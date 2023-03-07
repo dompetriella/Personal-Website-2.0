@@ -1,31 +1,30 @@
 <script>
-	// import './styles.css';
+	import './styles.css';
+	import '../app.css'
 </script>
 
 <div class="app">
 	<nav>
 	</nav>
-
+	
 	<main>
 		<slot />
 	</main>
-
-	<!-- <footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer> -->
 </div>
 
 <style>
+
 	.app {
 		display: flex;
 		flex-direction: column;
+		margin: 0px;
+		padding: 0px;
 	}
 
 	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
+		width: 100vw;
+		height: 100vh;
+		background-color: var(--lightModePrimary);
 	}
 
 	@media (min-width: 480px) {
