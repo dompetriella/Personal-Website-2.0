@@ -1,7 +1,7 @@
 <script>
 	import './styles.css';
 	import '../app.css';
-	import { lightMode, toggleLightMode } from './stores';
+	import { lightMode, toggleLightMode } from '../stores';
 </script>
 
 <div class="app">

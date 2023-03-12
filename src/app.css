@@ -3,18 +3,18 @@ body {
     padding: 0px;
 }
 
-div {
-    font-family: 'Alata', sans-serif;
-}
-
 @font-face {
     font-family: 'Alata';
-    src: url('static/fonts/Alata-Regular.ttf') format('ttf'),
+    src: url('/fonts/Alata-Regular.ttf') format('woff2'),
         /* Modern Browsers */
-        url('static/fonts/Alata-Regular.ttf') format('ttf');
+        url('/fonts/Alata-Regular.ttf') format('woff2');
     /* Older Browsers */
     font-weight: normal;
     font-style: normal;
+}
+
+div {
+    font-family: 'Alata', sans-serif;
 }
 
 :root {
@@ -29,6 +29,8 @@ div {
 
     --darkModePrimary: #1E1E1E;
     --darkModeSecondary: #2B2B2C;
+    --darkModeHighlight: #C8651D;
+    --darkModeHighlightSecondary: rgb(200, 101, 29, 0.25);
 
     --darkModeSplashPrimary: #E8E4E4;
     --darkModeSplashSecondary: #606061;
@@ -37,4 +39,5 @@ div {
     --lightText: #E8E4E4;
     --darkText: #171717;
     --darkGreenText: #2B452D;
+    --darkBlueText: #385961;
 }
