@@ -5,5 +5,4 @@ export const lightMode = writable(true);
 
 export function toggleLightMode() {
     lightMode.update(mode => !mode);
-    console.log('lightMode:', get(lightMode));
 }
