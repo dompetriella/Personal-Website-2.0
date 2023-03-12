@@ -35,9 +35,9 @@
 			width="35"
 		/>
 
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<img
 			on:click={toggleLightMode}
+			on:keypress={toggleLightMode}
 			src={$lightMode ? '/sun.png' : '/moon.png'}
 			alt={$lightMode ? 'sun' : 'moon'}
 			height="70"
@@ -45,10 +45,10 @@
 		/>
 	</nav>
 
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<img
 		class="background-toggle"
 		on:click={toggleLightMode}
+		on:keypress={toggleLightMode}
 		src={$lightMode ? '/sun.png' : '/fullmoon.png'}
 		alt={$lightMode ? 'sun' : 'moon'}
 		height="350"
