@@ -1,5 +1,6 @@
 <script lang="ts">
 	import HeaderSign from '../components/header-sign.svelte';
+	import SplashBackground from '../components/splash-background.svelte';
 	import { lightMode } from '../stores';
 	let screenSize: number;
 	const mobile: number = 480;
@@ -17,6 +18,7 @@
 				<div>{$lightMode ? 'BY DAY' : 'BY NIGHT'}</div>
 			</div>
 		</div>
+		<SplashBackground />
 	</div>
 </div>
 
@@ -42,6 +44,10 @@
 	@media (max-width: 480px) {
 		.header-area {
 			padding-top: 2em;
+		}
+
+		.opening-screen {
+			flex-direction: column;
 		}
 	}
 
