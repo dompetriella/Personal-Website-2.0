@@ -8,18 +8,37 @@
 
 <style>
 	.splash-body {
-		padding-top: 15em;
-		position: absolute;
-		overflow: hidden;
-		right: 0;
+		position: relative;
 	}
 
 	.primary-splash {
-		height: 35em;
-		width: 35em;
+		position: absolute;
+		height: 7em;
+		width: 7em;
+		left: 1em;
+		top: 1em;
 		border-radius: 50%;
-		transform: translateX(9em);
-		background-color: black;
+		background-color: white;
 		z-index: 3;
+	}
+
+	.secondary-splash {
+		position: absolute; /* Add position absolute */
+		height: 8.5em;
+		width: 8.5em;
+		left: 0.5em;
+		top: 0.5em;
+		border-radius: 50%;
+		background-color: grey;
+		z-index: 2;
+	}
+
+	.tertiary-splash {
+		position: absolute; /* Add position absolute */
+		height: 10em;
+		width: 10em;
+		border-radius: 50%;
+		background-color: black;
+		z-index: 1;
 	}
 </style>

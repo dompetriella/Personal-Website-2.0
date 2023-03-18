@@ -18,6 +18,7 @@
 				<div>{$lightMode ? 'BY DAY' : 'BY NIGHT'}</div>
 			</div>
 		</div>
+
 		<SplashBackground />
 	</div>
 </div>
@@ -34,6 +35,10 @@
 		text-align: center;
 		letter-spacing: 2px;
 		padding: 1em;
+	}
+
+	.header-area {
+		z-index: 50;
 	}
 
 	.opening-screen {
