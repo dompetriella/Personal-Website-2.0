@@ -43,7 +43,9 @@
 
 	.text {
 		position: absolute;
-		font-size: 2em;
+		font-size: 1.6em;
+		letter-spacing: 2px;
+		user-select: none;
 	}
 
 	.secondary-splash {

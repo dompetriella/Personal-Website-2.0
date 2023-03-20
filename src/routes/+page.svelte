@@ -1,6 +1,7 @@
 <script lang="ts">
 	import HeaderSign from '../components/header-sign.svelte';
 	import SplashButton from '../components/splash-button.svelte';
+	import ProjectHeader from '../components/project-header.svelte';
 	import { lightMode } from '../stores';
 	let screenSize: number;
 	const mobile: number = 480;
@@ -16,11 +17,17 @@
 			<div>{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}</div>
 			<div>{$lightMode ? 'BY DAY' : 'BY NIGHT'}</div>
 		</div>
+		<div style="height: 30em;" />
 	</div>
-	<div class="splash-buttons">
-		<SplashButton text="CODE" />
-		<SplashButton text="ART" />
-		<SplashButton text="GAMES" />
+	<div class="projects-area">
+		<div class="projects-header-desktop">
+			<ProjectHeader />
+		</div>
+		<div class="splash-buttons">
+			<SplashButton text="CODE" />
+			<SplashButton text="ART" />
+			<SplashButton text="GAMES" />
+		</div>
 	</div>
 </div>
 
@@ -58,7 +65,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			row-gap: 4em;
+			row-gap: 5em;
 		}
 	}
 
