@@ -1,6 +1,6 @@
 <script lang="ts">
 	import HeaderSign from '../components/header-sign.svelte';
-	import SplashBackground from '../components/splash-background.svelte';
+	import SplashButton from '../components/splash-button.svelte';
 	import { lightMode } from '../stores';
 	let screenSize: number;
 	const mobile: number = 480;
@@ -9,17 +9,18 @@
 <svelte:window bind:innerWidth={screenSize} />
 
 <div class="main-tree">
-	<div class="opening-screen">
-		<div class="header-area">
-			<HeaderSign fontSize={screenSize > mobile ? 5 : 2.7} />
-			<div style="color: {$lightMode ? 'var(--darkText)' : 'var(--lightText)'}" class="header-text">
-				<div>I'M DOM PETRIELLA</div>
-				<div>{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}</div>
-				<div>{$lightMode ? 'BY DAY' : 'BY NIGHT'}</div>
-			</div>
+	<div class="header-area">
+		<HeaderSign fontSize={screenSize > mobile ? 5 : 2.7} />
+		<div style="color: {$lightMode ? 'var(--darkText)' : 'var(--lightText)'}" class="header-text">
+			<div>I'M DOM PETRIELLA</div>
+			<div>{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}</div>
+			<div>{$lightMode ? 'BY DAY' : 'BY NIGHT'}</div>
 		</div>
-
-		<SplashBackground />
+	</div>
+	<div class="splash-buttons">
+		<SplashButton text="CODE" />
+		<SplashButton text="ART" />
+		<SplashButton text="GAMES" />
 	</div>
 </div>
 
@@ -27,8 +28,6 @@
 	.main-tree {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		height: 100vh;
 	}
 
 	.header-text {
@@ -41,7 +40,7 @@
 		z-index: 50;
 	}
 
-	.opening-screen {
+	.splash-buttons {
 		display: flex;
 	}
 
@@ -49,10 +48,17 @@
 	@media (max-width: 480px) {
 		.header-area {
 			padding-top: 2em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 		}
 
-		.opening-screen {
+		.splash-buttons {
 			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			row-gap: 4em;
 		}
 	}
 
@@ -69,6 +75,12 @@
 
 		.header-text {
 			font-size: 1.5em;
+		}
+
+		.splash-buttons {
+			width: 100vw;
+			justify-content: space-around;
+			align-items: center;
 		}
 	}
 </style>
