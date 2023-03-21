@@ -43,12 +43,14 @@
 		padding: 1em;
 	}
 
-	.header-area {
-		z-index: 50;
-	}
-
 	.splash-buttons {
 		display: flex;
+	}
+
+	.projects-area {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	/* mobile */

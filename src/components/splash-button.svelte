@@ -68,4 +68,15 @@
 		background-color: black;
 		z-index: 1;
 	}
+
+	/* mobile */
+	@media (max-width: 480px) {
+	}
+
+	/* desktop */
+	@media (min-width: 480px) {
+		.splash-body {
+			margin: 7em 0em;
+		}
+	}
 </style>
