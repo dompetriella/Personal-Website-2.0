@@ -43,15 +43,6 @@
 	/>
 </nav>
 
-<img
-	class="background-toggle"
-	on:click={toggleLightMode}
-	on:keypress={toggleLightMode}
-	src={$lightMode ? '/sun.png' : '/fullmoon.png'}
-	alt={$lightMode ? 'sun' : 'moon'}
-	height="350"
-	width="350"
-/>
 <nav
 	class="desktop"
 	style={$lightMode
@@ -71,6 +62,14 @@
 		<div class="nav-text" style="color: {$lightMode ? 'var(--darkGreenText)' : 'var(--lightText)'}">
 			CONTACT
 		</div>
+		<img
+			on:click={toggleLightMode}
+			on:keypress={toggleLightMode}
+			src={$lightMode ? '/sun.png' : '/moon.png'}
+			alt={$lightMode ? 'sun' : 'moon'}
+			height="70"
+			width="70"
+		/>
 	</div>
 </nav>
 
@@ -94,7 +93,7 @@
 			animation: fadeIn 1s;
 		}
 
-		.background-toggle {
+		.right-nav {
 			display: none;
 		}
 
@@ -138,13 +137,7 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
-		}
-
-		.background-toggle {
-			display: block;
-			position: fixed;
-			top: -9em;
-			left: -8em;
+			align-items: center;
 		}
 	}
 </style>

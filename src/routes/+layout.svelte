@@ -1,5 +1,4 @@
 <script>
-	import './styles.css';
 	import '../app.css';
 	import Navbar from '../components/navbar.svelte';
 	import { lightMode } from '../stores';
