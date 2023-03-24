@@ -5,6 +5,7 @@
 	import { lightMode } from '../stores';
 	import SplashBackgroundDesktop from '../components/splash-background-desktop.svelte';
 	import SplashBackgroundMobile from '../components/splash-background-projects-mobile.svelte';
+	import ContactDesktop from '../components/contact-desktop.svelte';
 	let screenSize: number;
 	const mobile: number = 480;
 </script>
@@ -40,7 +41,9 @@
 			<SplashButton text="GAMES" />
 		</div>
 	</div>
-	<div class="contact-area" />
+	<div class="contact-area">
+		<ContactDesktop />
+	</div>
 </div>
 
 <style>

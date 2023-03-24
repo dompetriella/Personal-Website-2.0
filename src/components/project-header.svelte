@@ -15,7 +15,7 @@
 	.line {
 		margin-bottom: 0.75em;
 		height: 0.25em;
-		width: 20em;
+		width: 22em;
 		border-radius: 1px;
 	}
 
@@ -26,9 +26,9 @@
 	}
 
 	.project-title {
-		font-size: 3em;
-		padding-right: 0.6em;
+		font-size: 3.5em;
 		letter-spacing: 5px;
+		margin-right: 0.4em;
 	}
 
 	.mid-line {
