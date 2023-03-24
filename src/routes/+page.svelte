@@ -4,6 +4,7 @@
 	import ProjectHeader from '../components/project-header.svelte';
 	import { lightMode } from '../stores';
 	import SplashBackgroundDesktop from '../components/splash-background-desktop.svelte';
+	import SplashBackgroundMobile from '../components/splash-background-projects-mobile.svelte';
 	let screenSize: number;
 	const mobile: number = 480;
 </script>
@@ -22,6 +23,9 @@
 		</div>
 		{#if screenSize > mobile}
 			<SplashBackgroundDesktop />
+		{/if}
+		{#if screenSize < mobile}
+			<SplashBackgroundMobile />
 		{/if}
 	</div>
 	<div class="projects-area">
