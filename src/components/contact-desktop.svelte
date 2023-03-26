@@ -59,4 +59,18 @@
 		justify-content: space-between;
 		align-items: end;
 	}
+
+	@media (min-width: 481px) and (max-width: 1000px) {
+		.contact-area {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		.contact-text-area {
+			margin-left: -20em;
+			margin-bottom: 3em;
+		}
+	}
 </style>

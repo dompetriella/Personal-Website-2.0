@@ -9,6 +9,9 @@
 	import ContactDesktop from '../components/contact-desktop.svelte';
 	let screenSize: number;
 	const mobile: number = 480;
+
+	$: fontSize = screenSize > mobile ? 5 : 2.7;
+	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
@@ -16,8 +19,8 @@
 <div class="main-tree">
 	<section class="header-section">
 		<div class="header">
-			<HeaderSign fontSize={screenSize > mobile ? 5 : 2.7} />
-			<div style="color: {$lightMode ? 'var(--darkText)' : 'var(--lightText)'}" class="header-text">
+			<HeaderSign {fontSize} />
+			<div style="color: {textColor}" class="header-text">
 				<div>I'M DOM PETRIELLA</div>
 				<div>{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}</div>
 				<div>{$lightMode ? 'BY DAY' : 'BY NIGHT'}</div>
@@ -124,6 +127,13 @@
 			width: 100vw;
 			justify-content: space-around;
 			align-items: center;
+		}
+	}
+
+	/* tablet */
+	@media (min-width: 481px) and (max-width: 1000px) {
+		.header-text {
+			color: var(--darkText) !important;
 		}
 	}
 </style>
