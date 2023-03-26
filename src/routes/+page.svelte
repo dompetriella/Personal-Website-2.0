@@ -4,7 +4,8 @@
 	import ProjectHeader from '../components/project-header.svelte';
 	import { lightMode } from '../stores';
 	import SplashBackgroundDesktop from '../components/splash-background-desktop.svelte';
-	import SplashBackgroundMobile from '../components/splash-background-projects-mobile.svelte';
+	import SplashBackgroundProjectsMobile from '../components/splash-background-projects-mobile.svelte';
+	import SplashBackgroundContactMobile from '../components/splash-background-contact-mobile.svelte';
 	import ContactDesktop from '../components/contact-desktop.svelte';
 	let screenSize: number;
 	const mobile: number = 480;
@@ -13,7 +14,7 @@
 <svelte:window bind:innerWidth={screenSize} />
 
 <div class="main-tree">
-	<div class="header-area">
+	<section class="header-section">
 		<div class="header">
 			<HeaderSign fontSize={screenSize > mobile ? 5 : 2.7} />
 			<div style="color: {$lightMode ? 'var(--darkText)' : 'var(--lightText)'}" class="header-text">
@@ -26,10 +27,11 @@
 			<SplashBackgroundDesktop />
 		{/if}
 		{#if screenSize < mobile}
-			<SplashBackgroundMobile />
+			<SplashBackgroundProjectsMobile />
 		{/if}
-	</div>
-	<div class="projects-area">
+	</section>
+
+	<section class="projects-section">
 		{#if screenSize > mobile}
 			<div class="projects-header-desktop">
 				<ProjectHeader />
@@ -40,10 +42,16 @@
 			<SplashButton text="ART" />
 			<SplashButton text="GAMES" />
 		</div>
-	</div>
-	<div class="contact-area">
-		<ContactDesktop />
-	</div>
+	</section>
+
+	<section class="contact-area">
+		{#if screenSize > mobile}
+			<ContactDesktop />
+		{/if}
+		{#if screenSize < mobile}
+			<SplashBackgroundContactMobile />
+		{/if}
+	</section>
 </div>
 
 <style>
@@ -66,7 +74,7 @@
 		display: flex;
 	}
 
-	.projects-area {
+	.projects-section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -74,7 +82,7 @@
 
 	/* mobile */
 	@media (max-width: 480px) {
-		.header-area {
+		.header-section {
 			padding-top: 2em;
 			display: flex;
 			flex-direction: column;
@@ -87,6 +95,7 @@
 			justify-content: center;
 			align-items: center;
 			row-gap: 5em;
+			margin-bottom: 15em;
 		}
 	}
 
@@ -96,7 +105,7 @@
 			align-items: start;
 		}
 
-		.header-area {
+		.header-section {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
