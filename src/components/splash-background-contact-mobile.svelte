@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { lightMode } from '../stores';
+	import ActionButton from './action-button.svelte';
+	import ContactForm from './contact-form.svelte';
 
 	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
 	$: primarySplash = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModeSplashPrimary)';
@@ -9,6 +11,10 @@
 	$: tertiarySplash = $lightMode
 		? 'var(--lightModeSplashTertiary)'
 		: 'var(--darkModeSplashTertiary)';
+
+	$: listTextColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
+	$: contactBoxColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
+	$: contactBoxShadowColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
 </script>
 
 <div class="circles-container">
@@ -16,13 +22,41 @@
 	<div style="background-color:{primarySplash};" class="primary-circle" />
 	<div style="background-color:{secondarySplash};" class="secondary-circle" />
 	<div style="background-color:{tertiarySplash};" class="tertiary-circle" />
+	<div class="contact-area">
+		<ActionButton text="RESUMÉ" buttonType={1} textSize={2} />
+		<ul style="color: {listTextColor}">
+			<li>Website freelance</li>
+			<li>UI/UX design</li>
+			<li>App development</li>
+			<li>Game dev</li>
+			<li>Music composition</li>
+			<li>Or just to chat!</li>
+		</ul>
+		<ContactForm width={20} />
+	</div>
 </div>
 
 <style>
+	.contact-area {
+		position: absolute;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		height: 90em;
+		width: 100vw;
+		margin-top: 11em;
+		z-index: 5;
+	}
+
 	.circles-container {
 		position: relative;
 		overflow: hidden;
-		height: 64em;
+		height: 90em;
 		width: 100vw;
 	}
 
@@ -45,7 +79,7 @@
 		border-radius: 50%;
 		z-index: 3;
 		margin-right: -15em;
-		margin-top: 4em;
+		margin-top: 5.5em;
 	}
 
 	.secondary-circle {
@@ -57,7 +91,7 @@
 		border-radius: 50%;
 		z-index: 2;
 		margin-right: -18em;
-		margin-top: 2em;
+		margin-top: 3.5em;
 	}
 
 	.tertiary-circle {
@@ -69,5 +103,17 @@
 		border-radius: 50%;
 		z-index: 1;
 		margin-right: -15em;
+		margin-top: 1.5em;
+	}
+
+	ul li {
+		margin-top: 2em;
+		margin-bottom: 2em;
+		font-size: 1.2em;
+		letter-spacing: 3px;
+	}
+
+	ul {
+		margin-top: 1em;
 	}
 </style>

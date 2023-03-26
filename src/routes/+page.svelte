@@ -95,7 +95,7 @@
 			justify-content: center;
 			align-items: center;
 			row-gap: 5em;
-			margin-bottom: 15em;
+			margin-bottom: 10em;
 		}
 	}
 

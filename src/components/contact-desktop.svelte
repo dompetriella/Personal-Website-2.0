@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ContactForm from './contact-form.svelte';
+
 	import { lightMode } from '../stores';
 	import ActionButton from './action-button.svelte';
 
@@ -10,6 +12,7 @@
 <div class="contact-area">
 	<div class="contact-text-area">
 		<div style="color: {textColor}" class="title">CONTACT</div>
+		<ActionButton buttonType={1} text="RESUMÉ" />
 		<ul style="color: {textColor}">
 			<li>For website freelance</li>
 			<li>For UI/UX design</li>
@@ -18,16 +21,9 @@
 			<li>Music composition</li>
 			<li>Or just to chat!</li>
 		</ul>
-		<div style="padding-top: 2em;">
-			<ActionButton buttonType={1} text="RESUMÉ" />
-		</div>
 	</div>
 	<div class="contact-input-area">
-		<div
-			style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 5px {contactBoxShadowColor};"
-			class="contact-form-area"
-		/>
-		<ActionButton text="SEND" />
+		<ContactForm width={40} />
 	</div>
 </div>
 
@@ -42,8 +38,8 @@
 	.contact-text-area {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		align-items: start;
+		justify-content: space-evenly;
+		align-items: center;
 	}
 
 	.title {
@@ -62,12 +58,5 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: end;
-	}
-
-	.contact-form-area {
-		height: 32em;
-		width: 40em;
-		border-radius: 1em;
-		margin-bottom: 1.5em;
 	}
 </style>

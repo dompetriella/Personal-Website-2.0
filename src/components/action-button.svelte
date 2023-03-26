@@ -25,7 +25,7 @@
 				buttonAttributes.textColor = 'var(--lightText)';
 			}
 			if (buttonType === ButtonType.Secondary) {
-				buttonAttributes.bgColor = 'var(--lightModeSplashPrimary)';
+				buttonAttributes.bgColor = 'var(--lightModeSplashSecondary)';
 				buttonAttributes.shadowColor = 'var(--darkBlueText)';
 				buttonAttributes.textColor = 'var(--lightText)';
 			}
@@ -57,7 +57,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 0.4em 1.5em;
+		padding: 0.4em 2em;
 		border-radius: 0.5em;
 		width: max-content;
 	}
