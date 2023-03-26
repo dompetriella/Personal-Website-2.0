@@ -21,7 +21,7 @@
 	.circles-container {
 		position: absolute;
 		overflow: hidden;
-		height: 100vh;
+		height: 80em;
 		width: 100vw;
 	}
 

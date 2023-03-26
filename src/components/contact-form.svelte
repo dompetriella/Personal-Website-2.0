@@ -24,7 +24,7 @@
 			style="width: {width * 0.85}em; background-color: {inputShadowColor}"
 			class="input-container"
 		>
-			<input style="background-color: {inputBoxColor}" class="single-input" />
+			<input style="background-color: {inputBoxColor};" class="single-input" />
 		</div>
 	</div>
 
@@ -78,6 +78,11 @@
 		border-radius: 0.5em;
 		width: 90%;
 		border: none;
+	}
+
+	textarea:focus,
+	input:focus {
+		outline: 3px dotted var(--darkModeHighlight);
 	}
 
 	.multiline-input {
