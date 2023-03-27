@@ -33,7 +33,7 @@
 		</div>
 
 		<div class="source-info">
-			<div>SOURCE CODE</div>
+			<div style="color: {headerTextColor};">SOURCE CODE</div>
 			<div style="color: {subTextColor}">FLUTTER</div>
 		</div>
 
