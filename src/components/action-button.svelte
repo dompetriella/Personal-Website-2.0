@@ -8,6 +8,8 @@
 	export let text: String = 'BUTTON';
 	export let buttonType: ButtonType = ButtonType.Primary;
 	export let textSize: number = 1.5;
+	export let verticalPadding: number = 0.4;
+	export let horizontalPadding: number = 2;
 
 	$: buttonAttributes = determineButtonAttributes($lightMode, buttonType);
 
@@ -46,7 +48,7 @@
 </script>
 
 <div
-	style="background-color: {buttonAttributes.bgColor}; box-shadow: -0.1em 0.1em 0 0.1em {buttonAttributes.shadowColor}; color: {buttonAttributes.textColor};  font-size: {textSize}em;"
+	style="background-color: {buttonAttributes.bgColor}; box-shadow: -0.1em 0.1em 0 0.1em {buttonAttributes.shadowColor}; color: {buttonAttributes.textColor};  font-size: {textSize}em; padding: {verticalPadding}em {horizontalPadding}em;"
 	class="action-button"
 >
 	{text}
@@ -57,8 +59,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 0.4em 2em;
 		border-radius: 0.5em;
 		width: max-content;
+		cursor: pointer;
 	}
 </style>

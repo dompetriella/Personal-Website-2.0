@@ -4,6 +4,8 @@
 	export let text: string = 'WELCOME';
 	export let fontSize: number = 2.7;
 	export let width: number = 6;
+	export let verticalPadding: number = 0.2;
+	export let horizontalPadding: number = 0;
 
 	$: bgColor = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModePrimary)';
 	$: color = $lightMode ? 'var(--darkModeSecondary)' : 'var(--darkModeHighlight)';
@@ -17,7 +19,7 @@
 </script>
 
 <div
-	style="font-size: {fontSize}em; width: {width}em;  background-color: {bgColor}; color: {color}; text-shadow: {textShadow}; -webkit-text-stroke: {textStroke}; box-shadow: {boxShadow}"
+	style="font-size: {fontSize}em; width: {width}em;  background-color: {bgColor}; color: {color}; text-shadow: {textShadow}; -webkit-text-stroke: {textStroke}; box-shadow: {boxShadow}; padding: {verticalPadding}em {horizontalPadding}em"
 >
 	{text}
 </div>
@@ -29,6 +31,5 @@
 		justify-content: center;
 		border-radius: 7px;
 		letter-spacing: 0.03em;
-		padding: 0.2em 0em;
 	}
 </style>

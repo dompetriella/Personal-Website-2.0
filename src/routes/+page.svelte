@@ -7,6 +7,7 @@
 	import SplashBackgroundProjectsMobile from '../components/splash-background-projects-mobile.svelte';
 	import SplashBackgroundContactMobile from '../components/splash-background-contact-mobile.svelte';
 	import ContactDesktop from '../components/contact-desktop.svelte';
+	import ProjectItem from '../components/project-item.svelte';
 	let screenSize: number;
 	const mobile: number = 480;
 
@@ -75,6 +76,9 @@
 
 	.splash-buttons {
 		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
 	}
 
 	.projects-section {
@@ -94,9 +98,6 @@
 		}
 
 		.splash-buttons {
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
 			row-gap: 5em;
 			margin-bottom: 10em;
 		}
@@ -125,8 +126,6 @@
 
 		.splash-buttons {
 			width: 100vw;
-			justify-content: space-around;
-			align-items: center;
 		}
 	}
 

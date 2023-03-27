@@ -1,14 +1,16 @@
-<script>
+<script lang="ts">
 	import '/src/app.css';
 	import { lightMode, toggleLightMode } from '../stores';
+
+	$: navbarBackground = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
+	$: navbarBoxShadow = $lightMode
+		? '-5px 5px 0em 2px var(--darkGreenText)'
+		: '-5px 5px 0em 2px var(--darkText)';
+
+	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
 </script>
 
-<nav
-	class="mobile"
-	style={$lightMode
-		? 'background-color: var(--lightModeSecondary); box-shadow: -5px 5px 0em 2px var(--darkGreenText);'
-		: 'background-color: var(--darkModeSecondary); box-shadow: -5px 5px 0em 2px var(--darkText);'}
->
+<nav class="mobile" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
 	<img
 		class="icon-image"
 		src={$lightMode ? '/light-home.png' : '/dark-home.png'}
@@ -43,25 +45,14 @@
 	/>
 </nav>
 
-<nav
-	class="desktop"
-	style={$lightMode
-		? 'background-color: var(--lightModeSecondary); box-shadow: -5px 5px 0em 2px var(--darkGreenText);'
-		: 'background-color: var(--darkModeSecondary); box-shadow: -5px 5px 0em 2px var(--darkText);'}
->
+<nav class="desktop" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
 	<div class="left-nav">
-		<div class="nav-text" style="color: {$lightMode ? 'var(--darkGreenText)' : 'var(--lightText)'}">
-			HOME
-		</div>
+		<div class="nav-text" style="color: {textColor}">HOME</div>
 	</div>
 
 	<div class="right-nav">
-		<div class="nav-text" style="color: {$lightMode ? 'var(--darkGreenText)' : 'var(--lightText)'}">
-			PROJECTS
-		</div>
-		<div class="nav-text" style="color: {$lightMode ? 'var(--darkGreenText)' : 'var(--lightText)'}">
-			CONTACT
-		</div>
+		<div class="nav-text" style="color: {textColor} ">PROJECTS</div>
+		<div class="nav-text" style="color: {textColor}">CONTACT</div>
 		<img
 			on:click={toggleLightMode}
 			on:keypress={toggleLightMode}
@@ -74,6 +65,10 @@
 </nav>
 
 <style>
+	img {
+		cursor: pointer;
+	}
+
 	@media (max-width: 480px) {
 		nav.mobile {
 			position: fixed;
@@ -125,6 +120,7 @@
 			font-weight: 100;
 			letter-spacing: 1px;
 			padding: 0em 1em;
+			cursor: pointer;
 		}
 
 		.left-nav {
