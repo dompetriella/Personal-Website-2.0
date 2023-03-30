@@ -18,7 +18,7 @@
 <svelte:window bind:innerWidth={screenSize} />
 
 <div class="main-tree">
-	<section class="header-section">
+	<section id="home-section" class="header-section">
 		<div class="header">
 			<HeaderSign {fontSize} />
 			<div style="color: {textColor}" class="header-text">
@@ -35,9 +35,9 @@
 		{/if}
 	</section>
 
-	<section class="projects-section">
+	<section id="project-section" class="projects-section">
 		{#if screenSize > mobile}
-			<div class="projects-header-desktop">
+			<div id="projects-section-desktop" class="projects-header-desktop">
 				<ProjectHeader />
 			</div>
 		{/if}
@@ -48,7 +48,7 @@
 		</div>
 	</section>
 
-	<section class="contact-area">
+	<section id="contact-section" class="contact-area">
 		{#if screenSize > mobile}
 			<ContactDesktop />
 		{/if}

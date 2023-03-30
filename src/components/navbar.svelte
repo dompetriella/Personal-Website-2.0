@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import '/src/app.css';
 	import { lightMode, toggleLightMode } from '../stores';
 
@@ -11,21 +11,25 @@
 </script>
 
 <nav class="mobile" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
-	<img
-		class="icon-image"
-		src={$lightMode ? '/light-home.png' : '/dark-home.png'}
-		alt="home"
-		height="35"
-		width="35"
-	/>
+	<a href="#home-section">
+		<img
+			class="icon-image"
+			src={$lightMode ? '/light-home.png' : '/dark-home.png'}
+			alt="home"
+			height="35"
+			width="35"
+		/>
+	</a>
 
-	<img
-		class="icon-image"
-		src={$lightMode ? '/light-projects.png' : '/dark-projects.png'}
-		alt="projects"
-		height="35"
-		width="35"
-	/>
+	<a href="#projects-section">
+		<img
+			class="icon-image"
+			src={$lightMode ? '/light-projects.png' : '/dark-projects.png'}
+			alt="projects"
+			height="35"
+			width="35"
+		/>
+	</a>
 
 	<img
 		class="icon-image"
@@ -47,11 +51,16 @@
 
 <nav class="desktop" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
 	<div class="left-nav">
-		<div class="nav-text" style="color: {textColor}">HOME</div>
+		<a href="#home-section">
+			<div class="nav-text" style="color: {textColor}">HOME</div>
+		</a>
 	</div>
 
 	<div class="right-nav">
-		<div class="nav-text" style="color: {textColor} ">PROJECTS</div>
+		<a href="#projects-section-desktop">
+			<div class="nav-text" style="color: {textColor}">PROJECTS</div>
+		</a>
+
 		<div class="nav-text" style="color: {textColor}">CONTACT</div>
 		<img
 			on:click={toggleLightMode}
@@ -65,6 +74,10 @@
 </nav>
 
 <style>
+	a {
+		text-decoration: none;
+	}
+
 	img {
 		cursor: pointer;
 	}
