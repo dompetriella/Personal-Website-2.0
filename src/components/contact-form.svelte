@@ -15,7 +15,7 @@
 </script>
 
 <div
-	style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 5px {contactBoxShadowColor}; width: {width}em"
+	style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 3px {contactBoxShadowColor}; width: {width}em"
 	class="contact-form-area"
 >
 	<div>

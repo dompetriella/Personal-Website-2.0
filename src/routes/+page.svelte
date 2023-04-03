@@ -7,12 +7,15 @@
 	import SplashBackgroundProjectsMobile from '../components/splash-background-projects-mobile.svelte';
 	import SplashBackgroundContactMobile from '../components/splash-background-contact-mobile.svelte';
 	import ContactDesktop from '../components/contact-desktop.svelte';
-	import ProjectItem from '../components/project-item.svelte';
+	import { codeProjects } from '../content/project-items-info';
+
 	let screenSize: number;
 	const mobile: number = 480;
 
 	$: fontSize = screenSize > mobile ? 5 : 2.7;
 	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
+
+	console.log(codeProjects.length);
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
@@ -42,7 +45,7 @@
 			</div>
 		{/if}
 		<div class="splash-buttons">
-			<SplashButton text="CODE" />
+			<SplashButton text="CODE" projectItems={codeProjects} />
 			<SplashButton text="ART" />
 			<SplashButton text="GAMES" />
 		</div>
@@ -78,6 +81,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+		align-items: start;
 		flex-wrap: wrap;
 	}
 

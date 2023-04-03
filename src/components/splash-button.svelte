@@ -2,7 +2,9 @@
 	import { lightMode } from '../stores';
 	import HeaderSign from './header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
-	export let text = 'TEXT';
+
+	export let projectItems: any = [];
+	export let text: string = 'TEXT';
 	export let expanded: boolean = false;
 
 	$: textColor = $lightMode ? 'var(--lightText)' : 'var(--darkText)';
@@ -37,10 +39,9 @@
 				<HeaderSign {text} verticalPadding={0.2} horizontalPadding={2} width={2} />
 			</div>
 			<div class="project-items">
-				<ProjectItem />
-				<ProjectItem />
-				<ProjectItem />
-				<ProjectItem />
+				{#each projectItems as projectItem}
+					<ProjectItem header={projectItem.header} />
+				{/each}
 			</div>
 		</div>
 	{/if}

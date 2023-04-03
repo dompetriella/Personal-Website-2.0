@@ -2,6 +2,23 @@
 	import { lightMode } from '../stores';
 	import ActionButton from './action-button.svelte';
 
+	enum ItemType {
+		Code,
+		Art,
+		Game
+	}
+
+	export const header: String = 'PLACEHOLDER';
+	export const subheader: String = 'Placeholder';
+	export const imageString: String = '';
+
+	export const status: String = 'Work in Progress';
+	export const hasButton: Boolean = false;
+	export const buttonText: String = 'Visit Site';
+
+	export const sourceCodeLink: String = '';
+	export const languageUsed: String = 'Svelte';
+
 	$: headerTextColor = $lightMode ? 'var(--darkText )' : 'var(--lightText)';
 	$: subTextColor = $lightMode ? 'var(--lightText)' : 'var(--darkModeSplashSecondary)';
 
@@ -10,36 +27,33 @@
 </script>
 
 <div
-	style="background-color: {containerColor}; box-shadow: -5px 5px 0px 5px {containerBoxShadowColor};"
+	style="background-color: {containerColor}; box-shadow: -5px 5px 0px 3px {containerBoxShadowColor};"
 	class="project-item-container"
 >
 	<div class="project-item-data">
 		<div class="heading-container">
 			<div class="heading-text">
-				<div style="color: {headerTextColor}; font-size: 1.5em">SIMPLE ROLLER</div>
-				<div style="color: {subTextColor}">A SIMPLER WAY TO ROLL</div>
+				<div style="color: {headerTextColor}; font-size: 1.5em">{header.toUpperCase}</div>
+				<div style="color: {subTextColor}">{subheader}</div>
 			</div>
 
 			<div style="width: 4em; height: 4em; background-color: black" />
 		</div>
 		<div class="status-text">
 			<div style="color: {headerTextColor}; padding-right: 1em;">STATUS:</div>
-			<div style="color: {subTextColor}">FINISHED</div>
-		</div>
-
-		<div class="project-info">
-			<div>ANDROID</div>
-			<div>iOS</div>
+			<div style="color: {subTextColor}">{status}</div>
 		</div>
 
 		<div class="source-info">
-			<div style="color: {headerTextColor};">SOURCE CODE</div>
-			<div style="color: {subTextColor}">FLUTTER</div>
+			<div style="color: {headerTextColor}; cursor: pointer">SOURCE CODE</div>
+			<div style="color: {subTextColor}">{languageUsed}</div>
 		</div>
 
-		<div class="site-button">
-			<ActionButton buttonType={1} textSize={1.2} text={'VISIT SITE'} horizontalPadding={4} />
-		</div>
+		{#if hasButton}
+			<div class="site-button">
+				<ActionButton buttonType={1} textSize={1.2} text={buttonText} horizontalPadding={4} />
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -68,18 +82,16 @@
 
 	.status-text {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: start;
-	}
-
-	.project-info {
-		padding: 1em 0;
+		padding-bottom: 1em;
 	}
 
 	.source-info {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		padding-top: 1em;
 	}
 
 	.site-button {
