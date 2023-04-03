@@ -18,6 +18,7 @@
 </script>
 
 <div class="circles-container">
+	<div class="contact-anchor" id="contact-m" />
 	<div style="color: {textColor}" class="text">CONTACT</div>
 	<div style="background-color:{primarySplash};" class="primary-circle" />
 	<div style="background-color:{secondarySplash};" class="secondary-circle" />
@@ -37,6 +38,10 @@
 </div>
 
 <style>
+	.contact-anchor {
+		margin-top: -3em;
+	}
+
 	.contact-area {
 		position: absolute;
 		display: flex;

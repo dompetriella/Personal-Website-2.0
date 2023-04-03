@@ -11,7 +11,7 @@
 </script>
 
 <nav class="mobile" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
-	<a href="#home-section">
+	<a href="#home">
 		<img
 			class="icon-image"
 			src={$lightMode ? '/light-home.png' : '/dark-home.png'}
@@ -21,7 +21,7 @@
 		/>
 	</a>
 
-	<a href="#projects-section">
+	<a href="#projects-m">
 		<img
 			class="icon-image"
 			src={$lightMode ? '/light-projects.png' : '/dark-projects.png'}
@@ -31,13 +31,15 @@
 		/>
 	</a>
 
-	<img
-		class="icon-image"
-		src={$lightMode ? '/light-contact.png' : '/dark-contact.png'}
-		alt="contact"
-		height="35"
-		width="35"
-	/>
+	<a href="#contact-m">
+		<img
+			class="icon-image"
+			src={$lightMode ? '/light-contact.png' : '/dark-contact.png'}
+			alt="contact"
+			height="35"
+			width="35"
+		/>
+	</a>
 
 	<img
 		on:click={toggleLightMode}
@@ -51,17 +53,20 @@
 
 <nav class="desktop" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
 	<div class="left-nav">
-		<a href="#home-section">
+		<a href="#home">
 			<div class="nav-text" style="color: {textColor}">HOME</div>
 		</a>
 	</div>
 
 	<div class="right-nav">
-		<a href="#projects-section-desktop">
+		<a href="#projects">
 			<div class="nav-text" style="color: {textColor}">PROJECTS</div>
 		</a>
 
-		<div class="nav-text" style="color: {textColor}">CONTACT</div>
+		<a href="#contact">
+			<div class="nav-text" style="color: {textColor}">CONTACT</div>
+		</a>
+
 		<img
 			on:click={toggleLightMode}
 			on:keypress={toggleLightMode}

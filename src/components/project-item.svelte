@@ -1,23 +1,20 @@
 <script lang="ts">
 	import { lightMode } from '../stores';
 	import ActionButton from './action-button.svelte';
+	import { ItemType } from '../models/projects';
 
-	enum ItemType {
-		Code,
-		Art,
-		Game
-	}
+	export const itemType: ItemType = ItemType.Code;
 
-	export const header: String = 'PLACEHOLDER';
-	export const subheader: String = 'Placeholder';
+	export let header: String = 'Placeholder';
+	export let subheader: String = '';
 	export const imageString: String = '';
 
-	export const status: String = 'Work in Progress';
-	export const hasButton: Boolean = false;
-	export const buttonText: String = 'Visit Site';
+	export let status: String = 'Work in Progress';
+	export let hasButton: Boolean = false;
+	export let buttonText: String = 'Visit Site';
 
 	export const sourceCodeLink: String = '';
-	export const languageUsed: String = 'Svelte';
+	export let languageUsed: String = 'Svelte';
 
 	$: headerTextColor = $lightMode ? 'var(--darkText )' : 'var(--lightText)';
 	$: subTextColor = $lightMode ? 'var(--lightText)' : 'var(--darkModeSplashSecondary)';
@@ -33,7 +30,7 @@
 	<div class="project-item-data">
 		<div class="heading-container">
 			<div class="heading-text">
-				<div style="color: {headerTextColor}; font-size: 1.5em">{header.toUpperCase}</div>
+				<div style="color: {headerTextColor}; font-size: 1.5em">{header.toUpperCase()}</div>
 				<div style="color: {subTextColor}">{subheader}</div>
 			</div>
 

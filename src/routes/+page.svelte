@@ -7,7 +7,8 @@
 	import SplashBackgroundProjectsMobile from '../components/splash-background-projects-mobile.svelte';
 	import SplashBackgroundContactMobile from '../components/splash-background-contact-mobile.svelte';
 	import ContactDesktop from '../components/contact-desktop.svelte';
-	import { codeProjects } from '../content/project-items-info';
+	import { gameProjects, artProjects, codeProjects } from '../content/project-items-info';
+	import { ItemType } from '../models/projects';
 
 	let screenSize: number;
 	const mobile: number = 480;
@@ -21,7 +22,7 @@
 <svelte:window bind:innerWidth={screenSize} />
 
 <div class="main-tree">
-	<section id="home-section" class="header-section">
+	<section id="home" class="header-section">
 		<div class="header">
 			<HeaderSign {fontSize} />
 			<div style="color: {textColor}" class="header-text">
@@ -38,20 +39,20 @@
 		{/if}
 	</section>
 
-	<section id="project-section" class="projects-section">
+	<section id="projects" class="projects-section">
 		{#if screenSize > mobile}
-			<div id="projects-section-desktop" class="projects-header-desktop">
+			<div class="projects-header-desktop">
 				<ProjectHeader />
 			</div>
 		{/if}
 		<div class="splash-buttons">
-			<SplashButton text="CODE" projectItems={codeProjects} />
-			<SplashButton text="ART" />
-			<SplashButton text="GAMES" />
+			<SplashButton text="CODE" itemType={ItemType.Code} projectItems={codeProjects} />
+			<SplashButton text="ART" itemType={ItemType.Art} projectItems={artProjects} />
+			<SplashButton text="GAMES" itemType={ItemType.Game} projectItems={gameProjects} />
 		</div>
 	</section>
 
-	<section id="contact-section" class="contact-area">
+	<section id="contact" class="contact-area">
 		{#if screenSize > mobile}
 			<ContactDesktop />
 		{/if}
@@ -126,6 +127,10 @@
 
 		.header-text {
 			font-size: 1.5em;
+		}
+
+		.projects-section {
+			padding: 5em 0em;
 		}
 
 		.splash-buttons {

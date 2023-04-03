@@ -11,6 +11,7 @@
 </script>
 
 <div class="circles-container">
+	<div class="projects-anchor" id="projects-m" />
 	<div style="color: var(--darkText)" class="text">PROJECTS</div>
 	<div style="background-color:{primarySplash};" class="primary-circle" />
 	<div style="background-color:{secondarySplash};" class="secondary-circle" />
@@ -18,6 +19,10 @@
 </div>
 
 <style>
+	.projects-anchor {
+		margin-top: 40em;
+	}
+
 	.circles-container {
 		position: relative;
 		overflow: hidden;

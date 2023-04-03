@@ -2,7 +2,9 @@
 	import { lightMode } from '../stores';
 	import HeaderSign from './header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
+	import type { ItemType } from '../models/projects';
 
+	export let itemType: any;
 	export let projectItems: any = [];
 	export let text: string = 'TEXT';
 	export let expanded: boolean = false;
@@ -40,7 +42,7 @@
 			</div>
 			<div class="project-items">
 				{#each projectItems as projectItem}
-					<ProjectItem header={projectItem.header} />
+					<ProjectItem {...projectItem} />
 				{/each}
 			</div>
 		</div>
