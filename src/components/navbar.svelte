@@ -4,8 +4,8 @@
 
 	$: navbarBackground = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
 	$: navbarBoxShadow = $lightMode
-		? '-5px 5px 0em 2px var(--darkGreenText)'
-		: '-5px 5px 0em 2px var(--darkText)';
+		? '-5px 5px 0px 2px var(--darkGreenText)'
+		: '-5px 5px 0px 2px var(--darkText)';
 
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
 </script>
@@ -97,11 +97,12 @@
 			justify-content: space-around;
 			width: 85vw;
 			height: 3em;
-			border-radius: 15px;
+			border-radius: 1em;
 			z-index: 999;
 		}
 
 		.icon-image {
+			padding-top: 5px;
 			padding-left: 1em;
 			animation: fadeIn 1s;
 		}
@@ -125,6 +126,7 @@
 			top: 1em;
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			align-self: center;
 			justify-content: space-between;
 			width: 90vw;

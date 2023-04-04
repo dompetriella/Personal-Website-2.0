@@ -31,5 +31,6 @@
 		justify-content: center;
 		border-radius: 7px;
 		letter-spacing: 0.03em;
+		user-select: none;
 	}
 </style>

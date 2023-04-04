@@ -62,5 +62,6 @@
 		border-radius: 0.5em;
 		width: max-content;
 		cursor: pointer;
+		user-select: none;
 	}
 </style>

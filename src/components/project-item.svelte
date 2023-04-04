@@ -5,19 +5,23 @@
 
 	export const itemType: ItemType = ItemType.Code;
 
-	export let header: String = 'Placeholder';
-	export let subheader: String = '';
-	export const imageString: String = '';
+	export let header: string = 'Placeholder';
+	export let subheader: string = '';
+	export const imageString: string = '';
 
-	export let status: String = 'Work in Progress';
-	export let hasButton: Boolean = false;
-	export let buttonText: String = 'Visit Site';
+	export let status: string = 'Work in Progress';
 
-	export const sourceCodeLink: String = '';
-	export let languageUsed: String = 'Svelte';
+	export let hasButton: boolean = false;
+	export let buttonText: string = 'Visit Site';
+	export let buttonRedirectURL: string = '';
 
-	$: headerTextColor = $lightMode ? 'var(--darkText )' : 'var(--lightText)';
-	$: subTextColor = $lightMode ? 'var(--lightText)' : 'var(--darkModeSplashSecondary)';
+	export let sourceCodeLink: string;
+	export let languageUsed: string = 'Svelte';
+
+	$: headerTextColor = $lightMode ? 'var(--darkGreenText )' : 'var(--lightText)';
+	$: subTextColor = $lightMode ? 'var(--lightModePrimary)' : 'var(--darkModeSplashSecondary)';
+
+	$: highlight = $lightMode ? 'var(--lightText)' : 'var(--darkModeHighlight)';
 
 	$: containerColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
 	$: containerBoxShadowColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
@@ -42,19 +46,28 @@
 		</div>
 
 		<div class="source-info">
-			<div style="color: {headerTextColor}; cursor: pointer">SOURCE CODE</div>
+			<a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
+				<div style="color: {highlight}; cursor: pointer">SOURCE CODE</div>
+			</a>
+
 			<div style="color: {subTextColor}">{languageUsed}</div>
 		</div>
 
 		{#if hasButton}
-			<div class="site-button">
-				<ActionButton buttonType={1} textSize={1.2} text={buttonText} horizontalPadding={4} />
-			</div>
+			<a href={buttonRedirectURL}>
+				<div class="site-button">
+					<ActionButton buttonType={1} textSize={1.2} text={buttonText} horizontalPadding={4} />
+				</div>
+			</a>
 		{/if}
 	</div>
 </div>
 
 <style>
+	a {
+		text-decoration: none;
+	}
+
 	.project-item-container {
 		width: 18em;
 		padding: 1em;
