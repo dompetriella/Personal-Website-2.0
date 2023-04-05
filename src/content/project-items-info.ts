@@ -16,9 +16,9 @@ export const codeProjects = [
 		status: 'Work in Progress (v0.1.2)',
 		info: 'Recursion, much?',
 		sourceCodeLink: "https://github.com/dompetriella/Personal-Website-2.0",
-		languageUsed: 'Svelte',
+		languageUsed: 'Sveltekit',
 		hasButton: true,
-		buttonText: "Go to Site",
+		buttonText: "Goto Site",
 		buttonRedirectURL: "https://www.dompetriella.com"
 	},
 	{

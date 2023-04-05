@@ -15,8 +15,6 @@
 
 	$: fontSize = screenSize > mobile ? 5 : 2.7;
 	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
-
-	console.log(codeProjects.length);
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
