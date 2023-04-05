@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fly, slide } from 'svelte/transition';
+	import { expoOut } from 'svelte/easing';
 	import { lightMode } from '../stores';
 	import HeaderSign from './header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
@@ -42,7 +44,9 @@
 			</div>
 			<div class="project-items">
 				{#each projectItems as projectItem}
-					<ProjectItem {...projectItem} />
+					<div in:fly={{ duration: 500, easing: expoOut, y: 100 }}>
+						<ProjectItem {...projectItem} />
+					</div>
 				{/each}
 			</div>
 		</div>

@@ -10,13 +10,14 @@
 	export const imageString: string = '';
 
 	export let status: string = 'Work in Progress';
+	export let info: string;
+
+	export let sourceCodeLink: string;
+	export let languageUsed: string = 'Svelte';
 
 	export let hasButton: boolean = false;
 	export let buttonText: string = 'Visit Site';
 	export let buttonRedirectURL: string = '';
-
-	export let sourceCodeLink: string;
-	export let languageUsed: string = 'Svelte';
 
 	$: headerTextColor = $lightMode ? 'var(--darkGreenText )' : 'var(--lightText)';
 	$: subTextColor = $lightMode ? 'var(--lightModePrimary)' : 'var(--darkModeSplashSecondary)';
@@ -44,6 +45,14 @@
 			<div style="color: {headerTextColor}; padding-right: 1em;">STATUS:</div>
 			<div style="color: {subTextColor}">{status}</div>
 		</div>
+
+		{#if info}
+			<div class="status-text">
+				<div style="color: {subTextColor}">
+					{info}
+				</div>
+			</div>
+		{/if}
 
 		<div class="source-info">
 			<a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">

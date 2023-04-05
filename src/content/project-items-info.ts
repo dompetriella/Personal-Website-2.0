@@ -11,16 +11,21 @@
 
 export const codeProjects = [
 	{
-		header: 'This site',
+		header: '- This site -',
 		subheader: 'dompetriella.com',
 		status: 'Work in Progress (v0.1.2)',
+		info: 'Recursion, much?',
 		sourceCodeLink: "https://github.com/dompetriella/Personal-Website-2.0",
-		languageUsed: 'Svelte'
+		languageUsed: 'Svelte',
+		hasButton: true,
+		buttonText: "Go to Site",
+		buttonRedirectURL: "https://www.dompetriella.com"
 	},
 	{
 		header: 'Simple Roller',
 		subheader: 'A Simpler Way to Roll',
 		status: 'Feature Complete (v1.3.4)',
+		info: 'A simple dice rolling app for tabletop games, with theming to fit your style.  Available on iOS and Android',
 		sourceCodeLink: "https://github.com/dompetriella/Simple-Roller",
 		languageUsed: 'Flutter'
 	},
@@ -28,6 +33,7 @@ export const codeProjects = [
 		header: 'Ocebot',
 		subheader: 'A Pet Project- literally',
 		status: 'Complete (v1.1.5)',
+		info: 'Data keeping app for my pet snake, Ocelot, made in the style of Stardew Valley.',
 		sourceCodeLink: "https://github.com/dompetriella/OceBot-2.0",
 		languageUsed: 'Flutter'
 	}
