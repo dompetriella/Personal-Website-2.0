@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '/src/app.css';
 	import { lightMode, toggleLightMode } from '../stores';
 
@@ -8,6 +8,14 @@
 		: '-5px 5px 0px 2px var(--darkText)';
 
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
+
+	function hoverOverText(e: any) {
+		e.target.style.color = $lightMode ? 'var(--lightText)' : 'var(--darkModeHighlight)';
+	}
+
+	function hoverAwayText(e: any) {
+		e.target.style.color = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
+	}
 </script>
 
 <nav class="mobile" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
@@ -54,17 +62,44 @@
 <nav class="desktop" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
 	<div class="left-nav">
 		<a href="#home">
-			<div class="nav-text" style="color: {textColor}">HOME</div>
+			<div
+				class="nav-text"
+				style="color: {textColor}"
+				on:blur={hoverAwayText}
+				on:focus={hoverOverText}
+				on:mouseover={hoverOverText}
+				on:mouseout={hoverAwayText}
+			>
+				HOME
+			</div>
 		</a>
 	</div>
 
 	<div class="right-nav">
 		<a href="#projects">
-			<div class="nav-text" style="color: {textColor}">PROJECTS</div>
+			<div
+				class="nav-text"
+				style="color: {textColor}"
+				on:blur={hoverAwayText}
+				on:focus={hoverOverText}
+				on:mouseover={hoverOverText}
+				on:mouseout={hoverAwayText}
+			>
+				PROJECTS
+			</div>
 		</a>
 
 		<a href="#contact">
-			<div class="nav-text" style="color: {textColor}">CONTACT</div>
+			<div
+				class="nav-text"
+				style="color: {textColor}"
+				on:blur={hoverAwayText}
+				on:focus={hoverOverText}
+				on:mouseover={hoverOverText}
+				on:mouseout={hoverAwayText}
+			>
+				CONTACT
+			</div>
 		</a>
 
 		<img
