@@ -43,6 +43,14 @@ export const artProjects = [];
 
 export const gameProjects = [
 	{
+		header: 'Elementals',
+		subheader: '',
+		status: 'Work in Progress (0.3.0)',
+		info: 'Harness one of the four elements in a multiplayer 1v1 card game',
+		sourceCodeLink: "https://github.chttps://github.com/dompetriella/Elementals",
+		languageUsed: 'Flutter',
+	},
+	{
 		header: 'Maritime Mines',
 		subheader: 'Minesweeper at sea',
 		status: 'Complete?',
