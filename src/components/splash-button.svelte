@@ -44,7 +44,7 @@
 			</div>
 			<div class="project-items">
 				{#each projectItems as projectItem}
-					<div in:fly={{ duration: 500, easing: expoOut, y: 100 }}>
+					<div in:fly={{ duration: 750, delay: 250, easing: expoOut, y: 100 }}>
 						<ProjectItem {...projectItem} />
 					</div>
 				{/each}
