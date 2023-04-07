@@ -28,7 +28,7 @@
 		overflow: hidden;
 		margin-top: -3em;
 		margin-bottom: 5em;
-		height: 54em;
+		height: 54.5em;
 		width: 100vw;
 	}
 
@@ -53,6 +53,27 @@
 		z-index: 3;
 		margin-right: -15em;
 		margin-top: 8em;
+		box-shadow: 0em 0.25em 2px rgba(0, 0, 0, 0.2);
+		animation-name: primary-splash-in;
+		animation-duration: 1200ms;
+		animation-iteration-count: 1;
+		animation-duration: forwards;
+		animation-timing-function: ease-out;
+	}
+
+	@keyframes primary-splash-in {
+		0% {
+			transform: scale(0);
+			opacity: 0;
+		}
+		50% {
+			opacity: 0;
+		}
+
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 
 	.secondary-circle {
@@ -65,6 +86,27 @@
 		z-index: 2;
 		margin-right: -20em;
 		margin-top: 4em;
+		box-shadow: 0em 0.2em 2px rgba(0, 0, 0, 0.1);
+		animation-name: primary-splash-in;
+		animation-duration: 1600ms;
+		animation-iteration-count: 1;
+		animation-duration: forwards;
+		animation-timing-function: ease-out;
+	}
+
+	@keyframes secondary-splash-in {
+		0% {
+			transform: scale(0);
+			opacity: 0;
+		}
+		40% {
+			opacity: 0;
+		}
+
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 
 	.tertiary-circle {
@@ -76,5 +118,26 @@
 		border-radius: 50%;
 		z-index: 1;
 		margin-right: -20em;
+		box-shadow: 0em 0.1em 1px rgba(0, 0, 0, 0.02);
+		animation-name: tertiary-splash-in;
+		animation-duration: 2100ms;
+		animation-iteration-count: 1;
+		animation-duration: forwards;
+		animation-timing-function: ease-out;
+	}
+
+	@keyframes tertiary-splash-in {
+		0% {
+			transform: scale(0);
+			opacity: 0;
+		}
+		40% {
+			opacity: 0;
+		}
+
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 </style>
