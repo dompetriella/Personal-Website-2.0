@@ -16,10 +16,11 @@
 	$: boxShadow = $lightMode
 		? '-3px 3px 0px 1px var(--darkBlueText)'
 		: '0px 0px 0px 5px var(--darkModeHighlight), 0px 0px 30px 10px var(--darkModeHighlight), -5px 5px 0px 4px var(--darkModeHighlightSecondary)';
+	$: border = $lightMode ? 'border: var(--lightText) solid 3px;' : 'border: none';
 </script>
 
 <div
-	style="font-size: {fontSize}em; width: {width}em;  background-color: {bgColor}; color: {color}; text-shadow: {textShadow}; -webkit-text-stroke: {textStroke}; box-shadow: {boxShadow}; padding: {verticalPadding}em {horizontalPadding}em"
+	style="font-size: {fontSize}em; width: {width}em;  background-color: {bgColor}; color: {color}; text-shadow: {textShadow}; -webkit-text-stroke: {textStroke}; box-shadow: {boxShadow}; padding: {verticalPadding}em {horizontalPadding}em; {border}"
 >
 	{text}
 </div>
@@ -30,6 +31,7 @@
 		align-items: center;
 		justify-content: center;
 		border-radius: 7px;
+		border: var(--lightText) solid 3px;
 		letter-spacing: 0.03em;
 		user-select: none;
 	}
