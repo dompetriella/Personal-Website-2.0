@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { crossfade, fade, fly, scale } from 'svelte/transition';
 	import { lightMode } from '../stores';
 
 	export let text: string = 'WELCOME';
@@ -6,6 +7,7 @@
 	export let width: number = 6;
 	export let verticalPadding: number = 0.2;
 	export let horizontalPadding: number = 0;
+	export let animationDelay: number = 2000;
 
 	$: bgColor = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModePrimary)';
 	$: color = $lightMode ? 'var(--darkModeSecondary)' : 'var(--darkModeHighlight)';
@@ -20,7 +22,20 @@
 </script>
 
 <div
-	style="font-size: {fontSize}em; width: {width}em;  background-color: {bgColor}; color: {color}; text-shadow: {textShadow}; -webkit-text-stroke: {textStroke}; box-shadow: {boxShadow}; padding: {verticalPadding}em {horizontalPadding}em; {border}"
+	in:fly={{ y: -200, delay: 600 }}
+	out:scale
+	class={$lightMode ? 'light-animation' : 'dark-animation'}
+	style="
+	font-size: {fontSize}em; 
+	width: {width}em;  
+	background-color: {bgColor}; 
+	color: {color}; 
+	text-shadow: {textShadow}; 
+	-webkit-text-stroke: {textStroke}; 
+	box-shadow: {boxShadow}; 
+	padding: {verticalPadding}em {horizontalPadding}em; {border};
+	animation-delay: {animationDelay}ms;
+	"
 >
 	{text}
 </div>
@@ -35,4 +50,28 @@
 		letter-spacing: 0.03em;
 		user-select: none;
 	}
+
+	/* .light-animation {
+		animation-name: falling-sign;
+		animation-delay: 2s;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-fill-mode: backwards;
+	}
+
+	@keyframes falling-sign {
+		0% {
+			opacity: 0%;
+			transform: translateY(-20em);
+		}
+		22% {
+			opacity: 0%;
+		}
+		25% {
+			opacity: 100%;
+		}
+		70% {
+			transform: rotate(-15deg);
+		}
+	} */
 </style>

@@ -12,7 +12,7 @@
 <div class="contact-area">
 	<div class="contact-text-area">
 		<div style="color: {textColor}" class="title">CONTACT</div>
-		<ActionButton buttonType={1} text="RESUMÉ" />
+		<!-- <ActionButton buttonType={1} text="RESUMÉ" /> -->
 		<ul style="color: {textColor}">
 			<li>For website freelance</li>
 			<li>For UI/UX design</li>

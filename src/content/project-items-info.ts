@@ -2,6 +2,8 @@
 // export let subheader: String = '';
 // export const imageString: String = '';
 
+import { ItemType } from "../models/projects";
+
 // export let status: String = 'Work in Progress';
 // export let hasButton: Boolean = false;
 // export let buttonText: String = 'Visit Site';
@@ -39,7 +41,17 @@ export const codeProjects = [
 	}
 ];
 
-export const artProjects = [];
+export const artProjects = [
+	{
+		itemType: ItemType.Art,
+		header: 'Point of Sale Demo',
+		subheader: 'Whatcha.. buyin?',
+		info: 'Demo design for point of sale system for school lunches',
+		hasButton: true,
+		buttonText: "View Figma",
+		buttonRedirectURL: "https://www.figma.com/file/7LM8Y5qKJnZbEOSWPBUDcB/POS-Design?node-id=0-1&t=gf4qM1YygA2BRcpq-0"
+	}
+];
 
 export const gameProjects = [
 	{

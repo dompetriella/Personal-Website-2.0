@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fly, slide } from 'svelte/transition';
+	import { fly, fade, slide } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
 	import { lightMode } from '../stores';
 	import HeaderSign from './header-sign.svelte';
@@ -24,15 +24,34 @@
 <div class="splash-body">
 	{#if !expanded}
 		<div
+			in:fade={{ delay: 500 }}
+			out:fade={{ delay: 100 }}
 			on:click={() => (expanded = true)}
 			on:keypress={() => (expanded = true)}
 			class="primary-splash"
 			style="background-color: {primarySplash}"
 		>
-			<div class="text" style="color: {textColor}">{text}</div>
+			<div
+				in:slide={{ delay: 700 }}
+				out:slide={{ delay: 100 }}
+				class="text"
+				style="color: {textColor}"
+			>
+				{text}
+			</div>
 		</div>
-		<div class="secondary-splash" style="background-color: {secondarySplash}" />
-		<div class="tertiary-splash" style="background-color: {tertiarySplash}" />
+		<div
+			in:fade={{ delay: 300 }}
+			out:fade={{ delay: 400 }}
+			class="secondary-splash"
+			style="background-color: {secondarySplash}"
+		/>
+		<div
+			in:fade={{ delay: 200 }}
+			out:fade={{ delay: 500 }}
+			class="tertiary-splash"
+			style="background-color: {tertiarySplash}"
+		/>
 	{:else}
 		<div class="expanded-body">
 			<div
@@ -40,11 +59,17 @@
 				on:click={() => (expanded = false)}
 				on:keypress={() => (expanded = true)}
 			>
-				<HeaderSign {text} verticalPadding={0.2} horizontalPadding={2} width={2} />
+				<HeaderSign
+					{text}
+					verticalPadding={0.2}
+					horizontalPadding={2}
+					width={2}
+					animationDelay={500}
+				/>
 			</div>
 			<div class="project-items">
 				{#each projectItems as projectItem, i}
-					<div in:fly={{ duration: 750, delay: 200 + i * 150, easing: quadOut, y: 100 }}>
+					<div in:fly={{ duration: 750, delay: 450 + i * 150, easing: quadOut, y: 100 }} out:fade>
 						<ProjectItem {...projectItem} />
 					</div>
 				{/each}

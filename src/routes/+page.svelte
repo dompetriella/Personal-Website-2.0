@@ -25,8 +25,12 @@
 			<HeaderSign {fontSize} />
 			<div style="color: {textColor}" class="header-text">
 				<div>I'M DOM PETRIELLA</div>
-				<div>{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}</div>
-				<div>{$lightMode ? 'BY DAY' : 'BY NIGHT'}</div>
+				<div>
+					{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}
+				</div>
+				<div style="animation-delay: 8000ms;">
+					{$lightMode ? 'BY DAY' : 'BY NIGHT'}
+				</div>
 			</div>
 		</div>
 		{#if screenSize > mobile}
@@ -70,6 +74,20 @@
 		text-align: center;
 		letter-spacing: 2px;
 		padding: 1em;
+		animation-name: fade-in-text;
+		animation-duration: 600ms;
+		animation-delay: 2000ms;
+		animation-fill-mode: backwards;
+	}
+
+	@keyframes fade-in-text {
+		0% {
+			transform: translateY(-1em);
+			opacity: 0;
+		}
+		100% {
+			opacity: 100;
+		}
 	}
 
 	.header {

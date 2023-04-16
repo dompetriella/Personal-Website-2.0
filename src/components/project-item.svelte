@@ -3,7 +3,7 @@
 	import ActionButton from './action-button.svelte';
 	import { ItemType } from '../models/projects';
 
-	export const itemType: ItemType = ItemType.Code;
+	export let itemType: ItemType = ItemType.Code;
 
 	export let header: string = 'Placeholder';
 	export let subheader: string = '';
@@ -54,13 +54,15 @@
 			</div>
 		{/if}
 
-		<div class="source-info">
-			<a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
-				<div style="color: {highlight}; cursor: pointer">SOURCE CODE</div>
-			</a>
+		{#if itemType != ItemType.Art}
+			<div class="source-info">
+				<a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
+					<div style="color: {highlight}; cursor: pointer">SOURCE CODE</div>
+				</a>
 
-			<div style="color: {subTextColor}">{languageUsed}</div>
-		</div>
+				<div style="color: {subTextColor}">{languageUsed}</div>
+			</div>
+		{/if}
 
 		{#if hasButton}
 			<a href={buttonRedirectURL}>
