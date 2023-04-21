@@ -1,12 +1,10 @@
 <script lang="ts">
 	import ContactForm from './contact-form.svelte';
 
-	import { lightMode } from '../stores';
-	import ActionButton from './action-button.svelte';
+	import { lightMode } from '../../stores';
+	import ActionButton from '../action-button.svelte';
 
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkModeSplashPrimary)';
-	$: contactBoxColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
-	$: contactBoxShadowColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
 </script>
 
 <div class="contact-area">

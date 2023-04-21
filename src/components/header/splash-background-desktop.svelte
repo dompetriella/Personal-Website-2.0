@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { lightMode } from '../stores';
+	import { lightMode } from '../../stores';
 
 	$: primarySplash = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModeSplashPrimary)';
 	$: secondarySplash = $lightMode

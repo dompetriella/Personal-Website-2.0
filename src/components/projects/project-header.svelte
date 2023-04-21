@@ -1,5 +1,5 @@
 <script>
-	import { lightMode } from '../stores';
+	import { lightMode } from '../../stores';
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
 	$: lineColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeHighlight)';
 </script>

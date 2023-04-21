@@ -48,7 +48,11 @@
 </script>
 
 <div
-	style="background-color: {buttonAttributes.bgColor}; box-shadow: -0.1em 0.15em 0 0.075em {buttonAttributes.shadowColor}; color: {buttonAttributes.textColor};  font-size: {textSize}em; padding: {verticalPadding}em {horizontalPadding}em;"
+	style="background-color: {buttonAttributes.bgColor}; 
+	box-shadow: -0.1em 0.15em 0 0.075em {buttonAttributes.shadowColor}; 
+	color: {buttonAttributes.textColor};  
+	font-size: {textSize}em; 
+	padding: {verticalPadding}em {horizontalPadding}em;"
 	class="action-button"
 >
 	{text}

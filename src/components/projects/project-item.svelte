@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { lightMode } from '../stores';
-	import ActionButton from './action-button.svelte';
-	import { ItemType } from '../models/projects';
+	import { lightMode } from '../../stores';
+	import ActionButton from '../action-button.svelte';
+	import { ItemType } from '../../models/projects';
 
 	export let itemType: ItemType = ItemType.Code;
 

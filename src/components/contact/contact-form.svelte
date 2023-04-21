@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { lightMode } from '../stores';
-	import ActionButton from './action-button.svelte';
+	import { lightMode } from '../../stores';
+	import ActionButton from '../action-button.svelte';
 	export let width: number;
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkModeSplashPrimary)';
 	$: contactBoxColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fly, fade, slide } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
-	import { lightMode } from '../stores';
-	import HeaderSign from './header-sign.svelte';
+	import { lightMode } from '../../stores';
+	import HeaderSign from '../header/header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
-	import type { ItemType } from '../models/projects';
+	import type { ItemType } from '../../models/projects';
 
 	export let itemType: any;
 	export let projectItems: any = [];

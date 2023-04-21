@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { lightMode } from '../stores';
-	import ActionButton from './action-button.svelte';
+	import { lightMode } from '../../stores';
+	import ActionButton from '../action-button.svelte';
 	import ContactForm from './contact-form.svelte';
 
 	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
@@ -13,8 +13,6 @@
 		: 'var(--darkModeSplashTertiary)';
 
 	$: listTextColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
-	$: contactBoxColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
-	$: contactBoxShadowColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
 </script>
 
 <div class="circles-container">

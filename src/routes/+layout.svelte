@@ -20,8 +20,8 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		margin: 0px;
-		padding: 0px;
+		margin: 0;
+		padding: 0;
 	}
 
 	main {

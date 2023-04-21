@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { crossfade, fade, fly, scale } from 'svelte/transition';
-	import { lightMode } from '../stores';
+	import { lightMode } from '../../stores';
 
 	export let text: string = 'WELCOME';
 	export let fontSize: number = 2.7;
@@ -9,7 +9,7 @@
 	export let horizontalPadding: number = 0;
 	export let animationDelay: number = 2000;
 
-	$: bgColor = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModePrimary)';
+	$: bgColor = $lightMode ? 'var(--lightModeSplashPrimary)' : 'rgb(0,0,0,.25)';
 	$: color = $lightMode ? 'var(--darkModeSecondary)' : 'var(--darkModeHighlight)';
 	$: textShadow = $lightMode
 		? 'var(--lightModePrimary) 1px 0 5px'
