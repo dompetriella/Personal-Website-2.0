@@ -10,7 +10,7 @@
 		: 'var(--darkModeSplashTertiary)';
 </script>
 
-<div style="height: 68em;" />
+<div style="min-height: 68em;" />
 <div class="circles-container">
 	<div style="background-color:{primarySplash};" class="primary-circle" />
 	<div style="background-color:{secondarySplash};" class="secondary-circle" />

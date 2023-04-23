@@ -78,25 +78,25 @@
 	@keyframes glow-in-text {
 		0% {
 			background: linear-gradient(
-				to right,
-				transparent 10%,
-				var(--darkModeHighlight) 30%,
-				var(--lightText) 60%
-			);
-			background-size: 1000%;
-			background-position-x: left;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-		100% {
-			background: linear-gradient(
-				to right,
+				to left,
 				transparent 10%,
 				var(--darkModeHighlight) 30%,
 				var(--lightText) 60%
 			);
 			background-size: 1000%;
 			background-position-x: right;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		100% {
+			background: linear-gradient(
+				to left,
+				transparent 10%,
+				var(--darkModeHighlight) 30%,
+				var(--lightText) 60%
+			);
+			background-size: 1000%;
+			background-position-x: left;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 		}

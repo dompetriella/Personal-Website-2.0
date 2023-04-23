@@ -4,9 +4,15 @@
 	import { lightMode } from '../../stores';
 	import { gameProjects, artProjects, codeProjects } from '../../content/project-items-info';
 	import { ItemType } from '../../models/projects';
+	import { onMount } from 'svelte';
 
 	let screenSize: number;
 	const mobile: number = 480;
+
+	let mounted = false;
+	onMount(async () => {
+		mounted = true;
+	});
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
@@ -17,11 +23,13 @@
 			<ProjectHeader />
 		</div>
 	{/if}
-	<div class="splash-buttons">
-		<SplashButton text="CODE" itemType={ItemType.Code} projectItems={codeProjects} />
-		<SplashButton text="ART" itemType={ItemType.Art} projectItems={artProjects} />
-		<SplashButton text="GAMES" itemType={ItemType.Game} projectItems={gameProjects} />
-	</div>
+	{#if mounted}
+		<div class="splash-buttons">
+			<SplashButton text="CODE" itemType={ItemType.Code} projectItems={codeProjects} />
+			<SplashButton text="ART" itemType={ItemType.Art} projectItems={artProjects} />
+			<SplashButton text="GAMES" itemType={ItemType.Game} projectItems={gameProjects} />
+		</div>
+	{/if}
 </section>
 
 <style>
