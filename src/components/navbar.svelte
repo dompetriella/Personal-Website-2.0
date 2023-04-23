@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '/src/app.css';
 	import { lightMode, toggleLightMode } from '../stores';
+	import { slide } from 'svelte/transition';
 
 	$: navbarBackground = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
 	$: navbarBoxShadow = $lightMode
