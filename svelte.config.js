@@ -9,29 +9,6 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		target: '#svelte',
-		vite: {
-			optimizeDeps: {
-				include: ['@carbon/icons-svelte']
-			}
-		},
-		prerender: {
-			crawl: true,
-			enabled: true,
-			onError: 'fail',
-			pages: ['*'],
-		},
-		paths: {
-			base: '/my-app',
-			assets: '/my-app'
-		},
-		ssr: true,
-		amp: false,
-		trailingSlash: 'never',
-		prerender: {
-			enabled: true,
-			entries: ['*', '/about', '/contact']
-		},
 	}
 };
 
