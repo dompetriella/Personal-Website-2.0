@@ -16,18 +16,18 @@
 
 <section id="home" class="header-section">
 	<div class="header">
-		<div class={animationType}>
+		<div class={$lightMode ? animationType : 'none'}>
 			<HeaderSign {fontSize} />
 		</div>
 
 		<div style="color: {textColor}" class="header-text">
-			<div class={animationType} style:animation-delay={$lightMode ? '200ms' : '0ms'}>
+			<div class={animationType} style:animation-delay={$lightMode ? '200ms' : '200ms'}>
 				I'M DOM PETRIELLA
 			</div>
-			<div class={animationType} style:animation-delay={$lightMode ? '400ms' : '0ms'}>
+			<div class={animationType} style:animation-delay={$lightMode ? '400ms' : '800ms'}>
 				{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}
 			</div>
-			<div class={animationType} style:animation-delay={$lightMode ? '600ms' : '0ms'}>
+			<div class={animationType} style:animation-delay={$lightMode ? '600ms' : '1600ms'}>
 				{$lightMode ? 'BY DAY' : 'BY NIGHT'}
 			</div>
 		</div>
@@ -61,11 +61,44 @@
 
 	@keyframes fade-in-text {
 		0% {
-			transform: translateY(-1em);
+			transform: translateY(-2em);
 			opacity: 0;
 		}
 		100% {
 			opacity: 100;
+		}
+	}
+
+	.dark-text-animation {
+		animation-name: glow-in-text;
+		animation-duration: 4000ms;
+		animation-fill-mode: backwards;
+	}
+
+	@keyframes glow-in-text {
+		0% {
+			background: linear-gradient(
+				to right,
+				transparent 10%,
+				var(--darkModeHighlight) 30%,
+				var(--lightText) 60%
+			);
+			background-size: 1000%;
+			background-position-x: left;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		100% {
+			background: linear-gradient(
+				to right,
+				transparent 10%,
+				var(--darkModeHighlight) 30%,
+				var(--lightText) 60%
+			);
+			background-size: 1000%;
+			background-position-x: right;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 	}
 

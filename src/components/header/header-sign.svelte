@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { crossfade, fade, fly, scale } from 'svelte/transition';
+	import { fly, scale } from 'svelte/transition';
 	import { lightMode } from '../../stores';
 
 	export let text: string = 'WELCOME';
@@ -24,7 +24,6 @@
 <div
 	in:fly={{ y: -200, delay: 600 }}
 	out:scale
-	class={$lightMode ? 'light-animation' : 'dark-animation'}
 	style="
 	font-size: {fontSize}em; 
 	width: {width}em;  
@@ -50,28 +49,4 @@
 		letter-spacing: 0.03em;
 		user-select: none;
 	}
-
-	/* .light-animation {
-		animation-name: falling-sign;
-		animation-delay: 2s;
-		animation-duration: 1s;
-		animation-timing-function: ease-in;
-		animation-fill-mode: backwards;
-	}
-
-	@keyframes falling-sign {
-		0% {
-			opacity: 0%;
-			transform: translateY(-20em);
-		}
-		22% {
-			opacity: 0%;
-		}
-		25% {
-			opacity: 100%;
-		}
-		70% {
-			transform: rotate(-15deg);
-		}
-	} */
 </style>

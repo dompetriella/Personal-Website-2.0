@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '/src/app.css';
 	import { lightMode, toggleLightMode } from '../stores';
-	import { slide } from 'svelte/transition';
 
 	$: navbarBackground = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
 	$: navbarBoxShadow = $lightMode
@@ -9,6 +8,8 @@
 		: '-5px 5px 0px 2px var(--darkText)';
 
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
+
+	$: lightModeToggle = $lightMode ? 'light-toggle-animation' : 'dark-toggle-animation';
 
 	function hoverOverText(e: any) {
 		e.target.style.color = $lightMode ? 'var(--lightText)' : 'var(--darkModeHighlight)';
@@ -53,6 +54,7 @@
 	<img
 		on:click={toggleLightMode}
 		on:keypress={toggleLightMode}
+		class={lightModeToggle}
 		src={$lightMode ? '/sun.png' : '/moon.png'}
 		alt={$lightMode ? 'sun' : 'moon'}
 		height="70"
@@ -106,6 +108,7 @@
 		<img
 			on:click={toggleLightMode}
 			on:keypress={toggleLightMode}
+			class={lightModeToggle}
 			src={$lightMode ? '/sun.png' : '/moon.png'}
 			alt={$lightMode ? 'sun' : 'moon'}
 			height="70"
@@ -121,6 +124,38 @@
 
 	img {
 		cursor: pointer;
+	}
+
+	.light-toggle-animation {
+		animation-name: sun-set;
+		animation-duration: 1000ms;
+	}
+
+	@keyframes sun-set {
+		0% {
+			opacity: 0;
+			transform: translateY(2em) scale(0);
+		}
+		25% {
+			opacity: 0;
+		}
+		100% {
+		}
+	}
+
+	.dark-toggle-animation {
+		animation-name: moon-rise;
+		animation-duration: 1000ms;
+	}
+
+	@keyframes moon-rise {
+		0% {
+			opacity: 0;
+			transform: translate(1em, -2em);
+		}
+		30% {
+			opacity: 0;
+		}
 	}
 
 	@media (max-width: 480px) {
