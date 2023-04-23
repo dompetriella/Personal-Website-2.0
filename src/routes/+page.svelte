@@ -5,7 +5,6 @@
 
 	let screenSize: number;
 	const mobile: number = 480;
-	export const prerender = true;
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
