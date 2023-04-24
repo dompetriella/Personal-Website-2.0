@@ -8,13 +8,28 @@
 	$: tertiarySplash = $lightMode
 		? 'var(--lightModeSplashTertiary)'
 		: 'var(--darkModeSplashTertiary)';
+
+	$: primarySplashAnimation = $lightMode
+		? 'light-primary-splash-animation'
+		: 'dark-primary-splash-animation';
+
+	$: secondarySplashAnimation = $lightMode
+		? 'light-secondary-splash-animation'
+		: 'dark-secondary-splash-animation';
+
+	$: tertiarySplashAnimation = $lightMode
+		? 'light-tertiary-splash-animation'
+		: 'dark-tertiary-splash-animation';
 </script>
 
 <div style="min-height: 68em;" />
 <div class="circles-container">
-	<div style="background-color:{primarySplash};" class="primary-circle" />
-	<div style="background-color:{secondarySplash};" class="secondary-circle" />
-	<div style="background-color:{tertiarySplash};" class="tertiary-circle" />
+	<div style="background-color:{primarySplash};" class="primary-circle {primarySplashAnimation}" />
+	<div
+		style="background-color:{secondarySplash};"
+		class="secondary-circle {secondarySplashAnimation}"
+	/>
+	<div style="background-color:{tertiarySplash};" class="tertiary-circle {tertiarySplash}" />
 </div>
 
 <style>

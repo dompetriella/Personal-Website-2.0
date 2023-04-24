@@ -134,10 +134,19 @@
 	@keyframes sun-set {
 		0% {
 			opacity: 0;
-			transform: translateY(2em) scale(0);
+		}
+		15% {
+			opacity: 0;
+			transform: scale(0);
 		}
 		25% {
-			opacity: 0;
+			transform: translateY(1em);
+		}
+		40% {
+		}
+		50% {
+			transform: scale(1.4);
+			filter: brightness(300%);
 		}
 		100% {
 		}
@@ -151,10 +160,10 @@
 	@keyframes moon-rise {
 		0% {
 			opacity: 0;
-			transform: translate(1em, -2em);
 		}
 		30% {
 			opacity: 0;
+			transform: rotate(0.5turn);
 		}
 	}
 

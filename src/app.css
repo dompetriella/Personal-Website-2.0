@@ -17,6 +17,7 @@ html {
 
 div {
     font-family: 'Alata', sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 :root {

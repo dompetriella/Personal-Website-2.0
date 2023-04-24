@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { fly, fade, slide } from 'svelte/transition';
-	import { quadOut } from 'svelte/easing';
+	import { fly, fade, slide, scale } from 'svelte/transition';
+	import { circOut, linear, quadOut } from 'svelte/easing';
 	import { lightMode } from '../../stores';
 	import HeaderSign from '../header/header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
@@ -68,11 +68,22 @@
 				/>
 			</div>
 			<div class="project-items">
-				{#each projectItems as projectItem, i}
-					<div in:fly={{ duration: 750, delay: 450 + i * 150, easing: quadOut, y: 100 }} out:fade>
-						<ProjectItem {...projectItem} />
-					</div>
-				{/each}
+				{#if $lightMode}
+					{#each projectItems as projectItem, i}
+						<div in:fly={{ duration: 750, delay: 450 + i * 150, easing: quadOut, y: 100 }} out:fade>
+							<ProjectItem {...projectItem} />
+						</div>
+					{/each}
+				{:else}
+					{#each projectItems as projectItem, i}
+						<div
+							in:fade={{ duration: 750, delay: 450 + i * 300, easing: linear }}
+							out:fly={{ x: 200 * (i % 2 ? -1 : 1) }}
+						>
+							<ProjectItem {...projectItem} />
+						</div>
+					{/each}
+				{/if}
 			</div>
 		</div>
 	{/if}

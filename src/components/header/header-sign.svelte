@@ -19,6 +19,8 @@
 		? '-3px 3px 0px 1px var(--darkBlueText)'
 		: '0px 0px 0px 5px var(--darkModeHighlight), 0px 0px 30px 10px var(--darkModeHighlight), -5px 5px 0px 4px var(--darkModeHighlightSecondary)';
 	$: border = $lightMode ? 'border: var(--lightText) solid 3px;' : 'border: none';
+
+	$: signAnimation = $lightMode ? 'light-mode-animation' : 'dark-mode-animation';
 </script>
 
 <div
@@ -35,6 +37,7 @@
 	padding: {verticalPadding}em {horizontalPadding}em; {border};
 	animation-delay: {animationDelay}ms;
 	"
+	class={signAnimation}
 >
 	{text}
 </div>
@@ -48,5 +51,13 @@
 		border: var(--lightText) solid 3px;
 		letter-spacing: 0.03em;
 		user-select: none;
+	}
+
+	.light-mode-animation {
+		animation-name: falling-sign;
+	}
+
+	.dark-mode-aniomation {
+		animation-name: neon-blink;
 	}
 </style>

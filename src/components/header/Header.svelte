@@ -16,7 +16,7 @@
 
 <section id="home" class="header-section">
 	<div class="header">
-		<div class={$lightMode ? animationType : 'none'}>
+		<div>
 			<HeaderSign {fontSize} />
 		</div>
 
