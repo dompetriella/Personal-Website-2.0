@@ -129,6 +129,7 @@
 	.light-toggle-animation {
 		animation-name: sun-set;
 		animation-duration: 1000ms;
+		animation-timing-function: ease-in-out;
 	}
 
 	@keyframes sun-set {
@@ -141,8 +142,6 @@
 		}
 		25% {
 			transform: translateY(1em);
-		}
-		40% {
 		}
 		50% {
 			transform: scale(1.4);

@@ -17,17 +17,17 @@
 <section id="home" class="header-section">
 	<div class="header">
 		<div>
-			<HeaderSign {fontSize} />
+			<HeaderSign {fontSize} animationDelay={100} />
 		</div>
 
 		<div style="color: {textColor}" class="header-text">
-			<div class={animationType} style:animation-delay={$lightMode ? '200ms' : '200ms'}>
+			<div class={animationType} style:animation-delay={$lightMode ? '700ms' : '600ms'}>
 				I'M DOM PETRIELLA
 			</div>
-			<div class={animationType} style:animation-delay={$lightMode ? '400ms' : '800ms'}>
+			<div class={animationType} style:animation-delay={$lightMode ? '900ms' : '1000ms'}>
 				{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}
 			</div>
-			<div class={animationType} style:animation-delay={$lightMode ? '600ms' : '1600ms'}>
+			<div class={animationType} style:animation-delay={$lightMode ? '1100ms' : '1600ms'}>
 				{$lightMode ? 'BY DAY' : 'BY NIGHT'}
 			</div>
 		</div>

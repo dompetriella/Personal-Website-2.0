@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { fly, scale } from 'svelte/transition';
 	import { lightMode } from '../../stores';
+	import { funnelOut } from '../../animations/splash-buttons';
 
 	export let text: string = 'WELCOME';
 	export let fontSize: number = 2.7;
 	export let width: number = 6;
 	export let verticalPadding: number = 0.2;
 	export let horizontalPadding: number = 0;
-	export let animationDelay: number = 2000;
+	export let animationDelay: number = 0;
 
 	$: bgColor = $lightMode ? 'var(--lightModeSplashPrimary)' : 'rgb(0,0,0,.25)';
 	$: color = $lightMode ? 'var(--darkModeSecondary)' : 'var(--darkModeHighlight)';
@@ -24,8 +25,7 @@
 </script>
 
 <div
-	in:fly={{ y: -200, delay: 600 }}
-	out:scale
+	out:funnelOut={{ duration: 400, delay: 0, y: 4 }}
 	style="
 	font-size: {fontSize}em; 
 	width: {width}em;  
@@ -35,7 +35,7 @@
 	-webkit-text-stroke: {textStroke}; 
 	box-shadow: {boxShadow}; 
 	padding: {verticalPadding}em {horizontalPadding}em; {border};
-	animation-delay: {animationDelay}ms;
+	animation-delay: {$lightMode ? animationDelay : animationDelay + 400}ms;
 	"
 	class={signAnimation}
 >
@@ -55,9 +55,53 @@
 
 	.light-mode-animation {
 		animation-name: falling-sign;
+		animation-duration: 1000ms;
+		animation-fill-mode: backwards;
 	}
 
-	.dark-mode-aniomation {
-		animation-name: neon-blink;
+	@keyframes falling-sign {
+		0% {
+			opacity: 0;
+			transform: translateY(-1.5em);
+		}
+
+		30% {
+			opacity: 0;
+		}
+	}
+
+	.dark-mode-animation {
+		animation-name: neon-flicker;
+		animation-duration: 1000ms;
+		animation-fill-mode: backwards;
+	}
+
+	@keyframes neon-flicker {
+		0% {
+			opacity: 0;
+		}
+		18% {
+			opacity: 0;
+		}
+		20% {
+			box-shadow: none;
+			text-shadow: none;
+			border: none;
+			opacity: 100%;
+			filter: brightness(180%);
+		}
+		22% {
+			opacity: 0;
+		}
+		50% {
+			opacity: 0;
+		}
+		60% {
+			opacity: 100%;
+			filter: brightness(115%);
+		}
+		70% {
+			opacity: 0;
+		}
 	}
 </style>

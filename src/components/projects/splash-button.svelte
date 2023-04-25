@@ -5,6 +5,7 @@
 	import HeaderSign from '../header/header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
 	import type { ItemType } from '../../models/projects';
+	import { funnelOut } from '../../animations/splash-buttons';
 
 	export let itemType: any;
 	export let projectItems: any = [];
@@ -64,13 +65,16 @@
 					verticalPadding={0.2}
 					horizontalPadding={2}
 					width={2}
-					animationDelay={500}
+					animationDelay={300}
 				/>
 			</div>
 			<div class="project-items">
 				{#if $lightMode}
 					{#each projectItems as projectItem, i}
-						<div in:fly={{ duration: 750, delay: 450 + i * 150, easing: quadOut, y: 100 }} out:fade>
+						<div
+							in:fly={{ duration: 750, delay: 450 + i * 150, easing: quadOut, y: 100 }}
+							out:fade={{ delay: 100 * i }}
+						>
 							<ProjectItem {...projectItem} />
 						</div>
 					{/each}
