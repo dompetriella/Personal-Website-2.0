@@ -25,7 +25,7 @@
 </script>
 
 <div
-	out:funnelOut={{ duration: 400, delay: 0, y: 4 }}
+	out:scale
 	style="
 	font-size: {fontSize}em; 
 	width: {width}em;  
