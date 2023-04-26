@@ -21,3 +21,9 @@
 		<SplashBackgroundContactMobile />
 	{/if}
 </section>
+
+<style>
+	.contact-area {
+		width: 100%;
+	}
+</style>

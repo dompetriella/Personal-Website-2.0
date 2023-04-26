@@ -29,7 +29,7 @@
 	.contact-area {
 		display: flex;
 		justify-content: space-around;
-		width: 100vw;
+		width: 100%;
 		padding: 10em 0em;
 	}
 
