@@ -61,7 +61,9 @@
 		buttonAttributes.shadowColor
 	};`}
 	on:mousedown={() => (isPressed = true)}
+	on:touchstart={() => (isPressed = true)}
 	on:mouseup={() => (isPressed = false)}
+	on:touchend={() => (isPressed = true)}
 >
 	{text}
 </div>
