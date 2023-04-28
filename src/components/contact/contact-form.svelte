@@ -24,7 +24,11 @@
 			style="width: {width * 0.85}em; background-color: {inputShadowColor}"
 			class="input-container"
 		>
-			<input style="background-color: {inputBoxColor};" class="single-input" />
+			<input
+				aria-label="Name Input"
+				style="background-color: {inputBoxColor};"
+				class="single-input"
+			/>
 		</div>
 	</div>
 
@@ -34,7 +38,11 @@
 			style="width: {width * 0.85}em; background-color: {inputShadowColor}"
 			class="input-container"
 		>
-			<input style="background-color: {inputBoxColor}" class="single-input" />
+			<input
+				aria-label="Email Address Input"
+				style="background-color: {inputBoxColor}"
+				class="single-input"
+			/>
 		</div>
 	</div>
 
@@ -44,7 +52,11 @@
 			style="width: {width * 0.85}em; background-color: {inputShadowColor}"
 			class="input-container"
 		>
-			<textarea style="background-color: {inputBoxColor}; height: 18em" class="multiline-input" />
+			<textarea
+				aria-label="Message Input"
+				style="background-color: {inputBoxColor}; height: 18em"
+				class="multiline-input"
+			/>
 		</div>
 	</div>
 

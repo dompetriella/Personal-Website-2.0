@@ -7,7 +7,8 @@
 
 	export let header: string = 'Placeholder';
 	export let subheader: string = '';
-	export const imageString: string = '';
+	export let imageFileName: string = '';
+	export let imageAlt: string = '';
 
 	export let status: string = 'Work in Progress';
 	export let info: string;
@@ -39,7 +40,11 @@
 				<div style="color: {subTextColor}">{subheader}</div>
 			</div>
 
-			<div style="width: 4em; height: 4em; background-color: black" />
+			<div style="width: 4em; height: 4em">
+				{#if imageFileName != ''}
+					<img src="/project-icons/{imageFileName}" alt={imageAlt} />
+				{/if}
+			</div>
 		</div>
 		<div class="status-text">
 			<div style="color: {headerTextColor}; padding-right: 1em;">STATUS:</div>
@@ -79,6 +84,11 @@
 		text-decoration: none;
 	}
 
+	img {
+		height: 100%;
+		max-width: 100%;
+		object-fit: scale-down;
+	}
 	.project-item-container {
 		width: 18em;
 		padding: 1em;
