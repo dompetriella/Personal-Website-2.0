@@ -54,7 +54,7 @@ export const gameProjects = [
 		subheader: '',
 		status: 'Work in Progress (0.3.0)',
 		info: 'Harness one of the four elements in a multiplayer 1v1 card game',
-		sourceCodeLink: "https://github.chttps://github.com/dompetriella/Elementals",
+		sourceCodeLink: "https://github.com/dompetriella/Elementals",
 		imageFileName: 'elementals.png',
 		imageAlt: 'elementals game logo',
 		languageUsed: 'Flutter',
