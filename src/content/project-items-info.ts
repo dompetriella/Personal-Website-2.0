@@ -1,23 +1,14 @@
-// export let header: String = 'Placeholder';
-// export let subheader: String = '';
-// export const imageString: String = '';
-
 import { ItemType } from "../models/projects";
-
-// export let status: String = 'Work in Progress';
-// export let hasButton: Boolean = false;
-// export let buttonText: String = 'Visit Site';
-
-// export const sourceCodeLink: String = '';
-// export let languageUsed: String = 'Svelte';
 
 export const codeProjects = [
 	{
 		header: '- This site -',
 		subheader: 'dompetriella.com',
-		status: 'Work in Progress (v0.1.2)',
+		status: 'Work in Progress (v0.1.6)',
 		info: 'Recursion, much?',
 		sourceCodeLink: "https://github.com/dompetriella/Personal-Website-2.0",
+		imageFileName: 'dompetriella.png',
+		imageAlt: ' my face .png',
 		languageUsed: 'Sveltekit',
 		hasButton: true,
 		buttonText: "Goto Site",
@@ -29,6 +20,8 @@ export const codeProjects = [
 		status: 'Feature Complete (v1.3.4)',
 		info: 'A simple dice rolling app for tabletop games, with theming to fit your style.  Available on iOS and Android',
 		sourceCodeLink: "https://github.com/dompetriella/Simple-Roller",
+		imageFileName: 'simple-roller.png',
+		imageAlt: 'the simple roller icon',
 		languageUsed: 'Flutter'
 	},
 	{
@@ -37,6 +30,8 @@ export const codeProjects = [
 		status: 'Complete (v1.1.5)',
 		info: 'Data keeping app for my pet snake, Ocelot, made in the style of Stardew Valley.',
 		sourceCodeLink: "https://github.com/dompetriella/OceBot-2.0",
+		imageFileName: 'ocebot.png',
+		imageAlt: 'hognose snake pixelated',
 		languageUsed: 'Flutter'
 	}
 ];
@@ -60,6 +55,8 @@ export const gameProjects = [
 		status: 'Work in Progress (0.3.0)',
 		info: 'Harness one of the four elements in a multiplayer 1v1 card game',
 		sourceCodeLink: "https://github.chttps://github.com/dompetriella/Elementals",
+		imageFileName: 'elementals.png',
+		imageAlt: 'elementals game logo',
 		languageUsed: 'Flutter',
 	},
 	{
@@ -67,6 +64,8 @@ export const gameProjects = [
 		subheader: 'Minesweeper at sea',
 		status: 'Complete?',
 		sourceCodeLink: "https://github.com/dompetriella/maritime-mines",
+		imageFileName: 'maritime-mines.png',
+		imageAlt: 'maritime mines logo',
 		languageUsed: 'HTML/CSS/JS',
 		hasButton: true,
 		buttonText: "Play",
