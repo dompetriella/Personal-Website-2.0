@@ -1,6 +1,39 @@
 <script lang="ts">
 	import { lightMode } from '../../stores';
 	import ActionButton from '../action-button.svelte';
+	import emailjs from '@emailjs/browser';
+
+	import { onMount } from 'svelte';
+	import { initEmailJS } from '../../emailjs';
+
+	const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+	const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+	const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+	onMount(() => {
+		initEmailJS(publicKey);
+	});
+
+	function handleSubmit(event: any) {
+		const form = event.target;
+		const formData = {
+			sender_name: form.sender_name.value,
+			sender_email_address: form.sender_email_address.value,
+			sender_message: form.sender_message.value
+		};
+
+		emailjs
+			.send(serviceId, templateId, formData, publicKey)
+			.then(() => {
+				alert('Email sent successfully!');
+				form.reset();
+			})
+			.catch((error: any) => {
+				console.error(error);
+				alert('Error sending email!');
+			});
+	}
+
 	export let width: number;
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkModeSplashPrimary)';
 	$: contactBoxColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
@@ -14,7 +47,14 @@
 		: 'var(--darkModeSplashSecondary)';
 </script>
 
-<div
+<!-- disabled for now so I don't get site spammmed -->
+<!-- <form
+	on:submit|preventDefault={handleSubmit}
+	style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 3px {contactBoxShadowColor}; width: {width}em"
+	class="contact-form-area"
+> -->
+
+<form
 	style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 3px {contactBoxShadowColor}; width: {width}em"
 	class="contact-form-area"
 >
@@ -26,6 +66,7 @@
 		>
 			<input
 				aria-label="Name Input"
+				name="sender_name"
 				style="background-color: {inputBoxColor};"
 				class="single-input"
 			/>
@@ -40,6 +81,7 @@
 		>
 			<input
 				aria-label="Email Address Input"
+				name="sender_email_address"
 				style="background-color: {inputBoxColor}"
 				class="single-input"
 			/>
@@ -54,6 +96,7 @@
 		>
 			<textarea
 				aria-label="Message Input"
+				name="sender_message"
 				style="background-color: {inputBoxColor}; height: 18em"
 				class="multiline-input"
 			/>
@@ -61,9 +104,9 @@
 	</div>
 
 	<div style="padding: 1em">
-		<ActionButton text="SEND" />
+		<ActionButton isSubmitButton={true} text="SEND" />
 	</div>
-</div>
+</form>
 
 <style>
 	.contact-form-area {

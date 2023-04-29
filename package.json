@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@emailjs/browser": "^3.11.0",
 		"@sveltejs/adapter-vercel": "^2.4.2"
 	}
 }

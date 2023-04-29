@@ -11,6 +11,7 @@
 	export let textSize: number = 1.5;
 	export let verticalPadding: number = 0.4;
 	export let horizontalPadding: number = 2;
+	export let isSubmitButton: boolean = false;
 
 	let isPressed = false;
 
@@ -50,8 +51,9 @@
 	}
 </script>
 
-<div
+<button
 	class="action-button"
+	type={isSubmitButton ? 'submit' : 'button'}
 	class:pressed={isPressed}
 	style={`background-color: ${buttonAttributes.bgColor};
           color: ${buttonAttributes.textColor};
@@ -66,9 +68,19 @@
 	on:touchend={() => (isPressed = true)}
 >
 	{text}
-</div>
+</button>
 
 <style>
+	button {
+		background: none;
+		color: inherit;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+		outline: inherit;
+	}
+
 	.action-button {
 		display: flex;
 		justify-content: center;
