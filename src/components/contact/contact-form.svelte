@@ -15,19 +15,19 @@
 
 	onMount(() => {
 		initEmailJS(publicKey);
-		console.log(captchaKey);
 	});
 
 	function onReCaptchaSubmit(token: string) {
-		console.log(captchaKey);
-		console.log('captcha');
+		if (!token) {
+			alert('Captcha failed, please refresh the page');
+		}
 	}
 
 	async function handleSubmit(event: Event) {
 		// prevent form submission
 		event.preventDefault();
 
-		console.log(captchaKey);
+		grecaptcha.execute();
 		// get the form data
 		const form = event.target as HTMLFormElement;
 		const formData = {
