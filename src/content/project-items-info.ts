@@ -4,7 +4,7 @@ export const codeProjects = [
 	{
 		header: '- This site -',
 		subheader: 'dompetriella.com',
-		status: 'Work in Progress (v0.1.6)',
+		status: 'Work in Progress (v0.1.8)',
 		info: 'Recursion, much?',
 		sourceCodeLink: "https://github.com/dompetriella/Personal-Website-2.0",
 		imageFileName: 'dompetriella.png',
