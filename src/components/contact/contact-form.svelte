@@ -9,7 +9,7 @@
 	const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 	const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 	const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-	const captchaKey = import.meta.env.CAPTCHA_KEY;
+	const captchaKey = import.meta.env.VITE_CAPTCHA_KEY;
 
 	export let width: number;
 
