@@ -138,10 +138,9 @@
 			data-sitekey={captchaKey}
 			data-callback="onReCaptchaSubmit"
 			data-size="invisible"
-			/>
+		/>
 
-			<ActionButton isSubmitButton={true} text="SEND" />
-		</div>
+		<ActionButton isSubmitButton={true} text="SEND" />
 	</div>
 </form>
 
