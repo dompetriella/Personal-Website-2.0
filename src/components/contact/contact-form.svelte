@@ -21,14 +21,17 @@
 		if (!token) {
 			alert('Captcha failed, please refresh the page');
 		}
+		console.log(token);
 	}
 
 	function handleSubmit(event: Event) {
 		// prevent form submission
 		event.preventDefault();
 
+		console.log('submit started');
 		grecaptcha.execute();
 		// get the form data
+		console.log('collecting form data');
 		const form = event.target as HTMLFormElement;
 		const formData = {
 			sender_name: form.sender_name.value,
@@ -38,6 +41,7 @@
 		};
 
 		try {
+			console.log('attempting to send email');
 			emailjs.send(serviceId, templateId, formData, publicKey);
 
 			alert('Email sent successfully!');
