@@ -17,24 +17,37 @@
 		initEmailJS(publicKey);
 	});
 
-	function handleSubmit(event: any) {
-		const form = event.target;
+	async function handleSubmit(event: Event & { readonly submitter: HTMLElement | null }) {
+		// prevent form submission
+		event.preventDefault();
+
+		// get the form data
+		const form = event.target as HTMLFormElement;
 		const formData = {
 			sender_name: form.sender_name.value,
 			sender_email_address: form.sender_email_address.value,
-			sender_message: form.sender_message.value
+			sender_message: form.sender_message.value,
+			token: ''
 		};
 
-		emailjs
-			.send(serviceId, templateId, formData, publicKey)
-			.then(() => {
-				alert('Email sent successfully!');
-				form.reset();
-			})
-			.catch((error: any) => {
-				console.error(error);
-				alert('Error sending email!');
-			});
+		try {
+			// execute the reCAPTCHA challenge
+			const token: any = await grecaptcha.execute();
+
+			// add the token to the form data
+			formData.token = token;
+
+			// send the form data using emailjs
+			await emailjs.send(serviceId, templateId, formData, publicKey);
+
+			// show success message and reset form
+			alert('Email sent successfully!');
+			form.reset();
+		} catch (error) {
+			// show error message
+			console.error(error);
+			alert('Error sending email!');
+		}
 	}
 
 	let nameSelected: boolean = false;
@@ -59,6 +72,7 @@
 
 <form
 	on:submit|preventDefault={handleSubmit}
+	id="contact-form"
 	style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 3px {contactBoxShadowColor}; width: {width}em"
 	class="contact-form-area"
 >
@@ -120,7 +134,8 @@
 	</div>
 
 	<div style="padding: 1em">
-		<div class="g-recaptcha" data-sitekey={captchaKey} />
+		<div class="g-recaptcha" data-sitekey={captchaKey} data-size="invisible" />
+
 		<ActionButton isSubmitButton={true} text="SEND" />
 	</div>
 </form>
