@@ -25,7 +25,6 @@
 	}
 
 	function handleSubmit(event: Event) {
-		// prevent form submission
 		event.preventDefault();
 
 		console.log('submit started');
