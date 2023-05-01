@@ -11,6 +11,8 @@
 	const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 	const captchaKey = import.meta.env.CAPTCHA_KEY;
 
+	export let width: number;
+
 	onMount(() => {
 		initEmailJS(publicKey);
 	});
@@ -35,7 +37,10 @@
 			});
 	}
 
-	export let width: number;
+	let nameSelected: boolean = false;
+	let emailSelected: boolean = false;
+	let messageSelected: boolean = false;
+
 	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkModeSplashPrimary)';
 	$: contactBoxColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
 	$: contactBoxShadowColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
@@ -44,6 +49,10 @@
 		? 'var(--lightModeSplashSecondary)'
 		: 'var(--darkModeSplashPrimary)';
 	$: inputShadowColor = $lightMode
+		? 'var(--lightModeSplashSecondary)'
+		: 'var(--darkModeSplashPrimary)';
+
+	$: selectedInputColor = $lightMode
 		? 'var(--lightModeSplashPrimary)'
 		: 'var(--darkModeSplashSecondary)';
 </script>
@@ -56,10 +65,14 @@
 	<div>
 		<div style="font-size: 1.5em; color: {textColor}; padding: 0.4em 0">NAME</div>
 		<div
-			style="width: {width * 0.85}em; background-color: {inputShadowColor}"
+			style="width: {width * 0.85}em; background-color: {nameSelected
+				? selectedInputColor
+				: inputShadowColor}"
 			class="input-container"
 		>
 			<input
+				on:focus={() => (nameSelected = true)}
+				on:focusout={() => (nameSelected = false)}
 				aria-label="Name Input"
 				name="sender_name"
 				style="background-color: {inputBoxColor};"
@@ -71,10 +84,14 @@
 	<div>
 		<div style="font-size: 1.5em; color: {textColor}; padding: 0.4em 0">EMAIL</div>
 		<div
-			style="width: {width * 0.85}em; background-color: {inputShadowColor}"
+			style="width: {width * 0.85}em; background-color: {emailSelected
+				? selectedInputColor
+				: inputShadowColor}"
 			class="input-container"
 		>
 			<input
+				on:focus={() => (emailSelected = true)}
+				on:focusout={() => (emailSelected = false)}
 				aria-label="Email Address Input"
 				name="sender_email_address"
 				style="background-color: {inputBoxColor}"
@@ -86,10 +103,14 @@
 	<div>
 		<div style="font-size: 1.5em; color: {textColor}; padding: 0.4em 0">MESSAGE</div>
 		<div
-			style="width: {width * 0.85}em; background-color: {inputShadowColor}"
+			style="width: {width * 0.85}em; background-color: {messageSelected
+				? selectedInputColor
+				: inputShadowColor}"
 			class="input-container"
 		>
 			<textarea
+				on:focus={() => (messageSelected = true)}
+				on:focusout={() => (messageSelected = false)}
 				aria-label="Message Input"
 				name="sender_message"
 				style="background-color: {inputBoxColor}; height: 18em"
@@ -126,14 +147,18 @@
 	.single-input {
 		height: 2em;
 		padding: 0.5em;
+		padding-left: 1em;
 		border-radius: 0.5em;
 		width: 90%;
 		border: none;
+		font-weight: bold;
+		letter-spacing: 2px;
 	}
 
 	textarea:focus,
 	input:focus {
-		outline: 3px dotted var(--darkModeHighlight);
+		outline: none;
+		border: none;
 	}
 
 	.multiline-input {
@@ -141,5 +166,7 @@
 		border-radius: 0.5em;
 		width: 90%;
 		border: none;
+		font-weight: bold;
+		letter-spacing: 2px;
 	}
 </style>
