@@ -2,17 +2,25 @@
 	import Contact from '../components/contact/Contact.svelte';
 	import Projects from '../components/projects/Projects.svelte';
 	import Header from '../components/header/Header.svelte';
+	import { onMount } from 'svelte';
 
 	let screenSize: number;
 	const mobile: number = 480;
+
+	let mounted = false;
+	onMount(async () => {
+		mounted = true;
+	});
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
 
 <div class="main-tree">
-	<Header />
-	<Projects />
-	<Contact />
+	{#if mounted}
+		<Header />
+		<Projects />
+		<Contact />
+	{/if}
 </div>
 
 <style>

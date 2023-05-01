@@ -8,11 +8,6 @@
 
 	let screenSize: number;
 	const mobile: number = 480;
-
-	let mounted = false;
-	onMount(async () => {
-		mounted = true;
-	});
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
@@ -23,13 +18,11 @@
 			<ProjectHeader />
 		</div>
 	{/if}
-	{#if mounted}
-		<div class="splash-buttons">
-			<SplashButton text="CODE" itemType={ItemType.Code} projectItems={codeProjects} />
-			<SplashButton text="ART" itemType={ItemType.Art} projectItems={artProjects} />
-			<SplashButton text="GAMES" itemType={ItemType.Game} projectItems={gameProjects} />
-		</div>
-	{/if}
+	<div class="splash-buttons">
+		<SplashButton text="CODE" itemType={ItemType.Code} projectItems={codeProjects} />
+		<SplashButton text="ART" itemType={ItemType.Art} projectItems={artProjects} />
+		<SplashButton text="GAMES" itemType={ItemType.Game} projectItems={gameProjects} />
+	</div>
 </section>
 
 <style>
