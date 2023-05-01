@@ -9,6 +9,7 @@
 	const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 	const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 	const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+	const captchaKey = import.meta.env.CAPTCHA_KEY;
 
 	onMount(() => {
 		initEmailJS(publicKey);
@@ -47,14 +48,8 @@
 		: 'var(--darkModeSplashSecondary)';
 </script>
 
-<!-- disabled for now so I don't get site spammmed -->
-<!-- <form
-	on:submit|preventDefault={handleSubmit}
-	style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 3px {contactBoxShadowColor}; width: {width}em"
-	class="contact-form-area"
-> -->
-
 <form
+	on:submit|preventDefault={handleSubmit}
 	style="background-color: {contactBoxColor}; box-shadow: -5px 5px 0px 3px {contactBoxShadowColor}; width: {width}em"
 	class="contact-form-area"
 >
@@ -104,6 +99,7 @@
 	</div>
 
 	<div style="padding: 1em">
+		<div class="g-recaptcha" data-sitekey={captchaKey} />
 		<ActionButton isSubmitButton={true} text="SEND" />
 	</div>
 </form>
