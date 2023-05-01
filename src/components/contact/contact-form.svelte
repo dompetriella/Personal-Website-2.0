@@ -23,7 +23,7 @@
 		}
 	}
 
-	async function handleSubmit(event: Event) {
+	function handleSubmit(event: Event) {
 		// prevent form submission
 		event.preventDefault();
 
@@ -38,7 +38,7 @@
 		};
 
 		try {
-			await emailjs.send(serviceId, templateId, formData, publicKey);
+			emailjs.send(serviceId, templateId, formData, publicKey);
 
 			alert('Email sent successfully!');
 			form.reset();
