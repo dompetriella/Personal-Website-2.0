@@ -15,12 +15,19 @@
 
 	onMount(() => {
 		initEmailJS(publicKey);
+		console.log(captchaKey);
 	});
 
-	async function handleSubmit(event: Event & { readonly submitter: HTMLElement | null }) {
+	function onReCaptchaSubmit(token: string) {
+		console.log(captchaKey);
+		console.log('captcha');
+	}
+
+	async function handleSubmit(event: Event) {
 		// prevent form submission
 		event.preventDefault();
 
+		console.log(captchaKey);
 		// get the form data
 		const form = event.target as HTMLFormElement;
 		const formData = {
@@ -31,16 +38,8 @@
 		};
 
 		try {
-			// execute the reCAPTCHA challenge
-			const token: any = await grecaptcha.execute();
-
-			// add the token to the form data
-			formData.token = token;
-
-			// send the form data using emailjs
 			await emailjs.send(serviceId, templateId, formData, publicKey);
 
-			// show success message and reset form
 			alert('Email sent successfully!');
 			form.reset();
 		} catch (error) {
@@ -134,9 +133,15 @@
 	</div>
 
 	<div style="padding: 1em">
-		<div class="g-recaptcha" data-sitekey={captchaKey} data-size="invisible" />
+		<div
+			class="g-recaptcha"
+			data-sitekey={captchaKey}
+			data-callback="onReCaptchaSubmit"
+			data-size="invisible"
+			/>
 
-		<ActionButton isSubmitButton={true} text="SEND" />
+			<ActionButton isSubmitButton={true} text="SEND" />
+		</div>
 	</div>
 </form>
 
