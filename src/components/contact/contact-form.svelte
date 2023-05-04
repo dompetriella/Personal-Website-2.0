@@ -18,10 +18,7 @@
 	});
 
 	function onReCaptchaSubmit(token: string): string {
-		if (!token) {
-			alert('Captcha failed, please refresh the page');
-			return '';
-		}
+		console.log(token);
 		return token;
 	}
 
@@ -36,6 +33,7 @@
 		const form = event.target as HTMLFormElement;
 		const formData = new FormData(form);
 		const token = onReCaptchaSubmit(grecaptcha.getResponse());
+		console.log(token);
 
 		// append the ReCAPTCHA token to the form data
 		formData.set('g-recaptcha-response', token);
