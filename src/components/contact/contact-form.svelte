@@ -17,31 +17,16 @@
 		initEmailJS(publicKey);
 	});
 
-	function onReCaptchaSubmit(token: string): string {
-		console.log(token);
-		return token;
-	}
-
 	function handleSubmit(event: Event) {
 		event.preventDefault();
-
-		console.log('submit started');
-		grecaptcha.execute();
 
 		// get the form data
 		console.log('collecting form data');
 		const form = event.target as HTMLFormElement;
 		const formData = new FormData(form);
-		const token = onReCaptchaSubmit(grecaptcha.getResponse());
-		console.log(token);
-
-		// append the ReCAPTCHA token to the form data
-		formData.set('g-recaptcha-response', token);
 
 		try {
-			console.log('attempting to send email');
 			emailjs.send(serviceId, templateId, { ...formData }, publicKey);
-
 			alert('Email sent successfully!');
 			form.reset();
 		} catch (error) {
@@ -135,13 +120,6 @@
 	</div>
 
 	<div style="padding: 1em">
-		<div
-			class="g-recaptcha"
-			data-sitekey={captchaKey}
-			data-callback="onReCaptchaSubmit"
-			data-size="invisible"
-		/>
-
 		<ActionButton isSubmitButton={true} text="SEND" />
 	</div>
 </form>
