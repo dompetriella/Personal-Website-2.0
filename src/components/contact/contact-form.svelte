@@ -30,19 +30,19 @@
 
 		console.log('submit started');
 		grecaptcha.execute();
+
 		// get the form data
 		console.log('collecting form data');
 		const form = event.target as HTMLFormElement;
-		const formData = {
-			sender_name: form.sender_name.value,
-			sender_email_address: form.sender_email_address.value,
-			sender_message: form.sender_message.value,
-			'g-recaptcha-response': onReCaptchaSubmit
-		};
+		const formData = new FormData(form);
+		const token = onReCaptchaSubmit(grecaptcha.getResponse());
+
+		// append the ReCAPTCHA token to the form data
+		formData.set('g-recaptcha-response', token);
 
 		try {
 			console.log('attempting to send email');
-			emailjs.send(serviceId, templateId, formData, publicKey);
+			emailjs.send(serviceId, templateId, { ...formData }, publicKey);
 
 			alert('Email sent successfully!');
 			form.reset();
