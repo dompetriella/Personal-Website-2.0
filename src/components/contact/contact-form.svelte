@@ -23,10 +23,14 @@
 		// get the form data
 		console.log('collecting form data');
 		const form = event.target as HTMLFormElement;
-		const formData = new FormData(form);
+		const formData = {
+			sender_name: form.sender_name.value,
+			sender_email_address: form.sender_email_address.value,
+			sender_message: form.sender_message.value
+		};
 
 		try {
-			emailjs.send(serviceId, templateId, { ...formData }, publicKey);
+			emailjs.send(serviceId, templateId, formData, publicKey);
 			alert('Email sent successfully!');
 			form.reset();
 		} catch (error) {
