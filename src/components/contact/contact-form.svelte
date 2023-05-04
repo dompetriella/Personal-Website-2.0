@@ -17,11 +17,12 @@
 		initEmailJS(publicKey);
 	});
 
-	function onReCaptchaSubmit(token: string) {
+	function onReCaptchaSubmit(token: string): string {
 		if (!token) {
 			alert('Captcha failed, please refresh the page');
+			return '';
 		}
-		console.log(token);
+		return token;
 	}
 
 	function handleSubmit(event: Event) {
@@ -36,7 +37,7 @@
 			sender_name: form.sender_name.value,
 			sender_email_address: form.sender_email_address.value,
 			sender_message: form.sender_message.value,
-			token: ''
+			'g-recaptcha-response': onReCaptchaSubmit
 		};
 
 		try {
