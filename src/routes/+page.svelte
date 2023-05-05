@@ -3,9 +3,18 @@
 	import Projects from '../components/projects/Projects.svelte';
 	import Header from '../components/header/Header.svelte';
 	import { onMount } from 'svelte';
+	import { setToDarkMode, setToLightMode } from '../stores';
+
+	function setColorScheme() {
+		let time: number = new Date().getHours();
+		if (time > 7 && time < 19) {
+			setToLightMode();
+		} else {
+			setToDarkMode();
+		}
+	}
 
 	let screenSize: number;
-	const mobile: number = 480;
 
 	let mounted = false;
 	onMount(async () => {
