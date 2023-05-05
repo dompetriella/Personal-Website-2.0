@@ -22,9 +22,13 @@
 		: 'dark-tertiary-splash-animation';
 </script>
 
-<div style="min-height: 68em;" />
+<div class="header-height" />
 <div class="circles-container">
-	<div style="background-color:{primarySplash};" class="primary-circle {primarySplashAnimation}" />
+	<div style="background-color:{primarySplash};" class="primary-circle {primarySplashAnimation}">
+		<div class="dom-picture">
+			<img src={$lightMode ? '/light-dom.svg' : '/dark-dom.svg'} />
+		</div>
+	</div>
 	<div
 		style="background-color:{secondarySplash};"
 		class="secondary-circle {secondarySplashAnimation}"
@@ -33,6 +37,14 @@
 </div>
 
 <style>
+	.header-height {
+		min-height: 68em;
+	}
+
+	.dom-picture {
+		transform: translateY(5em) scale(0.9) translateX(-40em);
+	}
+
 	.circles-container {
 		position: absolute;
 		overflow: hidden;
@@ -56,6 +68,8 @@
 		animation-iteration-count: 1;
 		animation-duration: forwards;
 		animation-timing-function: ease-out;
+
+		overflow: hidden;
 	}
 
 	@keyframes primary-splash-in {
@@ -131,6 +145,12 @@
 		}
 		100% {
 			opacity: 1;
+		}
+	}
+
+	@media (min-width: 480px) and (max-width: 1024px) {
+		.dom-picture {
+			transform: translateY(12em) scale(0.6) translateX(-28em);
 		}
 	}
 </style>

@@ -151,7 +151,7 @@
 		}
 
 		.header {
-			padding-left: 10em;
+			padding-left: 5em;
 			padding-top: 15em;
 		}
 
@@ -164,8 +164,14 @@
 		}
 	}
 
+	@media (min-width: 1440px) {
+		.header {
+			padding-left: 10em;
+		}
+	}
+
 	/* tablet */
-	@media (min-width: 481px) and (max-width: 1000px) {
+	@media (min-width: 480px) and (max-width: 1000px) {
 		.header-text {
 			color: var(--darkText) !important;
 		}
