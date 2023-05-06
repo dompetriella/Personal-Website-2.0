@@ -11,6 +11,8 @@
 
 	$: lightModeToggle = $lightMode ? 'light-toggle-animation' : 'dark-toggle-animation';
 
+	$: iconAnimation = $lightMode ? 'light-mode-icon' : 'dark-mode-icon';
+
 	function hoverOverText(e: any) {
 		e.target.style.color = $lightMode ? 'var(--lightText)' : 'var(--darkModeHighlight)';
 	}
@@ -23,7 +25,8 @@
 <nav class="mobile" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
 	<a href="#home">
 		<img
-			class="icon-image"
+			class="icon-image {iconAnimation}"
+			style="animation-delay: 100ms"
 			src={$lightMode ? '/light-home.png' : '/dark-home.png'}
 			alt="home"
 			height="35"
@@ -33,7 +36,8 @@
 
 	<a href="#projects-m">
 		<img
-			class="icon-image"
+			class="icon-image {iconAnimation}"
+			style="animation-delay: 300ms"
 			src={$lightMode ? '/light-projects.png' : '/dark-projects.png'}
 			alt="projects"
 			height="35"
@@ -43,7 +47,8 @@
 
 	<a href="#contact-m">
 		<img
-			class="icon-image"
+			class="icon-image {iconAnimation}"
+			style="animation-delay: 500ms"
 			src={$lightMode ? '/light-contact.png' : '/dark-contact.png'}
 			alt="contact"
 			height="35"
@@ -183,7 +188,47 @@
 		.icon-image {
 			padding-top: 5px;
 			padding-left: 1em;
-			animation: fadeIn 1s;
+		}
+
+		.light-mode-icon {
+			animation-name: light-mode-icon-animation;
+			animation-duration: 1s;
+			animation-fill-mode: backwards;
+		}
+
+		@keyframes light-mode-icon-animation {
+			0% {
+				opacity: 0;
+			}
+			25% {
+				filter: brightness(500%);
+			}
+			50% {
+				transform: translateY(-1em);
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		.dark-mode-icon {
+			animation-name: dark-mode-icon-animation;
+			animation-duration: 1s;
+			animation-fill-mode: backwards;
+		}
+
+		@keyframes dark-mode-icon-animation {
+			0% {
+				opacity: 0;
+				filter: brightness(0);
+			}
+			50% {
+				transform: translateY(-1em);
+				filter: brightness(0);
+			}
+			100% {
+				opacity: 1;
+			}
 		}
 
 		.right-nav {

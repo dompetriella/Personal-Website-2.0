@@ -190,7 +190,9 @@
 	@keyframes light-mode-dom-animation {
 		0% {
 			opacity: 0;
-			transform: translate(-25%);
+		}
+		40% {
+			transform: translate(-40em, -20em) scale(0.5);
 		}
 		50% {
 			opacity: 0;
@@ -206,14 +208,14 @@
 			filter: brightness(0);
 		}
 		31% {
-			filter: brightness(0.1) grayscale(100%);
+			filter: brightness(0) grayscale(100%);
 		}
 		40% {
 			filter: brightness(0) grayscale(80%);
-			opacity: 1;
 		}
 		100% {
 			filter: none;
+			opacity: 1;
 		}
 	}
 </style>

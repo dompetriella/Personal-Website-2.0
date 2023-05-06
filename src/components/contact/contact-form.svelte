@@ -75,6 +75,7 @@
 			class="input-container"
 		>
 			<input
+				required
 				on:focus={() => (nameSelected = true)}
 				on:focusout={() => (nameSelected = false)}
 				aria-label="Name Input"
@@ -94,6 +95,8 @@
 			class="input-container"
 		>
 			<input
+				type="email"
+				required
 				on:focus={() => (emailSelected = true)}
 				on:focusout={() => (emailSelected = false)}
 				aria-label="Email Address Input"
@@ -113,6 +116,7 @@
 			class="input-container"
 		>
 			<textarea
+				required
 				on:focus={() => (messageSelected = true)}
 				on:focusout={() => (messageSelected = false)}
 				aria-label="Message Input"
