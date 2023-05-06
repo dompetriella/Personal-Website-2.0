@@ -195,9 +195,6 @@
 			opacity: 0;
 			filter: brightness(0);
 		}
-		25% {
-			filter: brightness(0.1) grayscale(100%);
-		}
 		40% {
 			filter: brightness(0) grayscale(80%);
 			opacity: 1;
