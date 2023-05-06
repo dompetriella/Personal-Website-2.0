@@ -70,7 +70,7 @@
 		{/if}
 
 		{#if hasButton}
-			<a href={buttonRedirectURL}>
+			<a href={buttonRedirectURL} target="_blank" rel="noopener noreferrer">
 				<div class="site-button">
 					<ActionButton buttonType={1} textSize={1.2} text={buttonText} horizontalPadding={4} />
 				</div>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import { lightMode } from '../stores';
 	enum ButtonType {
 		Primary,

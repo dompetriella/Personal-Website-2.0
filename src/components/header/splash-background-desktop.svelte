@@ -20,13 +20,18 @@
 	$: tertiarySplashAnimation = $lightMode
 		? 'light-tertiary-splash-animation'
 		: 'dark-tertiary-splash-animation';
+
+	$: domModeClass = $lightMode ? 'light-mode-dom' : 'dark-mode-dom';
 </script>
 
 <div class="header-height" />
 <div class="circles-container">
 	<div style="background-color:{primarySplash};" class="primary-circle {primarySplashAnimation}">
-		<div class="dom-picture">
-			<img src={$lightMode ? '/light-dom.svg' : '/dark-dom.svg'} />
+		<div class={domModeClass}>
+			<img
+				src={$lightMode ? '/light-dom.svg' : '/dark-dom.svg'}
+				alt={$lightMode ? 'picture of dom (light mode)' : 'picture of dom (dark mode)'}
+			/>
 		</div>
 	</div>
 	<div
@@ -41,8 +46,22 @@
 		min-height: 68em;
 	}
 
-	.dom-picture {
-		transform: translateY(5em) scale(0.9) translateX(-40em);
+	.light-mode-dom {
+		transform: translateX(-30em) translateY(8em) scale(0.9);
+		animation-name: light-mode-dom-animation;
+		animation-duration: 2300ms;
+		animation-iteration-count: 1;
+		animation-duration: forwards;
+		animation-timing-function: ease-in-out;
+	}
+
+	.dark-mode-dom {
+		transform: translateX(-20em) translateY(20em) scale(0.9);
+		animation-name: dark-mode-dom-animation;
+		animation-duration: 2300ms;
+		animation-iteration-count: 1;
+		animation-duration: forwards;
+		animation-timing-function: ease-in-out;
 	}
 
 	.circles-container {
@@ -149,8 +168,42 @@
 	}
 
 	@media (min-width: 480px) and (max-width: 1024px) {
-		.dom-picture {
-			transform: translateY(12em) scale(0.6) translateX(-28em);
+		.light-mode-dom {
+			transform: translateX(-20em) translateY(12em) scale(0.6);
+		}
+
+		.dark-mode-dom {
+			transform: translateX(-12em) translateY(15em) scale(0.6);
+		}
+	}
+
+	@keyframes light-mode-dom-animation {
+		0% {
+			opacity: 0;
+			transform: translate(-70%);
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes dark-mode-dom-animation {
+		0% {
+			opacity: 0;
+			filter: brightness(0);
+		}
+		25% {
+			filter: brightness(0.1) grayscale(100%);
+		}
+		40% {
+			filter: brightness(0) grayscale(80%);
+			opacity: 1;
+		}
+		100% {
+			filter: none;
 		}
 	}
 </style>

@@ -20,12 +20,21 @@
 	$: tertiarySplashAnimation = $lightMode
 		? 'light-tertiary-splash-animation'
 		: 'dark-tertiary-splash-animation';
+
+	$: domModeClass = $lightMode ? 'light-mode-dom' : 'dark-mode-dom';
 </script>
 
 <div class="circles-container">
 	<div class="projects-anchor" id="projects-m" />
 	<div style="color: var(--darkText)" class="text">PROJECTS</div>
-	<div style="background-color:{primarySplash};" class="primary-circle {primarySplashAnimation}" />
+	<div style="background-color:{primarySplash};" class="primary-circle {primarySplashAnimation}">
+		<div class={domModeClass}>
+			<img
+				src={$lightMode ? '/light-dom.svg' : '/dark-dom.svg'}
+				alt={$lightMode ? 'picture of dom (light mode)' : 'picture of dom (dark mode)'}
+			/>
+		</div>
+	</div>
 	<div
 		style="background-color:{secondarySplash};"
 		class="secondary-circle {secondarySplashAnimation}"
@@ -39,6 +48,24 @@
 <style>
 	.projects-anchor {
 		margin-top: 40em;
+	}
+
+	.light-mode-dom {
+		transform: translateX(-29em) translateY(-12em) scale(0.6);
+		animation-name: light-mode-dom-animation;
+		animation-duration: 2300ms;
+		animation-iteration-count: 1;
+		animation-duration: forwards;
+		animation-timing-function: ease-in-out;
+	}
+
+	.dark-mode-dom {
+		transform: translateX(-22em) translateY(-5em) scale(0.6);
+		animation-name: dark-mode-dom-animation;
+		animation-duration: 2300ms;
+		animation-iteration-count: 1;
+		animation-duration: forwards;
+		animation-timing-function: ease-in-out;
 	}
 
 	.circles-container {
@@ -68,6 +95,7 @@
 		height: 42em;
 		width: 42em;
 		border-radius: 50%;
+		overflow: hidden;
 		z-index: 3;
 		margin-right: -15em;
 		margin-top: 8em;
@@ -156,6 +184,36 @@
 		100% {
 			transform: scale(1);
 			opacity: 1;
+		}
+	}
+
+	@keyframes light-mode-dom-animation {
+		0% {
+			opacity: 0;
+			transform: translate(-25%);
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes dark-mode-dom-animation {
+		0% {
+			opacity: 0;
+			filter: brightness(0);
+		}
+		31% {
+			filter: brightness(0.1) grayscale(100%);
+		}
+		40% {
+			filter: brightness(0) grayscale(80%);
+			opacity: 1;
+		}
+		100% {
+			filter: none;
 		}
 	}
 </style>
