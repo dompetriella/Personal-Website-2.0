@@ -4,7 +4,7 @@ export const codeProjects = [
 	{
 		header: '- This site -',
 		subheader: 'dompetriella.com',
-		status: 'Work in Progress (v0.1.8)',
+		status: 'Work in Progress (v0.2.0)',
 		info: 'Recursion, much?',
 		sourceCodeLink: "https://github.com/dompetriella/Personal-Website-2.0",
 		imageFileName: 'dompetriella.png',
@@ -18,7 +18,7 @@ export const codeProjects = [
 		header: 'Simple Roller',
 		subheader: 'A Simpler Way to Roll',
 		status: 'Feature Complete (v1.3.4)',
-		info: 'A simple dice rolling app for tabletop games, with theming to fit your style.  Available on iOS and Android',
+		info: 'A simple dice rolling app for tabletop games with theming to fit your style.  Available on iOS and Android',
 		sourceCodeLink: "https://github.com/dompetriella/Simple-Roller",
 		imageFileName: 'simple-roller.png',
 		imageAlt: 'the simple roller icon',
@@ -41,11 +41,21 @@ export const artProjects = [
 		itemType: ItemType.Art,
 		header: 'Point of Sale Demo',
 		subheader: 'Whatcha.. buyin?',
-		info: 'Demo design for point of sale system for school lunches',
+		info: 'Iterations of design for point of sale system for school lunches',
 		hasButton: true,
 		buttonText: "View Figma",
 		buttonRedirectURL: "https://www.figma.com/file/7LM8Y5qKJnZbEOSWPBUDcB/POS-Design?node-id=0-1&t=gf4qM1YygA2BRcpq-0"
-	}
+	},
+
+	{
+		itemType: ItemType.Art,
+		header: '- This site -',
+		subheader: 'Wireframes for dompetriella.com',
+		info: 'The wireframes for the site.  Might even hide some new features on the horizon 👀',
+		hasButton: true,
+		buttonText: "View Figma",
+		buttonRedirectURL: "https://www.figma.com/file/RbLkYXbhG1OcCJtrdHPhar/Personal-Site-Redesign?type=design&t=WiRhzv7fmK4TlpOh-0"
+	},
 ];
 
 export const gameProjects = [
