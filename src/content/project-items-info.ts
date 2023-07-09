@@ -39,12 +39,12 @@ export const codeProjects = [
 export const artProjects = [
 	{
 		itemType: ItemType.Art,
-		header: 'Point of Sale Demo',
-		subheader: 'Whatcha.. buyin?',
-		info: 'Iterations of design for point of sale system for school lunches',
+		header: 'Note Jogger (wireframes)',
+		subheader: 'Where the music magic happens',
+		info: 'Designs and wireframes for the revamped UI in the Note Jogger app',
 		hasButton: true,
 		buttonText: "View Figma",
-		buttonRedirectURL: "https://www.figma.com/file/7LM8Y5qKJnZbEOSWPBUDcB/POS-Design?node-id=0-1&t=gf4qM1YygA2BRcpq-0"
+		buttonRedirectURL: "https://www.figma.com/file/FnMg9ygZ9hylYLqntLmbiJ/Note-Jogger?type=design&fuid=1081230008261467704"
 	},
 
 	{
@@ -60,14 +60,17 @@ export const artProjects = [
 
 export const gameProjects = [
 	{
-		header: 'Elementals',
-		subheader: '',
-		status: 'Work in Progress (0.3.0)',
-		info: 'Harness one of the four elements in a multiplayer 1v1 card game',
-		sourceCodeLink: "https://github.com/dompetriella/Elementals",
-		imageFileName: 'elementals.png',
-		imageAlt: 'elementals game logo',
+		header: 'Note Jogger',
+		subheader: 'Catch Up on Your Musical Exercises',
+		status: '0.5.6a',
+		info: "Make a game of out learning music with Note Jogger!",
+		sourceCodeLink: "https://github.com/dompetriella/Note-Jogger",
+		imageFileName: 'note-jogger.png',
+		imageAlt: 'note jogger logo',
 		languageUsed: 'Flutter',
+		hasButton: true,
+		buttonText: "Play",
+		buttonRedirectURL: "https://note-jogger.web.app/"
 	},
 	{
 		header: 'Maritime Mines',
@@ -80,5 +83,16 @@ export const gameProjects = [
 		hasButton: true,
 		buttonText: "Play",
 		buttonRedirectURL: "https://maritime-mines.dompetriella.repl.co/"
-	}
+	},
+	{
+		header: 'Elementals',
+		subheader: '',
+		status: 'Work in Progress (0.3.0)',
+		info: 'Harness one of the four elements in a multiplayer 1v1 card game',
+		sourceCodeLink: "https://github.com/dompetriella/Elementals",
+		imageFileName: 'elementals.png',
+		imageAlt: 'elementals game logo',
+		languageUsed: 'Flutter',
+	},
+
 ];
