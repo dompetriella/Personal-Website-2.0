@@ -4,11 +4,11 @@ export const codeProjects = [
 	{
 		header: '- This site -',
 		subheader: 'dompetriella.com',
-		status: 'Work in Progress (v0.2.0)',
+		status: 'Work in Progress (v0.2.1)',
 		info: 'Recursion, much?',
 		sourceCodeLink: "https://github.com/dompetriella/Personal-Website-2.0",
 		imageFileName: 'dompetriella.png',
-		imageAlt: ' my face .png',
+		imageAlt: 'my face .png',
 		languageUsed: 'Sveltekit',
 		hasButton: true,
 		buttonText: "Goto Site",
