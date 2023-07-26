@@ -63,7 +63,7 @@ export const gameProjects = [
 		header: 'Note Jogger',
 		subheader: 'Catch Up on Your Musical Exercises',
 		status: '0.5.6a',
-		info: "Make a game of out learning music with Note Jogger!",
+		info: "Make a game out of learning music with Note Jogger!",
 		sourceCodeLink: "https://github.com/dompetriella/Note-Jogger",
 		imageFileName: 'note-jogger.png',
 		imageAlt: 'note jogger logo',
