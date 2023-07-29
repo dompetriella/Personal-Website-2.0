@@ -5,8 +5,6 @@
 </script>
 
 <div class="app">
-	<Navbar />
-
 	<main
 		style={$lightMode
 			? 'background-color: var(--lightModePrimary);'

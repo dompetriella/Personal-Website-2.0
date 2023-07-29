@@ -4,15 +4,7 @@
 	import Header from '../components/header/Header.svelte';
 	import { onMount } from 'svelte';
 	import { setToDarkMode, setToLightMode } from '../stores';
-
-	function setColorScheme() {
-		let time: number = new Date().getHours();
-		if (time > 7 && time < 19) {
-			setToLightMode();
-		} else {
-			setToDarkMode();
-		}
-	}
+	import Navbar from '../components/navbar.svelte';
 
 	let screenSize: number;
 
@@ -26,6 +18,7 @@
 
 <div class="main-tree">
 	{#if mounted}
+		<Navbar />
 		<Header />
 		<Projects />
 		<Contact />
