@@ -172,6 +172,10 @@
 	}
 
 	@media (max-width: 480px) {
+		nav.desktop {
+			display: none;
+		}
+
 		nav.mobile {
 			position: fixed;
 			bottom: 1em;
