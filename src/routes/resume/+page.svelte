@@ -16,7 +16,7 @@
 	import { onMount } from 'svelte';
 	import { lightMode, toggleLightMode } from '../../stores';
 
-	let screenSize: number;
+	let screenWidth: number;
 	const resumeHeight: number = 1400;
 	const resumeWidth: number = 1000;
 
@@ -34,7 +34,7 @@
 	});
 </script>
 
-<svelte:window bind:innerWidth={screenSize} />
+<svelte:window bind:innerWidth={screenWidth} />
 
 <div class="app">
 	<main

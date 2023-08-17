@@ -4,11 +4,9 @@
 	import { lightMode } from '../../stores';
 	import HeaderSign from '../header/header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
-	import type { ItemType } from '../../models/projects';
-	import { funnelOut } from '../../animations/splash-buttons';
 
 	export let itemType: any;
-	export let projectItems: any = [];
+	export let projectItems: Array<any> = [];
 	export let text: string = 'TEXT';
 	export let expanded: boolean = false;
 
