@@ -8,10 +8,10 @@ const decent = maxSkillNodes - 3
 export const skillNodeContent: Array<any> = [
     {
         title: "HTML / CSS / JS",
-        filledNodes: perfect
+        filledNodes: excellent
     },
     {
-        title: "C#",
+        title: "Back-End C#",
         filledNodes: excellent
     },
     {
