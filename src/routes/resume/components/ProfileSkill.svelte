@@ -16,10 +16,6 @@
 		: 'background-color: var(--darkModeSplashSecondary);'}; height: {skillsHeight}px"
 >
 	<div class="skill-rating-container">
-		<div class="skills-title-container">
-			<h3 style={$lightMode ? 'color: var(--darkText);' : 'color: var(--lightText);'}>SKILLS</h3>
-		</div>
-
 		{#each skillNodeContent as skill}
 			<SkillRating title={skill.title} filledNodes={skill.filledNodes} />
 		{/each}
@@ -35,14 +31,6 @@
 		font-size: 32px;
 		writing-mode: sideways-lr;
 		text-orientation: mixed;
-	}
-
-	.skills-title-container {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		margin-bottom: 180px;
-		padding-right: 8px;
 	}
 
 	.skill-rating-container {

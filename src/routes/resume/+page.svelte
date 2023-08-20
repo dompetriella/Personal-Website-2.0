@@ -15,6 +15,7 @@
 
 	import { onMount } from 'svelte';
 	import { lightMode, toggleLightMode } from '../../stores';
+	import Navbar from '../../components/navbar.svelte';
 
 	let screenWidth: number;
 	const resumeHeight: number = 1400;
@@ -42,17 +43,6 @@
 			? 'background-color: var(--darkGreenText);'
 			: 'background-color: var(--darkModePrimary);'}
 	>
-		<div style="position: absolute; top: 0; right: 0;">
-			<img
-				on:click={toggleLightMode}
-				on:keypress={toggleLightMode}
-				src={$lightMode ? '/sun.png' : '/moon.png'}
-				alt={$lightMode ? 'sun' : 'moon'}
-				height="70"
-				width="70"
-			/>
-		</div>
-
 		<section
 			class="resume-section"
 			style="height: {resumeHeight}px; width: {resumeWidth}px; {$lightMode
@@ -73,57 +63,13 @@
 				<Education {educationHeight} />
 			</div>
 		</section>
-
-		<section class="sample-work-section">
-			<div
-				class="sample-work-title-container"
-				style={$lightMode
-					? 'background-color: var( --lightModeSecondary);'
-					: 'background-color: var(--lightText);'}
-			>
-				<div
-					class="sample-work-title"
-					style={$lightMode ? 'color: var( --lightText);' : 'color: var(--darkText);'}
-				>
-					Sample Work
-				</div>
-			</div>
-			<div
-				class="sample-work-body-container"
-				style={$lightMode
-					? 'background-color: var(--lightText);'
-					: 'background-color: var(--darkModeSplashSecondary);'}
-			>
-				<div />
-			</div>
-		</section>
 	</main>
 </div>
 
 <style>
-	.sample-work-section {
-		padding-left: 1em;
-		width: 100%;
+	.app {
 		display: flex;
 		flex-direction: column;
-	}
-
-	.sample-work-body-container {
-		display: flex;
-		width: 100%;
-		height: 100%;
-	}
-
-	.sample-work-title-container {
-		display: flex;
-		justify-content: center;
-	}
-
-	.sample-work-title {
-		padding-top: 2em;
-		padding-bottom: 0.1em;
-		font-size: 2em;
-		letter-spacing: 2px;
 	}
 
 	.resume-information-container {
