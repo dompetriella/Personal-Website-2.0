@@ -11,6 +11,8 @@
 	export let verticalPadding: number = 0.4;
 	export let horizontalPadding: number = 2;
 	export let isSubmitButton: boolean = false;
+	export let route: string = 'javascript:void(0)';
+	export let onClick = () => {};
 
 	let isPressed = false;
 
@@ -50,26 +52,33 @@
 	}
 </script>
 
-<button
-	class="action-button"
-	type={isSubmitButton ? 'submit' : 'button'}
-	class:pressed={isPressed}
-	style={`background-color: ${buttonAttributes.bgColor};
+<a data-sveltekit-reload href={route}>
+	<button
+		class="action-button"
+		type={isSubmitButton ? 'submit' : 'button'}
+		class:pressed={isPressed}
+		style={`background-color: ${buttonAttributes.bgColor};
           color: ${buttonAttributes.textColor};
           font-size: ${textSize}em;
           padding: ${verticalPadding}em ${horizontalPadding}em;
           box-shadow: ${isPressed ? '0px 3px 0px 2px' : '-3px 5px 0 0.075em'} ${
-		buttonAttributes.shadowColor
-	};`}
-	on:mousedown={() => (isPressed = true)}
-	on:touchstart={() => (isPressed = true)}
-	on:mouseup={() => (isPressed = false)}
-	on:touchend={() => (isPressed = true)}
->
-	{text}
-</button>
+			buttonAttributes.shadowColor
+		};`}
+		on:mousedown={() => (isPressed = true)}
+		on:touchstart={() => (isPressed = true)}
+		on:mouseup={() => (isPressed = false)}
+		on:touchend={() => (isPressed = true)}
+		on:click={() => onClick()}
+	>
+		{text}
+	</button>
+</a>
 
 <style>
+	a {
+		text-decoration: none;
+	}
+
 	button {
 		background: none;
 		color: inherit;

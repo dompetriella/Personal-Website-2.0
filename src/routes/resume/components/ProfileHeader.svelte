@@ -54,15 +54,16 @@
 
 	.subtitle-name {
 		padding-top: 5px;
-		font-size: 1.2em;
+		font-size: 1.6em;
 		text-align: center;
 		letter-spacing: 2px;
 	}
 
 	.tagline-name {
 		padding-top: 1.5em;
-		font-size: 2.2em;
+		font-size: 2em;
 		text-align: center;
 		letter-spacing: 2px;
+		margin: 0px 50px;
 	}
 </style>
