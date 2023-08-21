@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { lightMode } from '../../../stores';
+	import { educationContent } from '../content/EducationContent';
 	export let educationHeight: number;
 	$: bgColor = $lightMode ? 'var( --lightModeSplashPrimary)' : 'var(--lightText)';
 	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
@@ -16,13 +17,15 @@
 			class="education-info-container"
 			style="background-color: {bgColor}; filter: brightness({filterPercentage}%);"
 		>
-			<h3>Grand Valley State University</h3>
-			<h4>Bachelor's Of Science - 2018</h4>
-			<div class="education-details">
-				<h4>Major: Cell and Molecular Biology</h4>
-				<h4>Minor: Communications</h4>
-				<h4><i>(Advertising and Public Relations)</i></h4>
-			</div>
+			{#each educationContent as education}
+				<h3>{education.school}</h3>
+				<h4>{education.degreeType} - {education.year}</h4>
+				<div class="education-details">
+					<h4>{education.degreeTitle}: {education.degree}</h4>
+					<h4>{education.secondaryDegreeTitle}: {education.secondaryDegree}</h4>
+					<h4><i>{education.auxiliary}</i></h4>
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>
