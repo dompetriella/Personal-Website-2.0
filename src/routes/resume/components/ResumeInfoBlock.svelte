@@ -54,7 +54,6 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		filter: brightness(108%);
 	}
 
 	.subtitle-text {

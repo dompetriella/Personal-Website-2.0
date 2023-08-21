@@ -28,6 +28,7 @@
 		margin: 6px 0px;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 	}
 
 	.node-container {

@@ -43,6 +43,16 @@
 			? 'background-color: var(--darkGreenText);'
 			: 'background-color: var(--darkModePrimary);'}
 	>
+		<div style="position: absolute; top: 0; right: 0;">
+			<img
+				on:click={toggleLightMode}
+				on:keypress={toggleLightMode}
+				src={$lightMode ? '/sun.png' : '/moon.png'}
+				alt={$lightMode ? 'sun' : 'moon'}
+				height="70"
+				width="70"
+			/>
+		</div>
 		<section
 			class="resume-section"
 			style="height: {resumeHeight}px; width: {resumeWidth}px; {$lightMode

@@ -19,7 +19,7 @@ export const workExperienceContent: Array<ResumeInformationContent> = [
         timeline: "2021-2022",
         information: [
             "Developed OCR systems using Kofax to increase processing productivity by 300%",
-            "Automation scriptiong and design in OnBase using .NET"
+            "Automation scripting and design in OnBase using .NET"
         ]
     }
 ];

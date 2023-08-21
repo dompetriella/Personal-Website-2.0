@@ -23,21 +23,12 @@
 </div>
 
 <style>
-	h3 {
-		padding: 0px;
-		margin: 0px;
-		font-weight: 400;
-		letter-spacing: 4px;
-		font-size: 32px;
-		writing-mode: sideways-lr;
-		text-orientation: mixed;
-	}
-
 	.skill-rating-container {
 		display: flex;
 		flex-direction: column;
-		padding-bottom: 60px;
-		margin-left: -20px;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 50px;
 	}
 
 	.resume-profile-skill-container {
