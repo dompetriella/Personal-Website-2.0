@@ -1,21 +1,20 @@
 <script lang="ts">
+	import ProfileHeaderMobile from './components/Mobile/ProfileHeaderMobile.svelte';
+
 	import Education from './components/Education.svelte';
-
 	import Accomplishments from './components/Accomplishments.svelte';
-
 	import WorkExperience from './components/WorkExperience.svelte';
-
 	import ProfilePicture from './components/ProfilePicture.svelte';
-
 	import ProfileContact from './components/ProfileContact.svelte';
-
 	import ProfileSkill from './components/ProfileSkill.svelte';
-
 	import ProfileHeader from './components/ProfileHeader.svelte';
 
 	import { onMount } from 'svelte';
 	import { lightMode, toggleLightMode } from '../../stores';
-	import Navbar from '../../components/navbar.svelte';
+	import { titleTextContent } from './content/TitleText';
+	import { contactInfoContent } from './content/ContactInfoContent';
+	import { skillNodeContent } from './content/SkillNodeContent';
+	import SkillRating from './components/SkillRating.svelte';
 
 	let screenWidth: number;
 	const resumeHeight: number = 1400;
@@ -29,10 +28,21 @@
 	const accomplishmentsHeight: number = 400;
 	const educationHeight: number = 175;
 
+	// allows for easily switching out content
+	// changing the index, changes what's shown
+	const titleText = titleTextContent[0];
+	const contactInfo = contactInfoContent[0];
+
+	$: bgColor = $lightMode
+		? 'background-color: var(--darkGreenText);'
+		: 'background-color: var(--darkModePrimary);';
+
 	let mounted = false;
 	onMount(async () => {
 		mounted = true;
 	});
+
+	$: isMobile = screenWidth >= 1024 ? false : true;
 </script>
 
 <svelte:window bind:innerWidth={screenWidth} />
@@ -43,7 +53,7 @@
 			? 'background-color: var(--darkGreenText);'
 			: 'background-color: var(--darkModePrimary);'}
 	>
-		<div style="position: absolute; top: 0; right: 0;">
+		<div style="position: absolute; top: 0; right: 0; z-index: 99">
 			<img
 				on:click={toggleLightMode}
 				on:keypress={toggleLightMode}
@@ -53,31 +63,41 @@
 				width="70"
 			/>
 		</div>
-		<section
-			class="resume-section"
-			style="height: {resumeHeight}px; width: {resumeWidth}px; {$lightMode
-				? 'background-color: var(--darkGreenText);'
-				: 'background-color: var(--darkModePrimary);'}"
-		>
-			<div class="resume-profile-container">
-				<div class="resume-profile-pill-container">
-					<ProfilePicture />
-					<ProfileHeader {profileHeight} />
-					<ProfileSkill {skillsHeight} />
-					<ProfileContact {contactHeight} />
+		{#if !isMobile}
+			<section
+				class="resume-section"
+				style="height: {resumeHeight}px; width: {resumeWidth}px; background-color: {bgColor}"
+			>
+				<div class="resume-profile-container">
+					<div class="resume-profile-pill-container">
+						<ProfilePicture />
+						<ProfileHeader {profileHeight} {titleText} />
+						<ProfileSkill {skillsHeight} {isMobile} />
+						<ProfileContact {contactHeight} {contactInfo} />
+					</div>
 				</div>
+				<div class="resume-information-container">
+					<WorkExperience {experienceHeight} />
+					<Accomplishments {accomplishmentsHeight} />
+					<Education {educationHeight} />
+				</div>
+			</section>
+		{:else}
+			<div class="resume-profile-container-m">
+				<ProfileHeaderMobile {titleText} />
+				<ProfileSkill {skillsHeight} {isMobile} />
 			</div>
-			<div class="resume-information-container">
-				<WorkExperience {experienceHeight} />
-				<Accomplishments {accomplishmentsHeight} />
-				<Education {educationHeight} />
-			</div>
-		</section>
+		{/if}
 	</main>
 </div>
 
 <style>
 	.app {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.resume-profile-container-m {
 		display: flex;
 		flex-direction: column;
 	}

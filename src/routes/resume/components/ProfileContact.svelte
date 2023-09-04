@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { lightMode } from '../../../stores';
+	import type { ContactInfo } from '../models/ContactInfo';
 	import MailIcon from './icons/mail-icon.svelte';
 	import PhoneIcon from './icons/phone-icon.svelte';
 	import WebIcon from './icons/web-icon.svelte';
 	export let contactHeight: number;
+	export let contactInfo: ContactInfo;
 
 	$: fillColor = $lightMode ? '#FFF' : '#000';
 </script>
@@ -18,14 +20,14 @@
 		<div class="contact-info-container">
 			<WebIcon fillColor={$lightMode ? '#FFFFFF' : '#000000'} height={35} width={35} />
 			<h4 style={$lightMode ? 'color: var( --lightText);' : 'color: var(--darkText);'}>
-				dompetriella.com
+				{contactInfo.websiteUrl}
 			</h4>
 		</div>
 
 		<div class="contact-info-container">
 			<PhoneIcon fillColor={$lightMode ? '#FFFFFF' : '#000000'} height={35} width={35} />
 			<h4 style={$lightMode ? 'color: var( --lightText);' : 'color: var(--darkText);'}>
-				616-232-5044
+				{contactInfo.phoneNumber}
 			</h4>
 		</div>
 
@@ -37,14 +39,14 @@
 						? 'color: var( --lightText);'
 						: 'color: var(--darkText);'} padding-bottom: 0px; padding-top: 5px;"
 				>
-					dompetriella
+					{contactInfo.emailAddress}
 				</h4>
 				<h4
 					style="{$lightMode
 						? 'color: var( --lightText);'
 						: 'color: var(--darkText);'} padding-top: 0px; transform: translateX(30px)"
 				>
-					@gmail.com
+					{contactInfo.emailAddressDomain}
 				</h4>
 			</div>
 		</div>

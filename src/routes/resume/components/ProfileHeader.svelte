@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { lightMode } from '../../../stores';
+	import { titleTextContent } from '../content/TitleText';
+	import type { ContactInfo } from '../models/ContactInfo';
+	import type { TitleText } from '../models/TitleText';
 
 	export let profileHeight: number;
+	export let titleText: TitleText;
 </script>
 
 <div
@@ -16,20 +20,20 @@
 			class="profile-name"
 			style={$lightMode ? 'color: var(--darkText);' : 'color: var(--lightText);'}
 		>
-			DOMINIC PETRIELLA
+			{titleText.name.toUpperCase()}
 		</div>
 		<div
 			class="subtitle-name"
 			style={$lightMode ? 'color: var(--lightText);' : 'color: var(--darkModeHighlight);'}
 		>
-			Software Developer
+			{titleText.subTitle}
 		</div>
 
 		<div
 			class="tagline-name"
 			style={$lightMode ? 'color: var(--darkText);' : 'color: var(--lightText);'}
 		>
-			Front End Designer with Full Stack Capabilities
+			{titleText.tagline}
 		</div>
 	</div>
 </div>
