@@ -20,7 +20,7 @@
 >
 	<div style="display: flex; flex-direction: column">
 		{#if isMobile}
-			<h1 class="title" style="color: {titleTextColor};">SKILLS</h1>
+			<h1 style="color: {titleTextColor};">SKILLS</h1>
 		{/if}
 		<div class="skill-rating-container">
 			{#each skillNodeContent as skill}
@@ -31,11 +31,10 @@
 </div>
 
 <style>
-	.title {
+	h1 {
 		font-size: 2em;
 		text-align: center;
-		letter-spacing: 2px;
-		padding: 0px 10px;
+		letter-spacing: 4px;
 	}
 
 	.skill-rating-container {
@@ -51,7 +50,7 @@
 		display: flex;
 		justify-content: center;
 		border-radius: 2em;
-		margin-top: -4em;
+		margin-top: -5em;
 		z-index: 1;
 		padding: 5em 0em 4em 0em;
 		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

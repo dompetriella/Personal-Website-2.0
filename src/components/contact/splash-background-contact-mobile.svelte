@@ -22,7 +22,7 @@
 	<div style="background-color:{secondarySplash};" class="secondary-circle" />
 	<div style="background-color:{tertiarySplash};" class="tertiary-circle" />
 	<div class="contact-area">
-		<!-- <ActionButton text="RESUMÉ" buttonType={1} textSize={2} /> -->
+		<ActionButton text="RESUMÉ" buttonType={1} textSize={2} route={'/resume'} />
 		<ul style="color: {listTextColor}">
 			<li>Website freelance</li>
 			<li>UI/UX design</li>

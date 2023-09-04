@@ -6,33 +6,38 @@
 	import WebIcon from './icons/web-icon.svelte';
 	export let contactHeight: number;
 	export let contactInfo: ContactInfo;
+	export let isMobile: boolean;
 
 	$: fillColor = $lightMode ? '#FFF' : '#000';
+	let height = isMobile ? '' : 'height: ' + contactHeight + 'px;';
 </script>
 
 <div
 	class="resume-profile-contact-container"
 	style="{$lightMode
 		? 'background-color: var( --lightModeSplashPrimary);'
-		: 'background-color: var(--lightText);'}; height: {contactHeight}px"
+		: 'background-color: var(--lightText);'}; {height}"
 >
-	<div style="padding-bottom: 25px;">
+	{#if isMobile}
+		<h1 class="title" style="color: var(--dartText);">CONTACT</h1>
+	{/if}
+	<div class="tile-padding">
 		<div class="contact-info-container">
-			<WebIcon fillColor={$lightMode ? '#FFFFFF' : '#000000'} height={35} width={35} />
+			<WebIcon {fillColor} height={35} width={35} />
 			<h4 style={$lightMode ? 'color: var( --lightText);' : 'color: var(--darkText);'}>
 				{contactInfo.websiteUrl}
 			</h4>
 		</div>
 
 		<div class="contact-info-container">
-			<PhoneIcon fillColor={$lightMode ? '#FFFFFF' : '#000000'} height={35} width={35} />
+			<PhoneIcon {fillColor} height={35} width={35} />
 			<h4 style={$lightMode ? 'color: var( --lightText);' : 'color: var(--darkText);'}>
 				{contactInfo.phoneNumber}
 			</h4>
 		</div>
 
 		<div class="contact-info-container">
-			<MailIcon fillColor={$lightMode ? '#FFFFFF' : '#000000'} height={35} width={35} />
+			<MailIcon {fillColor} height={35} width={35} />
 			<div class="email-column">
 				<h4
 					style="{$lightMode
@@ -46,7 +51,7 @@
 						? 'color: var( --lightText);'
 						: 'color: var(--darkText);'} padding-top: 0px; transform: translateX(30px)"
 				>
-					{contactInfo.emailAddressDomain}
+					@{contactInfo.emailAddressDomain}
 				</h4>
 			</div>
 		</div>
@@ -59,6 +64,10 @@
 		display: flex;
 		justify-content: start;
 		align-items: center;
+	}
+
+	h1 {
+		letter-spacing: 4px;
 	}
 
 	h4 {
@@ -75,12 +84,39 @@
 	}
 
 	.resume-profile-contact-container {
-		position: absolute;
+		margin-top: -2em;
+		padding-top: 3em;
+		padding-bottom: 3em;
 		display: flex;
 		flex-direction: column;
-		justify-content: end;
 		align-items: center;
 		width: 100%;
-		border-radius: 5em;
+		border-radius: 0em 0em 2em 2em;
+	}
+
+	.tile-padding {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+
+	@media screen and (min-width: 1024px) {
+		.tile-padding {
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 25px;
+		}
+
+		.resume-profile-contact-container {
+			margin: 0px;
+			padding: 0px;
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
+			align-items: center;
+			width: 100%;
+			border-radius: 5em;
+		}
 	}
 </style>

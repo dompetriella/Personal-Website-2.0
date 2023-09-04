@@ -73,19 +73,25 @@
 						<ProfilePicture />
 						<ProfileHeader {profileHeight} {titleText} />
 						<ProfileSkill {skillsHeight} {isMobile} />
-						<ProfileContact {contactHeight} {contactInfo} />
+						<ProfileContact {contactHeight} {contactInfo} {isMobile} />
 					</div>
 				</div>
 				<div class="resume-information-container">
-					<WorkExperience {experienceHeight} />
-					<Accomplishments {accomplishmentsHeight} />
-					<Education {educationHeight} />
+					<WorkExperience {experienceHeight} {isMobile} />
+					<Accomplishments {accomplishmentsHeight} {isMobile} />
+					<Education {educationHeight} {isMobile} />
 				</div>
 			</section>
 		{:else}
 			<div class="resume-profile-container-m">
 				<ProfileHeaderMobile {titleText} />
 				<ProfileSkill {skillsHeight} {isMobile} />
+				<ProfileContact {contactHeight} {contactInfo} {isMobile} />
+				<div style="margin-top: 5em;">
+					<WorkExperience {experienceHeight} {isMobile} />
+					<Accomplishments {accomplishmentsHeight} {isMobile} />
+					<Education {educationHeight} {isMobile} />
+				</div>
 			</div>
 		{/if}
 	</main>
@@ -100,6 +106,7 @@
 	.resume-profile-container-m {
 		display: flex;
 		flex-direction: column;
+		padding-bottom: 5em;
 	}
 
 	.resume-information-container {

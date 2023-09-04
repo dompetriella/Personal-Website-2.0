@@ -25,7 +25,7 @@
 
 <style>
 	.skill-rating-container {
-		margin: 6px 0px;
+		margin: 6px 20px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
