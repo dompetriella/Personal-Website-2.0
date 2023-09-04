@@ -47,55 +47,57 @@
 
 <svelte:window bind:innerWidth={screenWidth} />
 
-<div class="app">
-	<main
-		style={$lightMode
-			? 'background-color: var(--darkGreenText);'
-			: 'background-color: var(--darkModePrimary);'}
-	>
-		<div style="position: absolute; top: 0; right: 0; z-index: 99">
-			<img
-				on:click={toggleLightMode}
-				on:keypress={toggleLightMode}
-				src={$lightMode ? '/sun.png' : '/moon.png'}
-				alt={$lightMode ? 'sun' : 'moon'}
-				height="70"
-				width="70"
-			/>
-		</div>
-		{#if !isMobile}
-			<section
-				class="resume-section"
-				style="height: {resumeHeight}px; width: {resumeWidth}px; background-color: {bgColor}"
-			>
-				<div class="resume-profile-container">
-					<div class="resume-profile-pill-container">
-						<ProfilePicture />
-						<ProfileHeader {profileHeight} {titleText} />
-						<ProfileSkill {skillsHeight} {isMobile} />
-						<ProfileContact {contactHeight} {contactInfo} {isMobile} />
+{#if mounted}
+	<div class="app">
+		<main
+			style={$lightMode
+				? 'background-color: var(--darkGreenText);'
+				: 'background-color: var(--darkModePrimary);'}
+		>
+			<div style="position: absolute; top: 0; right: 0; z-index: 99; cursor: pointer">
+				<img
+					on:click={toggleLightMode}
+					on:keypress={toggleLightMode}
+					src={$lightMode ? '/sun.png' : '/moon.png'}
+					alt={$lightMode ? 'sun' : 'moon'}
+					height="70"
+					width="70"
+				/>
+			</div>
+			{#if !isMobile}
+				<section
+					class="resume-section"
+					style="height: {resumeHeight}px; width: {resumeWidth}px; background-color: {bgColor}"
+				>
+					<div class="resume-profile-container">
+						<div class="resume-profile-pill-container">
+							<ProfilePicture />
+							<ProfileHeader {profileHeight} {titleText} />
+							<ProfileSkill {skillsHeight} {isMobile} />
+							<ProfileContact {contactHeight} {contactInfo} {isMobile} />
+						</div>
+					</div>
+					<div class="resume-information-container">
+						<WorkExperience {experienceHeight} {isMobile} />
+						<Accomplishments {accomplishmentsHeight} {isMobile} />
+						<Education {educationHeight} {isMobile} />
+					</div>
+				</section>
+			{:else}
+				<div class="resume-profile-container-m">
+					<ProfileHeaderMobile {titleText} />
+					<ProfileSkill {skillsHeight} {isMobile} />
+					<ProfileContact {contactHeight} {contactInfo} {isMobile} />
+					<div style="margin-top: 5em;">
+						<WorkExperience {experienceHeight} {isMobile} />
+						<Accomplishments {accomplishmentsHeight} {isMobile} />
+						<Education {educationHeight} {isMobile} />
 					</div>
 				</div>
-				<div class="resume-information-container">
-					<WorkExperience {experienceHeight} {isMobile} />
-					<Accomplishments {accomplishmentsHeight} {isMobile} />
-					<Education {educationHeight} {isMobile} />
-				</div>
-			</section>
-		{:else}
-			<div class="resume-profile-container-m">
-				<ProfileHeaderMobile {titleText} />
-				<ProfileSkill {skillsHeight} {isMobile} />
-				<ProfileContact {contactHeight} {contactInfo} {isMobile} />
-				<div style="margin-top: 5em;">
-					<WorkExperience {experienceHeight} {isMobile} />
-					<Accomplishments {accomplishmentsHeight} {isMobile} />
-					<Education {educationHeight} {isMobile} />
-				</div>
-			</div>
-		{/if}
-	</main>
-</div>
+			{/if}
+		</main>
+	</div>
+{/if}
 
 <style>
 	.app {
