@@ -13,8 +13,6 @@
 	import { lightMode, toggleLightMode } from '../../stores';
 	import { titleTextContent } from './content/TitleText';
 	import { contactInfoContent } from './content/ContactInfoContent';
-	import { skillNodeContent } from './content/SkillNodeContent';
-	import SkillRating from './components/SkillRating.svelte';
 
 	let screenWidth: number;
 	const resumeHeight: number = 1400;
@@ -37,6 +35,12 @@
 		? 'background-color: var(--darkGreenText);'
 		: 'background-color: var(--darkModePrimary);';
 
+	function handlePrintClick() {
+		let printContents = document.getElementsByClassName('resume-section');
+
+		window.print();
+	}
+
 	let mounted = false;
 	onMount(async () => {
 		mounted = true;
@@ -49,12 +53,29 @@
 
 {#if mounted}
 	<div class="app">
-		<main
-			style={$lightMode
-				? 'background-color: var(--darkGreenText);'
-				: 'background-color: var(--darkModePrimary);'}
-		>
-			<div style="position: absolute; top: 0; right: 0; z-index: 99; cursor: pointer">
+		<nav style={bgColor}>
+			<div style="cursor: pointer; margin-right: auto;">
+				<a href={'/'}>
+					<img
+						src={$lightMode ? '/back-light.png' : '/back-dark.png'}
+						alt="return to main website"
+						height="50"
+						width="50"
+					/>
+				</a>
+			</div>
+			<!-- not quite ready yet -->
+			<!-- <div style="cursor: pointer">
+				<img
+					on:click={handlePrintClick}
+					on:keypress={handlePrintClick}
+					src={$lightMode ? '/download-light.png' : '/download-dark.png'}
+					alt="download resume"
+					height="45"
+					width="50"
+				/>
+			</div> -->
+			<div style="cursor: pointer">
 				<img
 					on:click={toggleLightMode}
 					on:keypress={toggleLightMode}
@@ -64,9 +85,16 @@
 					width="70"
 				/>
 			</div>
+		</nav>
+		<main
+			style={$lightMode
+				? 'background-color: var(--darkGreenText);'
+				: 'background-color: var(--darkModePrimary);'}
+		>
 			{#if !isMobile}
 				<section
 					class="resume-section"
+					id="section-to-print"
 					style="height: {resumeHeight}px; width: {resumeWidth}px; background-color: {bgColor}"
 				>
 					<div class="resume-profile-container">
@@ -100,6 +128,13 @@
 {/if}
 
 <style>
+	nav {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		padding-left: 16px;
+	}
+
 	.app {
 		display: flex;
 		flex-direction: column;
