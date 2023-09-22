@@ -13,6 +13,7 @@
 	import { lightMode, toggleLightMode } from '../../stores';
 	import { titleTextContent } from './content/TitleText';
 	import { contactInfoContent } from './content/ContactInfoContent';
+	import { Theme } from '../../models/theme';
 
 	let screenWidth: number;
 	const resumeHeight: number = 1400;
@@ -32,8 +33,8 @@
 	const contactInfo = contactInfoContent[0];
 
 	$: bgColor = $lightMode
-		? 'background-color: var(--darkGreenText);'
-		: 'background-color: var(--darkModePrimary);';
+		? `background-color: ${Theme.darkGreenText};`
+		: `background-color: ${Theme.darkModePrimary};`;
 
 	function handlePrintClick() {
 		let printContents = document.getElementsByClassName('resume-section');
@@ -87,9 +88,7 @@
 			</div>
 		</nav>
 		<main
-			style={$lightMode
-				? 'background-color: var(--darkGreenText);'
-				: 'background-color: var(--darkModePrimary);'}
+			style={bgColor}
 		>
 			{#if !isMobile}
 				<section

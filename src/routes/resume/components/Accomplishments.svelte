@@ -2,6 +2,7 @@
 	import ResumeInfoBlock from './ResumeInfoBlock.svelte';
 	import { accomplishmentsContent } from '../content/AccomplishmentsContent';
 	import { lightMode } from '../../../stores';
+	import { Theme } from '../../../models/theme';
 
 	$: bgColor = $lightMode ? Theme.lightModeSplashSecondary : Theme.darkModeSplashSecondary;
 	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;

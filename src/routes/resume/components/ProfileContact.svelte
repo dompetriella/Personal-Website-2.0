@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Theme } from '../../../models/theme';
 	import { lightMode } from '../../../stores';
 	import type { ContactInfo } from '../models/ContactInfo';
 	import MailIcon from './icons/mail-icon.svelte';
@@ -15,23 +16,23 @@
 <div
 	class="resume-profile-contact-container"
 	style="{$lightMode
-		? 'background-color: var( --lightModeSplashPrimary);'
-		: 'background-color: var(--lightText);'}; {height}"
+		? `background-color: ${Theme.lightModeSplashPrimary}`
+		: `background-color: ${Theme.lightText}`}; {height}"
 >
 	{#if isMobile}
-		<h1 class="title" style="color: var(--dartText);">CONTACT</h1>
+		<h1 class="title" style={`color: ${Theme.darkText};`}>CONTACT</h1>
 	{/if}
 	<div class="tile-padding">
 		<div class="contact-info-container">
 			<WebIcon {fillColor} height={35} width={35} />
-			<h4 style={$lightMode ? 'color: var( --lightText);' : 'color: var(--darkText);'}>
+			<h4 style={$lightMode ? `color: ${Theme.lightText};` : `color: ${Theme.darkText};`}>
 				{contactInfo.websiteUrl}
 			</h4>
 		</div>
 
 		<div class="contact-info-container">
 			<PhoneIcon {fillColor} height={35} width={35} />
-			<h4 style={$lightMode ? 'color: var( --lightText);' : 'color: var(--darkText);'}>
+			<h4 style={$lightMode ? `color: ${Theme.lightText};` : `color: ${Theme.darkText};`}>
 				{contactInfo.phoneNumber}
 			</h4>
 		</div>
@@ -41,15 +42,15 @@
 			<div class="email-column">
 				<h4
 					style="{$lightMode
-						? 'color: var( --lightText);'
-						: 'color: var(--darkText);'} padding-bottom: 0px; padding-top: 5px;"
+						? `color: ${Theme.lightText};`
+						: `color: ${Theme.darkText};`} padding-bottom: 0px; padding-top: 5px;"
 				>
 					{contactInfo.emailAddress}
 				</h4>
 				<h4
 					style="{$lightMode
-						? 'color: var( --lightText);'
-						: 'color: var(--darkText);'} padding-top: 0px; transform: translateX(30px)"
+						? `color: ${Theme.lightText};`
+						: `color: ${Theme.darkText};`} padding-top: 0px; transform: translateX(30px)"
 				>
 					@{contactInfo.emailAddressDomain}
 				</h4>

@@ -3,10 +3,11 @@
 	import { workExperienceContent } from '../content/WorkExperienceContent';
 
 	import { lightMode } from '../../../stores';
+	import { Theme } from '../../../models/theme';
 	export let experienceHeight: number;
 	export let isMobile: boolean;
 
-	$: bgColor = $lightMode ? Theme.lightModeSecondary : 'var(--darkModeSecondary)';
+	$: bgColor = $lightMode ? Theme.lightModeSecondary : Theme.darkModeSecondary;
 	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 	let height = isMobile ? '' : 'height: ' + experienceHeight + 'px;';
 </script>

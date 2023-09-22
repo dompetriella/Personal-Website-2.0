@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { Theme } from '../../../models/theme';
 	import { lightMode } from '../../../stores';
 	import { educationContent } from '../content/EducationContent';
 	export let educationHeight: number;
 	export let isMobile: boolean;
-	$: bgColor = $lightMode ? 'var( --lightModeSplashPrimary)' : Theme.lightText;
+	$: bgColor = $lightMode ? Theme.lightModeSplashPrimary : Theme.lightText;
 	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 	$: filterPercentage = $lightMode ? 105 : 90;
 

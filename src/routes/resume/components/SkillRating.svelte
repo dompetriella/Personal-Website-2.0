@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Theme } from '../../../models/theme';
 	import { lightMode } from '../../../stores';
 	import { maxSkillNodes } from '../content/SkillNodeContent';
 

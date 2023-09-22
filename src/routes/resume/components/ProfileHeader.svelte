@@ -4,6 +4,7 @@
 	import { titleTextContent } from '../content/TitleText';
 	import type { ContactInfo } from '../models/ContactInfo';
 	import type { TitleText } from '../models/TitleText';
+	import { Theme } from '../../../models/theme';
 
 	export let profileHeight: number;
 	export let titleText: TitleText;
@@ -12,26 +13,26 @@
 <div
 	class="resume-profile-name-container"
 	style="{$lightMode
-		? 'background-color: var(--lightModeSecondary);'
-		: 'background-color: var(--darkModeSecondary);'}; height: {profileHeight}px"
+		? `background-color: ${Theme.lightModeSecondary}`
+		: `background-color: ${Theme.darkModeSecondary}`}; height: {profileHeight}px"
 >
 	<div style="margin-top: 180px">
 		<div
 			class="profile-name"
-			style={$lightMode ? 'color: var(--darkText);' : 'color: var(--lightText);'}
+			style={$lightMode ? `color: ${Theme.darkText};` : `color: ${Theme.lightText};`}
 		>
 			{titleText.name.toUpperCase()}
 		</div>
 		<div
 			class="subtitle-name"
-			style={$lightMode ? 'color: var(--lightText);' : 'color: var(--darkModeHighlight);'}
+			style={$lightMode ? `color: ${Theme.lightText};` : `color: ${Theme.darkModeHighlight};`}
 		>
 			{titleText.subTitle}
 		</div>
 
 		<div
 			class="tagline-name"
-			style={$lightMode ? 'color: var(--darkText);' : 'color: var(--lightText);'}
+			style={$lightMode ? `color: ${Theme.darkText};` : `color: ${Theme.lightText};`}
 		>
 			{titleText.tagline}
 		</div>

@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { lightMode } from '../../../stores';
 	import { titleTextContent } from '../content/TitleText';
+	import { Theme } from '../../../models/theme';
 
 	export let skillsHeight: number;
 	export let isMobile: boolean;
@@ -15,8 +16,8 @@
 <div
 	class="resume-profile-skill-container"
 	style="{$lightMode
-		? 'background-color: var(--lightModeSplashSecondary);'
-		: 'background-color: var(--darkModeSplashSecondary);'} {height}"
+		? `background-color: ${Theme.lightModeSplashSecondary};`
+		: `background-color: ${Theme.darkModeSplashSecondary};`} {height}"
 >
 	<div style="display: flex; flex-direction: column">
 		{#if isMobile}
