@@ -1,13 +1,14 @@
 <script lang="ts">
+	import { Theme } from '../../models/theme';
 	import { lightMode } from '../../stores';
 
-	$: primarySplash = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModeSplashPrimary)';
+	$: primarySplash = $lightMode ? Theme.lightModeSplashPrimary : Theme.darkModeSplashPrimary;
 	$: secondarySplash = $lightMode
-		? 'var(--lightModeSplashSecondary)'
-		: 'var(--darkModeSplashSecondary)';
+		? Theme.lightModeSplashSecondary
+		: Theme.darkModeSplashSecondary;
 	$: tertiarySplash = $lightMode
-		? 'var(--lightModeSplashTertiary)'
-		: 'var(--darkModeSplashTertiary)';
+		? Theme.lightModeSplashTertiary
+		: Theme.darkModeSplashTertiary;
 
 	$: primarySplashAnimation = $lightMode
 		? 'light-primary-splash-animation'
@@ -26,7 +27,7 @@
 
 <div class="circles-container">
 	<div class="projects-anchor" id="projects-m" />
-	<div style="color: var(--darkText)" class="text">PROJECTS</div>
+	<div style={"color: " + Theme.darkText} class="text">PROJECTS</div>
 	<div style="background-color:{primarySplash};" class="primary-circle {primarySplashAnimation}">
 		<div class={domModeClass}>
 			<img

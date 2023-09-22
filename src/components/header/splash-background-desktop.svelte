@@ -1,13 +1,14 @@
 <script lang="ts">
+	import { Theme } from '../../models/theme';
 	import { lightMode } from '../../stores';
 
-	$: primarySplash = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModeSplashPrimary)';
+	$: primarySplash = $lightMode ? Theme.lightModeSplashPrimary : Theme.darkModeSplashPrimary;
 	$: secondarySplash = $lightMode
-		? 'var(--lightModeSplashSecondary)'
-		: 'var(--darkModeSplashSecondary)';
+		? Theme.lightModeSplashSecondary
+		: Theme.darkModeSplashSecondary;
 	$: tertiarySplash = $lightMode
-		? 'var(--lightModeSplashTertiary)'
-		: 'var(--darkModeSplashTertiary)';
+		? Theme.lightModeSplashTertiary
+		: Theme.darkModeSplashTertiary;
 
 	$: primarySplashAnimation = $lightMode
 		? 'light-primary-splash-animation'
@@ -38,7 +39,7 @@
 		style="background-color:{secondarySplash};"
 		class="secondary-circle {secondarySplashAnimation}"
 	/>
-	<div style="background-color:{tertiarySplash};" class="tertiary-circle {tertiarySplash}" />
+	<div style="background-color:{tertiarySplash};" class="tertiary-circle {tertiarySplashAnimation}" />
 </div>
 
 <style>

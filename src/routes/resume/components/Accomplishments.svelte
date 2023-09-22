@@ -3,8 +3,8 @@
 	import { accomplishmentsContent } from '../content/AccomplishmentsContent';
 	import { lightMode } from '../../../stores';
 
-	$: bgColor = $lightMode ? 'var(--lightModeSplashSecondary)' : 'var(--darkModeSplashSecondary)';
-	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
+	$: bgColor = $lightMode ? Theme.lightModeSplashSecondary : Theme.darkModeSplashSecondary;
+	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 
 	export let accomplishmentsHeight: number;
 	export let isMobile: boolean;

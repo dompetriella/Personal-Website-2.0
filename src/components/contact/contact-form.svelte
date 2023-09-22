@@ -5,6 +5,7 @@
 
 	import { onMount } from 'svelte';
 	import { initEmailJS } from '../../emailjs';
+	import { Theme } from '../../models/theme';
 
 	const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 	const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -44,20 +45,20 @@
 	let emailSelected: boolean = false;
 	let messageSelected: boolean = false;
 
-	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkModeSplashPrimary)';
-	$: contactBoxColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
-	$: contactBoxShadowColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
+	$: textColor = $lightMode ? Theme.darkGreenText : Theme.darkModeSplashPrimary;
+	$: contactBoxColor = $lightMode ? Theme.lightModeSecondary : Theme.darkModeSecondary;
+	$: contactBoxShadowColor = $lightMode ? Theme.darkGreenText : Theme.darkText;
 
 	$: inputBoxColor = $lightMode
-		? 'var(--lightModeSplashSecondary)'
-		: 'var(--darkModeSplashPrimary)';
+		? Theme.lightModeSplashSecondary
+		: Theme.darkModeSplashPrimary;
 	$: inputShadowColor = $lightMode
-		? 'var(--lightModeSplashSecondary)'
-		: 'var(--darkModeSplashPrimary)';
+		? Theme.lightModeSplashSecondary
+		: Theme.darkModeSplashPrimary;
 
 	$: selectedInputColor = $lightMode
-		? 'var(--lightModeSplashPrimary)'
-		: 'var(--darkModeSplashSecondary)';
+		? Theme.lightModeSplashPrimary
+		: Theme.darkModeSplashSecondary;
 </script>
 
 <form

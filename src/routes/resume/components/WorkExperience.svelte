@@ -6,8 +6,8 @@
 	export let experienceHeight: number;
 	export let isMobile: boolean;
 
-	$: bgColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
-	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
+	$: bgColor = $lightMode ? Theme.lightModeSecondary : 'var(--darkModeSecondary)';
+	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 	let height = isMobile ? '' : 'height: ' + experienceHeight + 'px;';
 </script>
 

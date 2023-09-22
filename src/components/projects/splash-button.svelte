@@ -4,20 +4,21 @@
 	import { lightMode } from '../../stores';
 	import HeaderSign from '../header/header-sign.svelte';
 	import ProjectItem from './project-item.svelte';
+	import { Theme } from '../../models/theme';
 
 	export let itemType: any;
 	export let projectItems: Array<any> = [];
 	export let text: string = 'TEXT';
 	export let expanded: boolean = false;
 
-	$: textColor = $lightMode ? 'var(--lightText)' : 'var(--darkText)';
-	$: primarySplash = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModeSplashPrimary)';
+	$: textColor = $lightMode ? Theme.lightText : Theme.darkText;
+	$: primarySplash = $lightMode ? Theme.lightModeSplashPrimary : Theme.darkModeSplashPrimary;
 	$: secondarySplash = $lightMode
-		? 'var(--lightModeSplashSecondary)'
-		: 'var(--darkModeSplashSecondary)';
+		? Theme.lightModeSplashSecondary
+		: Theme.darkModeSplashSecondary;
 	$: tertiarySplash = $lightMode
-		? 'var(--lightModeSplashTertiary)'
-		: 'var(--darkModeSplashTertiary)';
+		? Theme.lightModeSplashTertiary
+		: Theme.darkModeSplashTertiary;
 </script>
 
 <div class="splash-body">

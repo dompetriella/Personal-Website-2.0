@@ -3,8 +3,8 @@
 	import { educationContent } from '../content/EducationContent';
 	export let educationHeight: number;
 	export let isMobile: boolean;
-	$: bgColor = $lightMode ? 'var( --lightModeSplashPrimary)' : 'var(--lightText)';
-	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
+	$: bgColor = $lightMode ? 'var( --lightModeSplashPrimary)' : Theme.lightText;
+	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 	$: filterPercentage = $lightMode ? 105 : 90;
 
 	let height = isMobile ? '' : 'height: ' + educationHeight + 'px;';

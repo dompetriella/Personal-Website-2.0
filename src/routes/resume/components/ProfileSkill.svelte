@@ -9,7 +9,7 @@
 	export let isMobile: boolean;
 
 	let height = isMobile ? '' : 'height: ' + skillsHeight + 'px;';
-	$: titleTextColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
+	$: titleTextColor = $lightMode ? Theme.darkText : Theme.lightText;
 </script>
 
 <div

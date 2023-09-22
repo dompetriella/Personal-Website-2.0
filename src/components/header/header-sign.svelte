@@ -2,6 +2,7 @@
 	import { fly, scale } from 'svelte/transition';
 	import { lightMode } from '../../stores';
 	import { funnelOut } from '../../animations/splash-buttons';
+	import { Theme } from '../../models/theme';
 
 	export let text: string = 'WELCOME';
 	export let fontSize: number = 2.7;
@@ -10,16 +11,16 @@
 	export let horizontalPadding: number = 0;
 	export let animationDelay: number = 0;
 
-	$: bgColor = $lightMode ? 'var(--lightModeSplashPrimary)' : 'rgb(0,0,0,.25)';
-	$: color = $lightMode ? 'var(--darkModeSecondary)' : 'var(--darkModeHighlight)';
+	$: bgColor = $lightMode ? Theme.lightModeSplashPrimary : 'rgb(0,0,0,.25)';
+	$: color = $lightMode ? Theme.darkModeSecondary : Theme.darkModeHighlight;
 	$: textShadow = $lightMode
-		? 'var(--lightModePrimary) 1px 0 5px'
-		: 'var(--darkModeHighlight) 0px 0px 20px';
-	$: textStroke = $lightMode ? '0px' : '2px var(--darkModeSplashTertiary)';
+		?  `${Theme.lightModePrimary} 1px 0 5px`
+		: `${Theme.darkModeHighlight} 0px 0px 20px`;
+	$: textStroke = $lightMode ? '0px' : `2px ${Theme.darkModeSplashTertiary}`;
 	$: boxShadow = $lightMode
-		? '-3px 3px 0px 1px var(--darkBlueText)'
-		: '0px 0px 0px 5px var(--darkModeHighlight), 0px 0px 30px 10px var(--darkModeHighlight), -5px 5px 0px 4px var(--darkModeHighlightSecondary)';
-	$: border = $lightMode ? 'border: var(--lightText) solid 3px;' : 'border: none';
+		? `-3px 3px 0px 1px ${Theme.darkBlueText}`
+		: `0px 0px 0px 5px ${Theme.darkModeHighlight}, 0px 0px 30px 10px ${Theme.darkModeHighlight}, -5px 5px 0px 4px ${Theme.darkModeHighlightSecondary}`;
+	$: border = $lightMode ? `border: ${Theme.lightText} solid 3px;` : 'border: none';
 
 	$: signAnimation = $lightMode ? 'light-mode-animation' : 'dark-mode-animation';
 </script>

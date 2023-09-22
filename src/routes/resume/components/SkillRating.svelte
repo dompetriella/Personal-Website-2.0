@@ -6,7 +6,7 @@
 	export let title: string;
 	export let filledNodes: number;
 
-	$: filledNodeColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeHighlight)';
+	$: filledNodeColor = $lightMode ? Theme.lightModeSecondary : Theme.darkModeHighlight;
 
 	const nodeList = Array.from({ length: skillNodes }, (_, index) => index < filledNodes);
 </script>
@@ -16,7 +16,7 @@
 	<div class="node-container">
 		{#each nodeList as isNodeFilled}
 			<div
-				style="background-color: {isNodeFilled ? filledNodeColor : 'var(--lightText)'};"
+				style="background-color: {isNodeFilled ? filledNodeColor : Theme.lightText};"
 				class="skill-node"
 			/>
 		{/each}

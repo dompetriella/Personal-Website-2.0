@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Theme } from '../models/theme';
 	import { lightMode } from '../stores';
 	enum ButtonType {
 		Primary,
@@ -27,25 +28,25 @@
 
 		if ($lightMode) {
 			if (buttonType === ButtonType.Primary) {
-				buttonAttributes.bgColor = 'var(--darkModeHighlight)';
-				buttonAttributes.shadowColor = 'var(--lightModeHighlight)';
-				buttonAttributes.textColor = 'var(--lightText)';
+				buttonAttributes.bgColor = Theme.darkModeHighlight;
+				buttonAttributes.shadowColor = Theme.lightModeHighlight;
+				buttonAttributes.textColor = Theme.lightText;
 			}
 			if (buttonType === ButtonType.Secondary) {
-				buttonAttributes.bgColor = 'var(--lightModeSplashSecondary)';
-				buttonAttributes.shadowColor = 'var(--darkBlueText)';
-				buttonAttributes.textColor = 'var(--lightText)';
+				buttonAttributes.bgColor = Theme.lightModeSplashSecondary;
+				buttonAttributes.shadowColor = Theme.darkBlueText;
+				buttonAttributes.textColor = Theme.lightText;
 			}
 		} else {
 			if (buttonType === ButtonType.Primary) {
-				buttonAttributes.bgColor = 'var(--darkModeHighlight)';
-				buttonAttributes.shadowColor = 'var(--darkModeHighlightSecondary)';
-				buttonAttributes.textColor = 'var(--darkText)';
+				buttonAttributes.bgColor = Theme.darkModeHighlight;
+				buttonAttributes.shadowColor = Theme.darkModeHighlightSecondary;
+				buttonAttributes.textColor = Theme.darkText;
 			}
 			if (buttonType === ButtonType.Secondary) {
-				buttonAttributes.bgColor = 'var(--darkModeSplashSecondary)';
-				buttonAttributes.shadowColor = 'var(--darkText)';
-				buttonAttributes.textColor = 'var(--lightText)';
+				buttonAttributes.bgColor = Theme.darkModeSplashSecondary;
+				buttonAttributes.shadowColor = Theme.darkText;
+				buttonAttributes.textColor = Theme.lightText;
 			}
 		}
 		return buttonAttributes;

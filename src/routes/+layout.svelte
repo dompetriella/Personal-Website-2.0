@@ -1,14 +1,14 @@
 <script>
 	import '../app.css';
-	import Navbar from '../components/navbar.svelte';
+	import { Theme } from '../models/theme';
 	import { lightMode } from '../stores';
+
+	$: bgColor = $lightMode ? Theme.lightModePrimary : Theme.darkText;
 </script>
 
 <div class="app">
 	<main
-		style={$lightMode
-			? 'background-color: var(--lightModePrimary);'
-			: 'background-color: var(--darkModePrimary);'}
+		style={`background-color: ${bgColor}`}
 	>
 		<slot />
 	</main>

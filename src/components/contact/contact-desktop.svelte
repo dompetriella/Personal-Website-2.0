@@ -3,8 +3,9 @@
 
 	import { lightMode } from '../../stores';
 	import ActionButton from '../action-button.svelte';
+	import { Theme } from '../../models/theme';
 
-	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkModeSplashPrimary)';
+	$: textColor = $lightMode ? Theme.darkGreenText : Theme.darkModeSplashPrimary;
 </script>
 
 <div class="contact-area">

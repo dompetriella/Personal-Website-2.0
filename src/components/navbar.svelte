@@ -5,8 +5,8 @@
 
 	$: navbarBackground = $lightMode ? Theme.lightModeSecondary  : Theme.darkModeSecondary;
 	$: navbarBoxShadow = $lightMode
-		? '-5px 5px 0px 2px var(--darkGreenText)'
-		: '-5px 5px 0px 2px var(--darkText)';
+		? `-5px 5px 0px 2px ${Theme.darkGreenText}`
+		: `-5px 5px 0px 2px ${Theme.darkText}`;
 
 	$: textColor = $lightMode ? Theme.darkGreenText : Theme.lightText;
 
@@ -15,11 +15,11 @@
 	$: iconAnimation = $lightMode ? 'light-mode-icon' : 'dark-mode-icon';
 
 	function hoverOverText(e: any) {
-		e.target.style.color = $lightMode ? 'var(--lightText)' : 'var(--darkModeHighlight)';
+		e.target.style.color = $lightMode ? Theme.lightText : Theme.darkModeHighlight;
 	}
 
 	function hoverAwayText(e: any) {
-		e.target.style.color = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
+		e.target.style.color = $lightMode ? Theme.darkGreenText : Theme.lightText;
 	}
 </script>
 

@@ -1,18 +1,19 @@
 <script lang="ts">
+	import { Theme } from '../../models/theme';
 	import { lightMode } from '../../stores';
 	import ActionButton from '../action-button.svelte';
 	import ContactForm from './contact-form.svelte';
 
-	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
-	$: primarySplash = $lightMode ? 'var(--lightModeSplashPrimary)' : 'var(--darkModeSplashPrimary)';
+	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
+	$: primarySplash = $lightMode ? Theme.lightModeSplashPrimary : Theme.darkModeSplashPrimary;
 	$: secondarySplash = $lightMode
-		? 'var(--lightModeSplashSecondary)'
-		: 'var(--darkModeSplashSecondary)';
+		? Theme.lightModeSplashSecondary
+		: Theme.darkModeSplashSecondary;
 	$: tertiarySplash = $lightMode
-		? 'var(--lightModeSplashTertiary)'
-		: 'var(--darkModeSplashTertiary)';
+		? Theme.lightModeSplashTertiary
+		: Theme.darkModeSplashTertiary;
 
-	$: listTextColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
+	$: listTextColor = $lightMode ? Theme.darkGreenText : Theme.darkText;
 </script>
 
 <div class="circles-container">

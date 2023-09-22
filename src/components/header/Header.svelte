@@ -3,12 +3,13 @@
 	import { lightMode } from '../../stores';
 	import SplashBackgroundDesktop from './splash-background-desktop.svelte';
 	import SplashBackgroundProjectsMobile from '../projects/splash-background-projects-mobile.svelte';
+	import { Theme } from '../../models/theme';
 
 	let screenSize: number;
 	const mobile: number = 480;
 
 	$: fontSize = screenSize > mobile ? 5 : 2.7;
-	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
+	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 	$: animationType = $lightMode ? 'light-text-animation' : 'dark-text-animation';
 </script>
 

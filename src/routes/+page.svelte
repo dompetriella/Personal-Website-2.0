@@ -3,7 +3,6 @@
 	import Projects from '../components/projects/Projects.svelte';
 	import Header from '../components/header/Header.svelte';
 	import { onMount } from 'svelte';
-	import { setToDarkMode, setToLightMode } from '../stores';
 	import Navbar from '../components/navbar.svelte';
 
 	let screenSize: number;

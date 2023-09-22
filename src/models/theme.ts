@@ -21,7 +21,7 @@ export class Theme {
     
     static darkModeSplashPrimary: string = '#E8E4E4';
     static darkModeSplashSecondary: string =  '#606061';
-    static darkModeSplashTertiary: string = '#222222;'
+    static darkModeSplashTertiary: string = '#222222';
 
 }
 

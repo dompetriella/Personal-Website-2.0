@@ -2,6 +2,7 @@
 	import { lightMode } from '../../stores';
 	import ActionButton from '../action-button.svelte';
 	import { ItemType } from '../../models/projects';
+	import { Theme } from '../../models/theme';
 
 	export let itemType: ItemType = ItemType.Code;
 
@@ -20,13 +21,13 @@
 	export let buttonText: string = 'Visit Site';
 	export let buttonRedirectURL: string = '';
 
-	$: headerTextColor = $lightMode ? 'var(--darkGreenText )' : 'var(--lightText)';
-	$: subTextColor = $lightMode ? 'var(--lightModePrimary)' : 'var(--darkModeSplashSecondary)';
+	$: headerTextColor = $lightMode ? Theme.darkGreenText : Theme.lightText;
+	$: subTextColor = $lightMode ? Theme.lightModePrimary : Theme.darkModeSplashSecondary;
 
-	$: highlight = $lightMode ? 'var(--lightText)' : 'var(--darkModeHighlight)';
+	$: highlight = $lightMode ? Theme.lightText : Theme.darkModeHighlight;
 
-	$: containerColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
-	$: containerBoxShadowColor = $lightMode ? 'var(--darkGreenText)' : 'var(--darkText)';
+	$: containerColor = $lightMode ? Theme.lightModeSecondary : 'var(--darkModeSecondary)';
+	$: containerBoxShadowColor = $lightMode ? Theme.darkGreenText : Theme.darkText;
 </script>
 
 <div

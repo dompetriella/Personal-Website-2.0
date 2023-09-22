@@ -2,13 +2,10 @@
 	import { lightMode } from '../../stores';
 	import SplashBackgroundContactMobile from './splash-background-contact-mobile.svelte';
 	import ContactDesktop from './contact-desktop.svelte';
+	import { Theme } from '../../models/theme';
 
 	let screenSize: number;
 	const mobile: number = 480;
-
-	$: fontSize = screenSize > mobile ? 5 : 2.7;
-	$: textColor = $lightMode ? 'var(--darkText)' : 'var(--lightText)';
-	$: animationType = $lightMode ? 'light-text-animation' : 'dark-text-animation';
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />

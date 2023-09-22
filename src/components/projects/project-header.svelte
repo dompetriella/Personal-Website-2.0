@@ -1,7 +1,8 @@
 <script>
+	import { Theme } from '../../models/theme';
 	import { lightMode } from '../../stores';
-	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
-	$: lineColor = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeHighlight)';
+	$: textColor = $lightMode ? Theme.darkGreenText : Theme.lightText;
+	$: lineColor = $lightMode ? Theme.lightModeSecondary : Theme.darkModeHighlight;
 </script>
 
 <div class="project-header-desktop">
