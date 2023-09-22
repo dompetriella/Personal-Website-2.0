@@ -1,13 +1,14 @@
 <script lang="ts">
 	import '/src/app.css';
 	import { lightMode, toggleLightMode } from '../stores';
+	import { Theme } from '../models/theme';
 
-	$: navbarBackground = $lightMode ? 'var(--lightModeSecondary)' : 'var(--darkModeSecondary)';
+	$: navbarBackground = $lightMode ? Theme.lightModeSecondary  : Theme.darkModeSecondary;
 	$: navbarBoxShadow = $lightMode
 		? '-5px 5px 0px 2px var(--darkGreenText)'
 		: '-5px 5px 0px 2px var(--darkText)';
 
-	$: textColor = $lightMode ? 'var(--darkGreenText)' : 'var(--lightText)';
+	$: textColor = $lightMode ? Theme.darkGreenText : Theme.lightText;
 
 	$: lightModeToggle = $lightMode ? 'light-toggle-animation' : 'dark-toggle-animation';
 

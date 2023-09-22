@@ -1,9 +1,9 @@
 export class Theme {
 
     static lightText: string = '#E8E4E4';
-    static dartText: string = '#171717';
-    static dartGreenText: string = '#2B452D';
-    static dartBlueText: string = '#385961';
+    static darkText: string = '#171717';
+    static darkGreenText: string = '#2B452D';
+    static darkBlueText: string = '#385961';
 
     static lightModePrimary: string = '#63A66A';
     static lightModeSecondary: string = '#76C77E';
