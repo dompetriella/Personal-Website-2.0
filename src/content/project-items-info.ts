@@ -7,6 +7,7 @@ export const codeProjects = [
 		status: 'Work in Progress (v0.2.1)',
 		info: 'Recursion, much?',
 		sourceCodeLink: "https://github.com/dompetriella/Personal-Website-2.0",
+
 		imageFileName: 'dompetriella.png',
 		imageAlt: 'my face .png',
 		languageUsed: 'Sveltekit',
@@ -25,53 +26,43 @@ export const codeProjects = [
 		languageUsed: 'Flutter'
 	},
 	{
-		header: 'Ocebot',
-		subheader: 'A Pet Project- literally',
-		status: 'Complete (v1.1.5)',
-		info: 'Data keeping app for my pet snake, Ocelot, made in the style of Stardew Valley.',
-		sourceCodeLink: "https://github.com/dompetriella/OceBot-2.0",
-		imageFileName: 'ocebot.png',
-		imageAlt: 'hognose snake pixelated',
-		languageUsed: 'Flutter'
-	}
-];
-
-export const artProjects = [
-	{
-		itemType: ItemType.Art,
-		header: 'Note Jogger (wireframes)',
-		subheader: 'Where the music magic happens',
-		info: 'Designs and wireframes for the revamped UI in the Note Jogger app',
-		hasButton: true,
-		buttonText: "View Figma",
-		buttonRedirectURL: "https://www.figma.com/file/FnMg9ygZ9hylYLqntLmbiJ/Note-Jogger?type=design&fuid=1081230008261467704"
-	},
-
-	{
-		itemType: ItemType.Art,
-		header: '- This site -',
-		subheader: 'Wireframes for dompetriella.com',
-		info: 'The wireframes for the site.  Might even hide some new features on the horizon 👀',
-		hasButton: true,
-		buttonText: "View Figma",
-		buttonRedirectURL: "https://www.figma.com/file/RbLkYXbhG1OcCJtrdHPhar/Personal-Site-Redesign?type=design&t=WiRhzv7fmK4TlpOh-0"
-	},
-];
-
-export const gameProjects = [
-	{
 		header: 'Note Jogger',
 		subheader: 'Catch Up on Your Musical Exercises',
 		status: '0.5.6a',
-		info: "Make a game out of learning music with Note Jogger!",
+		info: "Make a game out of learning music with Note Jogger! (For iOS and Android, Web may run into issues)",
 		sourceCodeLink: "https://github.com/dompetriella/Note-Jogger",
 		imageFileName: 'note-jogger.png',
 		imageAlt: 'note jogger logo',
 		languageUsed: 'Flutter',
 		hasButton: true,
-		buttonText: "Play",
+		buttonText: "Play Demo",
 		buttonRedirectURL: "https://note-jogger.web.app/"
 	},
+];
+
+export const artProjects = [
+	{
+		itemType: ItemType.Art,
+		header: 'Icons',
+		subheader: 'A picture worth a thousand clicks',
+		info: "Some favorite app icon designs I've made over the years",
+		imageFileName: 'pokeball-icon.png',
+		imageAlt: 'a pokeball',
+		imageList: [
+			{ imageFileName: 'proto-jogger-icon.png', imageAltDescription: 'a stylized keyboard piano' },
+			{ imageFileName: 'poseidon-icon.png', imageAltDescription: 'a trident fighting blue waves' },
+			{ imageFileName: 'pokeball-icon.png', imageAltDescription: 'a pokeball' },
+			{ imageFileName: 'maritime-mines.png', imageAltDescription: 'a mine floating at sea' },
+			{ imageFileName: 'watchtower-icon.png', imageAltDescription: 'a purple lighthouse' },
+			{ imageFileName: 'meet2eat-icon.png', imageAltDescription: 'a dinner being revealed' },
+		],
+		hasButton: false,
+		buttonText: "See More",
+	},
+];
+
+export const gameProjects = [
+
 	{
 		header: 'Maritime Mines',
 		subheader: 'Minesweeper at sea',

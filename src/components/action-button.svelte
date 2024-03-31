@@ -12,6 +12,7 @@
 	export let verticalPadding: number = 0.4;
 	export let horizontalPadding: number = 2;
 	export let isSubmitButton: boolean = false;
+	export let buttonRedirectURL: string = '';
 	export let route: string = 'javascript:void(0)';
 	export let onClick = () => {};
 

@@ -10,6 +10,7 @@
 	export let subheader: string = '';
 	export let imageFileName: string = '';
 	export let imageAlt: string = '';
+	export let imageList: CustomImage[] = [];
 
 	export let status: string = 'Work in Progress';
 	export let info: string;
@@ -47,16 +48,35 @@
 				{/if}
 			</div>
 		</div>
-		<div class="status-text">
-			<div style="color: {headerTextColor}; padding-right: 1em;">STATUS:</div>
-			<div style="color: {subTextColor}">{status}</div>
-		</div>
+		{#if itemType != ItemType.Art}
+			<div class="status-text">
+				<div style="color: {headerTextColor}; padding-right: 1em;">STATUS:</div>
+				<div style="color: {subTextColor}">{status}</div>
+			</div>
+		{/if}
 
 		{#if info}
 			<div class="status-text">
 				<div style="color: {subTextColor}">
 					{info}
 				</div>
+			</div>
+		{/if}
+
+		{#if itemType === ItemType.Art}
+			<div class="preview-image-container">
+				{#each imageList as image}
+					<div
+						style="background-color: {subTextColor}; box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.25);"
+						class="preview-image-backdrop"
+					>
+						<img
+							class="preview-image"
+							src={`/project-icons/${image.imageFileName}`}
+							alt={image.imageAltDescription}
+						/>
+					</div>
+				{/each}
 			</div>
 		{/if}
 
@@ -73,7 +93,13 @@
 		{#if hasButton}
 			<a href={buttonRedirectURL} target="_blank" rel="noopener noreferrer">
 				<div class="site-button">
-					<ActionButton buttonType={1} textSize={1.2} text={buttonText} horizontalPadding={4} />
+					<ActionButton
+						buttonType={1}
+						textSize={1.2}
+						text={buttonText}
+						horizontalPadding={4}
+						route={buttonRedirectURL}
+					/>
 				</div>
 			</a>
 		{/if}
@@ -130,5 +156,28 @@
 		padding-top: 1em;
 		display: flex;
 		justify-content: center;
+	}
+
+	.preview-image-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.preview-image-backdrop {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 5em;
+		height: 5em;
+		padding: 0.5em;
+		margin: 1em;
+		border-radius: 1em;
+		box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+	}
+
+	.preview-image {
+		width: 4.8em;
+		height: 4.87em;
 	}
 </style>

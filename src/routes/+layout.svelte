@@ -7,9 +7,7 @@
 </script>
 
 <div class="app">
-	<main
-		style={`background-color: ${bgColor}`}
-	>
+	<main style={`background-color: ${bgColor}`}>
 		<slot />
 	</main>
 </div>

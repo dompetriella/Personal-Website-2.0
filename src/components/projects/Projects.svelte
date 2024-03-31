@@ -19,7 +19,7 @@
 		</div>
 	{/if}
 	<div class="splash-buttons">
-		<SplashButton text="CODE" itemType={ItemType.Code} projectItems={codeProjects} />
+		<SplashButton text="APPS" itemType={ItemType.Code} projectItems={codeProjects} />
 		<SplashButton text="ART" itemType={ItemType.Art} projectItems={artProjects} />
 		<SplashButton text="GAMES" itemType={ItemType.Game} projectItems={gameProjects} />
 	</div>
