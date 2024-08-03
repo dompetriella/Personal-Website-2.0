@@ -64,10 +64,37 @@ export const artProjects = [
 export const gameProjects = [
 
 	{
+		header: 'New Bark Town (remake)',
+		subheader: 'Come along as we remake a classic',
+		status: 'Work in Progress (0.0.1)',
+		info: 'A small remake of New Bark Town from Pokemon Silver/Gold/Crystal.  One part learning Godot, one part nostalgia',
+		sourceCodeLink: "https://github.com/dompetriella/new_bark_town",
+		imageFileName: 'new-bark-town.png',
+		imageAlt: 'totodile!',
+		languageUsed: 'Godot (Gdscript)',
+		hasButton: true,
+		buttonRedirectURL: "https://aquaticanuran.itch.io/new-bark-town",
+		buttonText: "Play"
+	},
+	{
+		header: 'Peak Efficiency',
+		subheader: 'Kenney 2024 Game Jam - "Connections',
+		status: 'Game Jam!',
+		info: "A little space shooter with some economy actions.  Its a one way trip, so strive for peak efficiency and beat your high score",
+		sourceCodeLink: "https://github.com/dompetriella/precious_cargo",
+		imageFileName: 'peak-efficiency.png',
+		imageAlt: 'peak efficiency space',
+		languageUsed: 'Godot (Gdscript)',
+		hasButton: true,
+		buttonRedirectURL: "https://aquaticanuran.itch.io/peak-efficiency",
+		buttonText: "Play"
+	},
+	{
 		header: 'Maritime Mines',
 		subheader: 'Minesweeper at sea',
 		status: 'Complete?',
 		sourceCodeLink: "https://github.com/dompetriella/maritime-mines",
+		info: 'This was my very first game I ever made, and holds a special place in my heart <3',
 		imageFileName: 'maritime-mines.png',
 		imageAlt: 'maritime mines logo',
 		languageUsed: 'HTML/CSS/JS',
@@ -75,15 +102,6 @@ export const gameProjects = [
 		buttonText: "Play",
 		buttonRedirectURL: "https://maritime-mines.dompetriella.repl.co/"
 	},
-	{
-		header: 'Elementals',
-		subheader: '',
-		status: 'Work in Progress (0.3.0)',
-		info: 'Harness one of the four elements in a multiplayer 1v1 card game',
-		sourceCodeLink: "https://github.com/dompetriella/Elementals",
-		imageFileName: 'elementals.png',
-		imageAlt: 'elementals game logo',
-		languageUsed: 'Flutter',
-	},
+
 
 ];

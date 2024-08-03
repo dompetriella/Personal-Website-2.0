@@ -54,26 +54,17 @@
 	}
 </script>
 
-<a data-sveltekit-reload href={route}>
-	<button
-		class="action-button"
-		type={isSubmitButton ? 'submit' : 'button'}
-		class:pressed={isPressed}
-		style={`background-color: ${buttonAttributes.bgColor};
+<a href={route}
+   class="action-button"
+   role="button"
+   aria-pressed={isPressed}
+   style={`background-color: ${buttonAttributes.bgColor};
           color: ${buttonAttributes.textColor};
           font-size: ${textSize}em;
           padding: ${verticalPadding}em ${horizontalPadding}em;
-          box-shadow: ${isPressed ? '0px 3px 0px 2px' : '-3px 5px 0 0.075em'} ${
-			buttonAttributes.shadowColor
-		};`}
-		on:mousedown={() => (isPressed = true)}
-		on:touchstart={() => (isPressed = true)}
-		on:mouseup={() => (isPressed = false)}
-		on:touchend={() => (isPressed = true)}
-		on:click={() => onClick()}
-	>
-		{text}
-	</button>
+          box-shadow: ${isPressed ? '0px 3px 0px 2px' : '-3px 5px 0 0.075em'} ${buttonAttributes.shadowColor};`}
+   on:click={() => onClick()}>
+  {text}
 </a>
 
 <style>
@@ -103,7 +94,7 @@
 	}
 
 	.action-button:hover {
-		filter: brightness(105%);
+		filter: brightness(120%);
 	}
 
 	.action-button.pressed {

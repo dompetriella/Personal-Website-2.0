@@ -24,6 +24,7 @@
 </script>
 
 <nav class="mobile" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
+	
 	<a href="#home">
 		<img
 			class="icon-image {iconAnimation}"
@@ -45,7 +46,7 @@
 			width="35"
 		/>
 	</a>
-
+	
 	<a href="#contact-m">
 		<img
 			class="icon-image {iconAnimation}"
@@ -57,15 +58,16 @@
 		/>
 	</a>
 
-	<img
-		on:click={toggleLightMode}
-		on:keypress={toggleLightMode}
+	<button class="icon-button" on:click={toggleLightMode} on:keypress={toggleLightMode}>
+		<img
 		class={lightModeToggle}
 		src={$lightMode ? '/sun.png' : '/moon.png'}
 		alt={$lightMode ? 'sun' : 'moon'}
 		height="70"
 		width="70"
 	/>
+	</button>
+
 </nav>
 
 <nav class="desktop" style="background-color: {navbarBackground}; box-shadow: {navbarBoxShadow};">
@@ -111,15 +113,16 @@
 			</div>
 		</a>
 
-		<img
-			on:click={toggleLightMode}
-			on:keypress={toggleLightMode}
+		<button on:click = {toggleLightMode} on:keypress= {toggleLightMode} class="icon-button">
+			<img
+			
 			class={lightModeToggle}
 			src={$lightMode ? '/sun.png' : '/moon.png'}
 			alt={$lightMode ? 'sun' : 'moon'}
 			height="70"
 			width="70"
 		/>
+		</button>
 	</div>
 </nav>
 
@@ -132,10 +135,25 @@
 		cursor: pointer;
 	}
 
+	img:hover {
+		filter: brightness(120%);
+	}
+
 	.light-toggle-animation {
 		animation-name: sun-set;
 		animation-duration: 1000ms;
 		animation-timing-function: ease-in-out;
+
+	}
+
+	.icon-button {
+		outline: 0;
+		border: 0;
+		background-color: transparent;
+	}
+
+	.icon-button:focus {
+		filter: brightness(120%);
 	}
 
 	@keyframes sun-set {

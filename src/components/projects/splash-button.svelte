@@ -6,7 +6,6 @@
 	import ProjectItem from './project-item.svelte';
 	import { Theme } from '../../models/theme';
 
-	export let itemType: any;
 	export let projectItems: Array<any> = [];
 	export let text: string = 'TEXT';
 	export let expanded: boolean = false;
@@ -23,7 +22,7 @@
 
 <div class="splash-body">
 	{#if !expanded}
-		<div
+		<button
 			in:fade={{ delay: 500 }}
 			out:fade={{ delay: 100 }}
 			on:click={() => (expanded = true)}
@@ -39,7 +38,7 @@
 			>
 				{text}
 			</div>
-		</div>
+		</button>
 		<div
 			in:fade={{ delay: 300 }}
 			out:fade={{ delay: 400 }}
@@ -131,18 +130,24 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 7.5em;
-		width: 7.5em;
-		left: 4.7em;
-		top: 2.7em;
+		min-height: 9em;
+		min-width: 9em;
+		top: 3em;
 		border-radius: 50%;
+		outline: none;
+		border: 0;
 		z-index: 3;
 		box-shadow: 0px 3px 0px 1px rgba(0, 0, 0, 0.25);
 		cursor: pointer;
 	}
 
 	.primary-splash:hover {
-		filter: brightness(102%);
+		filter: brightness(120%);
+	}
+
+	.primary-splash:focus {
+		border: 2px solid white;
+		box-shadow: 0 0 16px 4px white;
 	}
 
 	.text {

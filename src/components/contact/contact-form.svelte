@@ -167,6 +167,7 @@
 	input:focus {
 		outline: none;
 		border: none;
+		filter: brightness(120%);
 	}
 
 	.multiline-input {

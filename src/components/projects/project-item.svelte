@@ -38,8 +38,8 @@
 	<div class="project-item-data">
 		<div class="heading-container">
 			<div class="heading-text">
-				<div style="color: {headerTextColor}; font-size: 1.5em">{header.toUpperCase()}</div>
-				<div style="color: {subTextColor}">{subheader}</div>
+				<h3 style="color: {headerTextColor}; font-size: 1.5em">{header.toUpperCase()}</h3>
+				<h4 style="color: {subTextColor}">{subheader}</h4>
 			</div>
 
 			<div style="width: 4em; height: 4em">
@@ -50,16 +50,16 @@
 		</div>
 		{#if itemType != ItemType.Art}
 			<div class="status-text">
-				<div style="color: {headerTextColor}; padding-right: 1em;">STATUS:</div>
-				<div style="color: {subTextColor}">{status}</div>
+				<h3 style="color: {headerTextColor}; padding-right: 1em;">STATUS:</h3>
+				<p style="color: {subTextColor}">{status}</p>
 			</div>
 		{/if}
 
 		{#if info}
 			<div class="status-text">
-				<div style="color: {subTextColor}">
+				<p style="color: {subTextColor}">
 					{info}
-				</div>
+				</p>
 			</div>
 		{/if}
 
@@ -83,10 +83,10 @@
 		{#if itemType != ItemType.Art}
 			<div class="source-info">
 				<a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
-					<div style="color: {highlight}; cursor: pointer">SOURCE CODE</div>
+					<p style="color: {highlight}; cursor: pointer">SOURCE CODE</p>
 				</a>
 
-				<div style="color: {subTextColor}">{languageUsed}</div>
+				<p style="color: {subTextColor}">{languageUsed}</p>
 			</div>
 		{/if}
 
@@ -116,6 +116,22 @@
 		max-width: 100%;
 		object-fit: scale-down;
 	}
+
+	h3 {
+		padding: 0;
+		margin: 0;
+	}
+
+	h4 {
+		padding: 0;
+		margin: 0;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
 	.project-item-container {
 		width: 18em;
 		padding: 1em;
