@@ -6,6 +6,7 @@ export class Theme {
     static darkBlueText: string = '#385961';
 
     static lightModePrimary: string = '#63A66A';
+    static lightModeProjectInfoText: string = '#4E8554';
     static lightModeSecondary: string = '#76C77E';
     static lightModeHighlight: string = '#D0C777';
 
@@ -16,6 +17,7 @@ export class Theme {
 
     static darkModePrimary: string = '#1E1E1E';
     static darkModeSecondary: string =  '#2B2B2C';
+    static darkModeProjectInfoText: string = '#7C7C7C';
     static darkModeHighlight: string = '#C8651D';
     static darkModeHighlightSecondary: string =  'rgb(200, 101, 29, 0.25)';
     

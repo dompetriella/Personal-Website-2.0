@@ -19,9 +19,9 @@
 		</div>
 	{/if}
 	<div class="splash-buttons">
-		<SplashButton text="APPS" itemType={ItemType.Code} projectItems={codeProjects} />
-		<SplashButton text="ART" itemType={ItemType.Art} projectItems={artProjects} />
-		<SplashButton text="GAMES" itemType={ItemType.Game} projectItems={gameProjects} />
+		<SplashButton text="APPS"  projectItems={codeProjects} />
+		<SplashButton text="ART" projectItems={artProjects} />
+		<SplashButton text="GAMES"  projectItems={gameProjects} />
 	</div>
 </section>
 

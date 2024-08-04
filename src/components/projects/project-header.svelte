@@ -6,13 +6,19 @@
 </script>
 
 <div class="project-header-desktop">
-	<div style="color: {textColor}" class="project-title">PROJECTS</div>
+	<h1 style="color: {textColor}" class="project-title">PROJECTS</h1>
 	<div style="background-color: {lineColor}" class="line" />
 	<div style="background-color: {lineColor}" class="mid-line line" />
 	<div style="background-color: {lineColor}" class="bottom-line line" />
 </div>
 
 <style>
+
+	h1 {
+		padding: 0;
+		margin: 0;
+	}
+
 	.line {
 		margin-bottom: 0.75em;
 		height: 0.25em;

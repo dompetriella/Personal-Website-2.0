@@ -25,7 +25,7 @@
 	$: signAnimation = $lightMode ? 'light-mode-animation' : 'dark-mode-animation';
 </script>
 
-<div
+<h1
 	out:scale
 	style="
 	font-size: {fontSize}em; 
@@ -41,10 +41,10 @@
 	class={signAnimation}
 >
 	{text}
-</div>
+</h1>
 
 <style>
-	div {
+	h1 {
 		display: flex;
 		align-items: center;
 		justify-content: center;

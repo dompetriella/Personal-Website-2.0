@@ -23,7 +23,7 @@
 	export let buttonRedirectURL: string = '';
 
 	$: headerTextColor = $lightMode ? Theme.darkGreenText : Theme.lightText;
-	$: subTextColor = $lightMode ? Theme.lightModePrimary : Theme.darkModeSplashSecondary;
+	$: subTextColor = $lightMode ? Theme.lightModeProjectInfoText : Theme.darkModeProjectInfoText;
 
 	$: highlight = $lightMode ? Theme.lightText : Theme.darkModeHighlight;
 
@@ -31,7 +31,8 @@
 	$: containerBoxShadowColor = $lightMode ? Theme.darkGreenText : Theme.darkText;
 </script>
 
-<div
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+<div tabindex="0"
 	style="background-color: {containerColor}; box-shadow: -5px 5px 0px 3px {containerBoxShadowColor};"
 	class="project-item-container"
 >
@@ -91,17 +92,15 @@
 		{/if}
 
 		{#if hasButton}
-			<a href={buttonRedirectURL} target="_blank" rel="noopener noreferrer">
-				<div class="site-button">
-					<ActionButton
-						buttonType={1}
-						textSize={1.2}
-						text={buttonText}
-						horizontalPadding={4}
-						route={buttonRedirectURL}
-					/>
-				</div>
-			</a>
+			<div class="site-button">
+				<ActionButton
+					buttonType={1}
+					textSize={1.2}
+					text={buttonText}
+					horizontalPadding={4}
+					route={buttonRedirectURL}
+				/>
+			</div>
 		{/if}
 	</div>
 </div>

@@ -22,15 +22,15 @@
 		</div>
 
 		<div style="color: {textColor}" class="header-text">
-			<div class={animationType} style:animation-delay={$lightMode ? '700ms' : '600ms'}>
+			<h2 class={animationType} style:animation-delay={$lightMode ? '700ms' : '600ms'}>
 				I'M DOM PETRIELLA
-			</div>
-			<div class={animationType} style:animation-delay={$lightMode ? '900ms' : '1000ms'}>
+			</h2>
+			<h2 class={animationType} style:animation-delay={$lightMode ? '900ms' : '1000ms'}>
 				{$lightMode ? 'FULL STACK DEVELOPER' : 'VISUAL DESIGNER'}
-			</div>
-			<div class={animationType} style:animation-delay={$lightMode ? '1100ms' : '1600ms'}>
+			</h2>
+			<h2 class={animationType} style:animation-delay={$lightMode ? '1100ms' : '1600ms'}>
 				{$lightMode ? 'BY DAY' : 'BY NIGHT'}
-			</div>
+			</h2>
 		</div>
 	</div>
 	{#if screenSize > mobile}
@@ -42,11 +42,19 @@
 </section>
 
 <style>
+
+	h2 {
+		padding: 0;
+		margin: 0;
+		font-size: 1em;
+	}
+
 	.light-header-sign {
 		animation-name: fade-in-text;
 		animation-duration: 600ms;
 		animation-fill-mode: backwards;
 	}
+
 
 	.header-text {
 		padding-top: 1em;
