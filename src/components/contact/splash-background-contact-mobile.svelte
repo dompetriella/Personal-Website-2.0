@@ -33,6 +33,15 @@
 					style="cursor: pointer;"
 				/>
 			</a>
+			<a href={'https://github.com/dompetriella'} target="_blank" rel="noopener noreferrer">
+				<img
+					src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+					height="65"
+					width="65"
+					alt="icon"
+					style="cursor: pointer;"
+				/>
+			</a>
 			<div style="width: 2em" />
 			<a href={'/resume'} target="_blank" rel="noopener noreferrer">
 				<img
@@ -65,6 +74,7 @@
 	.contact-icons {
 		display: flex;
 		flex-direction: row;
+		align-items: center;
 	}
 
 	.contact-area {

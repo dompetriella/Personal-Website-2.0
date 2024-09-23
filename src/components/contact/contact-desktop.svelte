@@ -31,7 +31,17 @@
 				/>
 			</a>
 
-			<div style="width: 1em" />
+			<a href={'https://github.com/dompetriella'} target="_blank" rel="noopener noreferrer">
+				<img
+					src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+					height="50"
+					width="50"
+					alt="icon"
+					style="cursor: pointer;"
+				/>
+			</a>
+
+			<div style="width: 1.5em" />
 			<ActionButton buttonType={ButtonType.Secondary} text="RESUMÉ" route={'/resume'} />
 		</div>
 		<ul style="color: {textColor}">
