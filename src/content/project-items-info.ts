@@ -43,6 +43,17 @@ export const codeProjects = [
 export const artProjects = [
 	{
 		itemType: ItemType.Art,
+		header: 'Music Projects',
+		subheader: 'Just behind the beat',
+		info: "An assortment of music or music projects I've worked on.  \n\nDistribution through Soundcloud.",
+		imageFileName: 'radio.png',
+		imageAlt: 'radio icon',
+		hasButton: true,
+		buttonText: "Give it a Listen",
+		buttonRedirectURL: "https://soundcloud.com/dominic-petriella",
+	},
+	{
+		itemType: ItemType.Art,
 		header: 'Icons',
 		subheader: 'A picture worth a thousand clicks',
 		info: "Some favorite app icon designs I've made over the years",
@@ -78,7 +89,7 @@ export const gameProjects = [
 	},
 	{
 		header: 'Peak Efficiency',
-		subheader: 'Kenney 2024 Game Jam - "Connections',
+		subheader: 'Kenney 2024 Game Jam - "Connections"',
 		status: 'Game Jam!',
 		info: "A little space shooter with some economy actions.  Its a one way trip, so strive for peak efficiency and beat your high score",
 		sourceCodeLink: "https://github.com/dompetriella/precious_cargo",

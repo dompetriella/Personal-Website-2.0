@@ -5,13 +5,35 @@
 	import ActionButton from '../action-button.svelte';
 	import { Theme } from '../../models/theme';
 
+	enum ButtonType {
+		Primary,
+		Secondary
+	}
+
 	$: textColor = $lightMode ? Theme.darkGreenText : Theme.darkModeSplashPrimary;
 </script>
 
 <div class="contact-area">
 	<div class="contact-text-area">
 		<div style="color: {textColor}" class="title">CONTACT</div>
-		<ActionButton buttonType={1} text="RESUMÉ" route={'/resume'} />
+		<div class="contact-buttons">
+			<a
+				href={'https://www.linkedin.com/in/dominicpetriella/'}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img
+					src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
+					height="60"
+					width="60"
+					alt="icon"
+					style="cursor: pointer;"
+				/>
+			</a>
+
+			<div style="width: 1em" />
+			<ActionButton buttonType={ButtonType.Secondary} text="RESUMÉ" route={'/resume'} />
+		</div>
 		<ul style="color: {textColor}">
 			<li>For website freelance</li>
 			<li>For UI/UX design</li>
@@ -38,6 +60,12 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.contact-buttons {
+		display: flex;
+		flex-direction: row;
 		align-items: center;
 	}
 

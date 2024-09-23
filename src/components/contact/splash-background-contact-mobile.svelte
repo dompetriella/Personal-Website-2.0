@@ -6,12 +6,8 @@
 
 	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 	$: primarySplash = $lightMode ? Theme.lightModeSplashPrimary : Theme.darkModeSplashPrimary;
-	$: secondarySplash = $lightMode
-		? Theme.lightModeSplashSecondary
-		: Theme.darkModeSplashSecondary;
-	$: tertiarySplash = $lightMode
-		? Theme.lightModeSplashTertiary
-		: Theme.darkModeSplashTertiary;
+	$: secondarySplash = $lightMode ? Theme.lightModeSplashSecondary : Theme.darkModeSplashSecondary;
+	$: tertiarySplash = $lightMode ? Theme.lightModeSplashTertiary : Theme.darkModeSplashTertiary;
 
 	$: listTextColor = $lightMode ? Theme.darkGreenText : Theme.darkText;
 </script>
@@ -23,7 +19,32 @@
 	<div style="background-color:{secondarySplash};" class="secondary-circle" />
 	<div style="background-color:{tertiarySplash};" class="tertiary-circle" />
 	<div class="contact-area">
-		<ActionButton text="RESUMÉ" buttonType={1} textSize={2} route={'/resume'} />
+		<div class="contact-icons">
+			<a
+				href={'https://www.linkedin.com/in/dominicpetriella/'}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img
+					src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
+					height="80"
+					width="80"
+					alt="linkedin icon"
+					style="cursor: pointer;"
+				/>
+			</a>
+			<div style="width: 2em" />
+			<a href={'/resume'} target="_blank" rel="noopener noreferrer">
+				<img
+					src="/resume-icon.png"
+					height="72"
+					width="72"
+					alt="resume icon"
+					style="cursor: pointer;"
+				/>
+			</a>
+		</div>
+
 		<ul style="color: {listTextColor}">
 			<li>Website freelance</li>
 			<li>UI/UX design</li>
@@ -39,6 +60,11 @@
 <style>
 	.contact-anchor {
 		margin-top: -3em;
+	}
+
+	.contact-icons {
+		display: flex;
+		flex-direction: row;
 	}
 
 	.contact-area {

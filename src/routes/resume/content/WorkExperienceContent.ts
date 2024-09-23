@@ -4,7 +4,7 @@ import type { ResumeInformationContent } from "../models/ResumeInformationConten
 export const workExperienceContent: Array<ResumeInformationContent> = [
 
     {
-        title: "Software Developer",
+        title: "UI/UX Engineer",
         location: "Magic-Wrighter, Inc",
         timeline: "2022-Present",
         information: [
