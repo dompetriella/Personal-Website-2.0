@@ -4,7 +4,7 @@
 	import { lightMode } from '../../../stores';
 	import { Theme } from '../../../models/theme';
 
-	$: bgColor = $lightMode ? Theme.lightModeSplashSecondary : Theme.darkModeSplashSecondary;
+	$: bgColor = $lightMode ? Theme.lightModeSecondary : Theme.darkModeSecondary;
 	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 
 	export let accomplishmentsHeight: number;
@@ -15,7 +15,7 @@
 
 <div class="info-box-container">
 	<div class="info-box-title">Applications</div>
-	<div class="info-box" style="background-color: {bgColor}; {height}">
+	<div class="info-box" style="background-color: {bgColor};">
 		{#each accomplishmentsContent as informationContent}
 			<ResumeInfoBlock {bgColor} {textColor} {informationContent} height={165} {isMobile} />
 		{/each}

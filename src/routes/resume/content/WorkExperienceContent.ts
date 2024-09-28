@@ -21,5 +21,15 @@ export const workExperienceContent: Array<ResumeInformationContent> = [
             "Developed OCR systems using Kofax to increase processing productivity by 300%",
             "Automation scripting and design in OnBase using .NET"
         ]
+    },
+
+    {
+        title: "Kofax/OnBase Engineer",
+        location: "SpendMend",
+        timeline: "2021-2022",
+        information: [
+            "Developed OCR systems using Kofax to increase processing productivity by 300%",
+            "Automation scripting and design in OnBase using .NET"
+        ]
     }
 ];

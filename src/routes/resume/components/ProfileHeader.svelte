@@ -25,7 +25,7 @@
 		</div>
 		<div
 			class="subtitle-name"
-			style={$lightMode ? `color: ${Theme.lightText};` : `color: ${Theme.darkModeHighlight};`}
+			style={$lightMode ? `color:  ${Theme.darkText};` : `color: ${Theme.lightText};`}
 		>
 			{titleText.subTitle}
 		</div>
@@ -66,7 +66,7 @@
 
 	.tagline-name {
 		padding-top: 1.5em;
-		font-size: 2em;
+		font-size: 1.7em;
 		text-align: center;
 		letter-spacing: 2px;
 		margin: 0px 50px;

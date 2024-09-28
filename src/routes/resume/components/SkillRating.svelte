@@ -8,16 +8,17 @@
 	export let filledNodes: number;
 
 	$: filledNodeColor = $lightMode ? Theme.lightModeSecondary : Theme.darkModeHighlight;
+	$: unfilledNodeColor = $lightMode ? Theme.lightModeSplashSecondary : Theme.darkModeSplashSecondary;
 
 	const nodeList = Array.from({ length: skillNodes }, (_, index) => index < filledNodes);
 </script>
 
 <div class="skill-rating-container">
-	<h3>{title}</h3>
+	<h3 style="color: {$lightMode ? Theme.darkText : Theme.lightText}">{title}</h3>
 	<div class="node-container">
 		{#each nodeList as isNodeFilled}
 			<div
-				style="background-color: {isNodeFilled ? filledNodeColor : Theme.lightText};"
+				style="background-color: {isNodeFilled ? filledNodeColor : unfilledNodeColor};"
 				class="skill-node"
 			/>
 		{/each}
@@ -38,10 +39,11 @@
 	}
 
 	.skill-node {
-		width: 34px;
-		height: 42px;
+		width: 32px;
+		height: 40px;
 		border-radius: 5px;
 		margin-right: 8px;
+		border: 2px white solid;
 	}
 
 	h3 {
@@ -53,6 +55,5 @@
 		letter-spacing: 2.4px;
 		padding-bottom: 3px;
 		margin: 0px;
-		color: var(--lightText);
 	}
 </style>

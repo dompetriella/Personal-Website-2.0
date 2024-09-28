@@ -4,7 +4,7 @@
 	import { educationContent } from '../content/EducationContent';
 	export let educationHeight: number;
 	export let isMobile: boolean;
-	$: bgColor = $lightMode ? Theme.lightModeSplashPrimary : Theme.lightText;
+	$: bgColor = $lightMode ? Theme.lightModeSecondary : Theme.darkModeSecondary;
 	$: textColor = $lightMode ? Theme.darkText : Theme.lightText;
 	$: filterPercentage = $lightMode ? 105 : 90;
 
@@ -13,10 +13,10 @@
 
 <div class="info-box-container">
 	<div class="info-box-title">Education</div>
-	<div class="info-box" style="background-color: {bgColor}; color: {textColor}; {height}">
+	<div class="info-box" style="background-color: {bgColor}; color: {textColor};">
 		<div
 			class="education-info-container"
-			style="background-color: {bgColor}; filter: brightness({filterPercentage}%);"
+			style="background-color: {bgColor}; filter: brightness({filterPercentage}%); color: {textColor}"
 		>
 			{#each educationContent as education}
 				<h3>{education.school}</h3>

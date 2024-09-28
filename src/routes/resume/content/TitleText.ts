@@ -3,7 +3,7 @@ export const titleTextContent: Array<TitleText> = [
     {
         name: "Dominic Petriella",
         subTitle: "UI/UX Engineer",
-        tagline: "Front End Designer with Full Stack Capabilities"
+        tagline: "Bridging Creative Design and Functional Development"
 
     }
 ];

@@ -14,7 +14,7 @@
 
 <div class="info-box-container">
 	<div class="info-box-title">Work Experience</div>
-	<div class="info-box" style="background-color: {bgColor}; {height}">
+	<div class="info-box" style="background-color: {bgColor};">
 		{#each workExperienceContent as informationContent}
 			<ResumeInfoBlock {bgColor} {textColor} {informationContent} {isMobile} />
 		{/each}

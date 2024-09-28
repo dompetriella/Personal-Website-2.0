@@ -15,12 +15,13 @@ export const skillNodeContent: Array<any> = [
         filledNodes: excellent
     },
     {
-        title: "Back-End C#",
+        title: "Figma / Rive",
         filledNodes: excellent
     },
-
     {
-        title: "Figma / Rive",
+        title: "Back-End C#",
         filledNodes: good
     },
+
+    
 ]

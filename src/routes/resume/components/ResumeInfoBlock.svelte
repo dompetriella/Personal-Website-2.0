@@ -13,7 +13,7 @@
 
 <div
 	class="resume-information-content-container"
-	style="background-color: {bgColor}; filter: brightness({filterPercentage}%); {adjustedHeight}"
+	style="background-color: {bgColor}; filter: brightness({filterPercentage}%);"
 >
 	<div>
 		<div style="color: {textColor}">
@@ -54,8 +54,8 @@
 	.resume-information-content-container {
 		display: flex;
 		flex-direction: column;
-		padding: 2em 0em;
-		margin: 1.5em 0em;
+		padding: 2em 2em;
+		margin: 1.5em 1.5em;
 		width: 90%;
 		border-radius: 0.5em;
 	}

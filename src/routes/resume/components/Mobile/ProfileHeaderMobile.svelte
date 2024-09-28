@@ -22,7 +22,7 @@
 			</div>
 			<div
 				class="subtitle-name"
-				style={$lightMode ? 'color: var(--lightText);' : 'color: var(--darkModeHighlight);'}
+				style={$lightMode ? 'color: var(--darkText);' : 'color: var(--lightText);'}
 			>
 				{titleText.subTitle}
 			</div>

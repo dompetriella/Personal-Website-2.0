@@ -10,7 +10,9 @@
 	export let isMobile: boolean;
 
 	$: fillColor = $lightMode ? '#FFF' : '#000';
+	$: textColor = $lightMode ? Theme.darkText : Theme
 	let height = isMobile ? '' : 'height: ' + contactHeight + 'px;';
+
 </script>
 
 <div
@@ -25,14 +27,14 @@
 	<div class="tile-padding">
 		<div class="contact-info-container">
 			<WebIcon {fillColor} height={35} width={35} />
-			<h4 style={$lightMode ? `color: ${Theme.lightText};` : `color: ${Theme.darkText};`}>
+			<h4 style={`color: ${Theme.darkText};`}>
 				{contactInfo.websiteUrl}
 			</h4>
 		</div>
 
 		<div class="contact-info-container">
 			<PhoneIcon {fillColor} height={35} width={35} />
-			<h4 style={$lightMode ? `color: ${Theme.lightText};` : `color: ${Theme.darkText};`}>
+			<h4 style="color: {Theme.darkText}">
 				{contactInfo.phoneNumber}
 			</h4>
 		</div>
@@ -41,16 +43,12 @@
 			<MailIcon {fillColor} height={35} width={35} />
 			<div class="email-column">
 				<h4
-					style="{$lightMode
-						? `color: ${Theme.lightText};`
-						: `color: ${Theme.darkText};`} padding-bottom: 0px; padding-top: 5px;"
+					style="color: {Theme.darkText}; padding-bottom: 0px; padding-top: 5px;"
 				>
 					{contactInfo.emailAddress}
 				</h4>
 				<h4
-					style="{$lightMode
-						? `color: ${Theme.lightText};`
-						: `color: ${Theme.darkText};`} padding-top: 0px; transform: translateX(30px)"
+					style="color: {Theme.darkText}; padding-top: 0px; transform: translateX(30px)"
 				>
 					@{contactInfo.emailAddressDomain}
 				</h4>
