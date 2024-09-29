@@ -7,7 +7,7 @@ export const accomplishmentsContent: Array<ResumeInformationContent> = [
         location: "Andriod / iOS",
         timeline: "2022",
         information: [
-            "A simple and accessible dice roller for all your tabletop needs",
+            "A simple, free and highly accessible dice helper app for tabletop RPG games.  Available on iOS and Android (Flutter)",
         ]
     }
 ];

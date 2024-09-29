@@ -54,8 +54,8 @@
 	.resume-information-content-container {
 		display: flex;
 		flex-direction: column;
-		padding: 2em 2em;
-		margin: 1.5em 1.5em;
+		padding: 2em 0em;
+		margin-bottom: 1.5em;
 		width: 90%;
 		border-radius: 0.5em;
 	}
@@ -135,7 +135,6 @@
 			width: 420px;
 			border-radius: 5px;
 			padding: 0px;
-			margin: 0px;
 		}
 	}
 </style>

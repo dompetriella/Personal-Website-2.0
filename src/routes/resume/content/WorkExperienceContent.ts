@@ -5,31 +5,22 @@ export const workExperienceContent: Array<ResumeInformationContent> = [
 
     {
         title: "UI/UX Engineer",
+        location: "SWIVEL",
+        timeline: "2024-Present",
+        information: [
+            "Architected UI/UX strategies and led front-end Flutter/React development, from wireframes to production-ready code.",
+            "Delivered visually compelling and fully accessible apps using Figma/Rive."
+        ]
+    },
+
+    {
+        title: "Software Developer",
         location: "Magic-Wrighter, Inc",
-        timeline: "2022-Present",
+        timeline: "2022-2024",
         information: [
-            "C# back-end developer for MWI payment systems and APIs",
-            "Developer, designer and animator for front-end applications using Flutter and React"
+            "Developed back-end systems and APIs using C# for MWI Payment solutions.",
+            "Spearheaded UI/UX and front-end development for MWI applications using Flutter and React."
         ]
     },
 
-    {
-        title: "Kofax/OnBase Engineer",
-        location: "SpendMend",
-        timeline: "2021-2022",
-        information: [
-            "Developed OCR systems using Kofax to increase processing productivity by 300%",
-            "Automation scripting and design in OnBase using .NET"
-        ]
-    },
-
-    {
-        title: "Kofax/OnBase Engineer",
-        location: "SpendMend",
-        timeline: "2021-2022",
-        information: [
-            "Developed OCR systems using Kofax to increase processing productivity by 300%",
-            "Automation scripting and design in OnBase using .NET"
-        ]
-    }
 ];

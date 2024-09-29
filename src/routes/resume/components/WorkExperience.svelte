@@ -36,6 +36,7 @@
 		align-items: center;
 		width: 100vw;
 		border-radius: 1em;
+		padding-top: 2em;
 	}
 
 	.info-box-container {
@@ -61,7 +62,7 @@
 			width: 464px;
 			border-radius: 10px;
 			margin-bottom: 1.5em;
-			padding: 0em;
+			padding-top: 2em;
 		}
 
 		.info-box-container {

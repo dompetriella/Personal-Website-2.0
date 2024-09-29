@@ -72,6 +72,7 @@
 		width: 90%;
 		border-radius: 0.5em;
 		padding: 2em 0em;
+		padding-top: 2em;
 	}
 
 	.info-box-title {
@@ -112,7 +113,7 @@
 			width: 464px;
 			border-radius: 10px;
 			margin-bottom: 1.5em;
-			padding: 0px;
+			padding-top: 2em;
 		}
 
 		.info-box-container {
