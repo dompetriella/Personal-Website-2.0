@@ -74,6 +74,20 @@ export const artProjects = [
 
 export const gameProjects = [
 
+	
+	{
+		header: 'Fire Rescue Robo Ranger',
+		subheader: 'GMTK Game Jam - "Built to Scale"',
+		status: 'Game Jam!',
+		info: "Another burn, another day on the job. Your mission: ascend each mountain, fighting fires as you go to save local wildlife.",
+		sourceCodeLink: "https://github.com/dompetriella/gmtk_game_jam_2024",
+		imageFileName: 'robo-ranger.png',
+		imageAlt: 'a robotic forest ranger',
+		languageUsed: 'Godot (Gdscript)',
+		hasButton: true,
+		buttonRedirectURL: "https://rapidcitythree.itch.io/fire-rescue-robo-ranger",
+		buttonText: "Play"
+	}, 
 	{
 		header: 'New Bark Town (remake)',
 		subheader: 'Come along as we remake a classic',
@@ -100,19 +114,4 @@ export const gameProjects = [
 		buttonRedirectURL: "https://aquaticanuran.itch.io/peak-efficiency",
 		buttonText: "Play"
 	},
-	{
-		header: 'Maritime Mines',
-		subheader: 'Minesweeper at sea',
-		status: 'Complete?',
-		sourceCodeLink: "https://github.com/dompetriella/maritime-mines",
-		info: 'This was my very first game I ever made, and holds a special place in my heart <3',
-		imageFileName: 'maritime-mines.png',
-		imageAlt: 'maritime mines logo',
-		languageUsed: 'HTML/CSS/JS',
-		hasButton: true,
-		buttonText: "Play",
-		buttonRedirectURL: "https://maritime-mines.dompetriella.repl.co/"
-	},
-
-
 ];
