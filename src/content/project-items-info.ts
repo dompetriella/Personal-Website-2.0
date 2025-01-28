@@ -50,7 +50,7 @@ export const artProjects = [
 		imageAlt: 'radio icon',
 		hasButton: true,
 		buttonText: "Give it a Listen",
-		buttonRedirectURL: "https://soundcloud.com/dominic-petriella",
+		buttonRedirectURL: "https://soundcloud.com/aquatic_anuran",
 	},
 	{
 		itemType: ItemType.Art,
@@ -74,7 +74,7 @@ export const artProjects = [
 
 export const gameProjects = [
 
-	
+
 	{
 		header: 'Fire Rescue Robo Ranger',
 		subheader: 'GMTK Game Jam - "Built to Scale"',
@@ -87,7 +87,7 @@ export const gameProjects = [
 		hasButton: true,
 		buttonRedirectURL: "https://rapidcitythree.itch.io/fire-rescue-robo-ranger",
 		buttonText: "Play"
-	}, 
+	},
 	{
 		header: 'New Bark Town (remake)',
 		subheader: 'Come along as we remake a classic',
