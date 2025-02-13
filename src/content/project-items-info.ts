@@ -89,6 +89,19 @@ export const gameProjects = [
 		buttonText: "Play"
 	},
 	{
+		header: 'KnuckleBones',
+		subheader: 'A Cult of the Lamb Spinoff',
+		status: 'Feature Complete (0.9.2)',
+		info: "A single player and online multiplayer version of the Knucklebones minigame from Cult of the Lamb",
+		sourceCodeLink: "https://github.com/dompetriella/knucklebones_react",
+		imageFileName: 'knucklebones-die.png',
+		imageAlt: 'a red dice',
+		languageUsed: 'React',
+		hasButton: true,
+		buttonRedirectURL: "https://play-knucklebones.web.app/",
+		buttonText: "Play"
+	},
+	{
 		header: 'New Bark Town (remake)',
 		subheader: 'Come along as we remake a classic',
 		status: 'Work in Progress (0.0.1)',
